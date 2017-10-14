@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E68207B1AADCE3F9AD0D39A /* libPods-Grocery Bazaar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F87295F796482A6C6CD21B8 /* libPods-Grocery Bazaar.a */; };
+		9C1CFC061F8F32E7004675FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC051F8F32E7004675FE /* main.m */; };
+		9C1CFC091F8F32E7004675FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC081F8F32E7004675FE /* AppDelegate.m */; };
+		9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC101F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld */; };
+		9C1CFC141F8F32E7004675FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC131F8F32E7004675FE /* Assets.xcassets */; };
+		9C1CFC171F8F32E7004675FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC151F8F32E7004675FE /* LaunchScreen.storyboard */; };
+		9C1CFC641F8F3344004675FE /* CommonFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC201F8F3344004675FE /* CommonFunction.m */; };
+		9C1CFC651F8F3344004675FE /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC231F8F3344004675FE /* CustomButton.m */; };
+		9C1CFC661F8F3344004675FE /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC251F8F3344004675FE /* CustomTextField.m */; };
+		9C1CFC671F8F3344004675FE /* LoderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC281F8F3344004675FE /* LoderView.m */; };
+		9C1CFC681F8F3344004675FE /* LoderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC291F8F3344004675FE /* LoderView.xib */; };
+		9C1CFC691F8F3344004675FE /* WebServicesCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC2B1F8F3344004675FE /* WebServicesCall.m */; };
+		9C1CFC6E1F8F3344004675FE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC371F8F3344004675FE /* HomeViewController.m */; };
+		9C1CFC6F1F8F3344004675FE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC381F8F3344004675FE /* HomeViewController.xib */; };
+		9C1CFC701F8F3344004675FE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC3B1F8F3344004675FE /* LoginViewController.m */; };
+		9C1CFC711F8F3344004675FE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC3C1F8F3344004675FE /* LoginViewController.xib */; };
+		9C1CFC7E1F8F3344004675FE /* RearCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC551F8F3344004675FE /* RearCell.m */; };
+		9C1CFC7F1F8F3344004675FE /* RearCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC561F8F3344004675FE /* RearCell.xib */; };
+		9C1CFC801F8F3344004675FE /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC581F8F3344004675FE /* RearViewController.m */; };
+		9C1CFC811F8F3344004675FE /* RearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC591F8F3344004675FE /* RearViewController.xib */; };
+		9C1CFC831F8F3344004675FE /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC5E1F8F3344004675FE /* SplashScreenViewController.m */; };
+		9C1CFC841F8F3344004675FE /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC5F1F8F3344004675FE /* SplashScreenViewController.xib */; };
+		9C1CFC8B1F8F3816004675FE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC8A1F8F3816004675FE /* Reachability.m */; };
+		9C1CFC951F8F483C004675FE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC911F8F483C004675FE /* RegisterViewController.m */; };
+		9C1CFC961F8F483C004675FE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC921F8F483C004675FE /* RegisterViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2F87295F796482A6C6CD21B8 /* libPods-Grocery Bazaar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Grocery Bazaar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86D4C7A63EA7312FBD1CAA20 /* Pods-Grocery Bazaar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery Bazaar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar.release.xcconfig"; sourceTree = "<group>"; };
+		9C1CFC011F8F32E6004675FE /* Grocery Bazaar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Bazaar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C1CFC051F8F32E7004675FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C1CFC071F8F32E7004675FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9C1CFC081F8F32E7004675FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9C1CFC111F8F32E7004675FE /* Grocery_Bazaar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Grocery_Bazaar.xcdatamodel; sourceTree = "<group>"; };
+		9C1CFC131F8F32E7004675FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C1CFC161F8F32E7004675FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C1CFC181F8F32E7004675FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C1CFC1F1F8F3344004675FE /* CommonFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunction.h; sourceTree = "<group>"; };
+		9C1CFC201F8F3344004675FE /* CommonFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunction.m; sourceTree = "<group>"; };
+		9C1CFC211F8F3344004675FE /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		9C1CFC221F8F3344004675FE /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
+		9C1CFC231F8F3344004675FE /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		9C1CFC241F8F3344004675FE /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTextField.h; sourceTree = "<group>"; };
+		9C1CFC251F8F3344004675FE /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
+		9C1CFC271F8F3344004675FE /* LoderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoderView.h; sourceTree = "<group>"; };
+		9C1CFC281F8F3344004675FE /* LoderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoderView.m; sourceTree = "<group>"; };
+		9C1CFC291F8F3344004675FE /* LoderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoderView.xib; sourceTree = "<group>"; };
+		9C1CFC2A1F8F3344004675FE /* WebServicesCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServicesCall.h; sourceTree = "<group>"; };
+		9C1CFC2B1F8F3344004675FE /* WebServicesCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServicesCall.m; sourceTree = "<group>"; };
+		9C1CFC361F8F3344004675FE /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		9C1CFC371F8F3344004675FE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		9C1CFC381F8F3344004675FE /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		9C1CFC3A1F8F3344004675FE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9C1CFC3B1F8F3344004675FE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9C1CFC3C1F8F3344004675FE /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		9C1CFC541F8F3344004675FE /* RearCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearCell.h; sourceTree = "<group>"; };
+		9C1CFC551F8F3344004675FE /* RearCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearCell.m; sourceTree = "<group>"; };
+		9C1CFC561F8F3344004675FE /* RearCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearCell.xib; sourceTree = "<group>"; };
+		9C1CFC571F8F3344004675FE /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
+		9C1CFC581F8F3344004675FE /* RearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewController.m; sourceTree = "<group>"; };
+		9C1CFC591F8F3344004675FE /* RearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearViewController.xib; sourceTree = "<group>"; };
+		9C1CFC5D1F8F3344004675FE /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
+		9C1CFC5E1F8F3344004675FE /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
+		9C1CFC5F1F8F3344004675FE /* SplashScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
+		9C1CFC871F8F3386004675FE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9C1CFC891F8F3816004675FE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		9C1CFC8A1F8F3816004675FE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9C1CFC901F8F483C004675FE /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		9C1CFC911F8F483C004675FE /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		9C1CFC921F8F483C004675FE /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		E4D4C68173C581AB44307385 /* Pods-Grocery Bazaar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery Bazaar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C1CFBFE1F8F32E6004675FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E68207B1AADCE3F9AD0D39A /* libPods-Grocery Bazaar.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2866844A3749CE500C334BC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4D4C68173C581AB44307385 /* Pods-Grocery Bazaar.debug.xcconfig */,
+				86D4C7A63EA7312FBD1CAA20 /* Pods-Grocery Bazaar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9425F5EA68FC397375313925 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F87295F796482A6C6CD21B8 /* libPods-Grocery Bazaar.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C1CFBF81F8F32E6004675FE = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC031F8F32E6004675FE /* Grocery Bazaar */,
+				9C1CFC021F8F32E6004675FE /* Products */,
+				2866844A3749CE500C334BC9 /* Pods */,
+				9425F5EA68FC397375313925 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9C1CFC021F8F32E6004675FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC011F8F32E6004675FE /* Grocery Bazaar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C1CFC031F8F32E6004675FE /* Grocery Bazaar */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC1E1F8F3344004675FE /* CommonFiles */,
+				9C1CFC2C1F8F3344004675FE /* ViewControllers */,
+				9C1CFC071F8F32E7004675FE /* AppDelegate.h */,
+				9C1CFC081F8F32E7004675FE /* AppDelegate.m */,
+				9C1CFC131F8F32E7004675FE /* Assets.xcassets */,
+				9C1CFC151F8F32E7004675FE /* LaunchScreen.storyboard */,
+				9C1CFC181F8F32E7004675FE /* Info.plist */,
+				9C1CFC101F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld */,
+				9C1CFC041F8F32E7004675FE /* Supporting Files */,
+			);
+			path = "Grocery Bazaar";
+			sourceTree = "<group>";
+		};
+		9C1CFC041F8F32E7004675FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC051F8F32E7004675FE /* main.m */,
+				9C1CFC871F8F3386004675FE /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C1CFC1E1F8F3344004675FE /* CommonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC881F8F3816004675FE /* Reachability */,
+				9C1CFC261F8F3344004675FE /* Loder VIew */,
+				9C1CFC1F1F8F3344004675FE /* CommonFunction.h */,
+				9C1CFC201F8F3344004675FE /* CommonFunction.m */,
+				9C1CFC211F8F3344004675FE /* Constant.h */,
+				9C1CFC221F8F3344004675FE /* CustomButton.h */,
+				9C1CFC231F8F3344004675FE /* CustomButton.m */,
+				9C1CFC241F8F3344004675FE /* CustomTextField.h */,
+				9C1CFC251F8F3344004675FE /* CustomTextField.m */,
+				9C1CFC2A1F8F3344004675FE /* WebServicesCall.h */,
+				9C1CFC2B1F8F3344004675FE /* WebServicesCall.m */,
+			);
+			path = CommonFiles;
+			sourceTree = "<group>";
+		};
+		9C1CFC261F8F3344004675FE /* Loder VIew */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC271F8F3344004675FE /* LoderView.h */,
+				9C1CFC281F8F3344004675FE /* LoderView.m */,
+				9C1CFC291F8F3344004675FE /* LoderView.xib */,
+			);
+			path = "Loder VIew";
+			sourceTree = "<group>";
+		};
+		9C1CFC2C1F8F3344004675FE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC8C1F8F483C004675FE /* Patient */,
+				9C1CFC351F8F3344004675FE /* HomeViewController */,
+				9C1CFC391F8F3344004675FE /* LoginViewController */,
+				9C1CFC3D1F8F3344004675FE /* RegisterViewController */,
+				9C1CFC521F8F3344004675FE /* SideMenu */,
+				9C1CFC5C1F8F3344004675FE /* SplashScreenViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9C1CFC351F8F3344004675FE /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC361F8F3344004675FE /* HomeViewController.h */,
+				9C1CFC371F8F3344004675FE /* HomeViewController.m */,
+				9C1CFC381F8F3344004675FE /* HomeViewController.xib */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		9C1CFC391F8F3344004675FE /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC3A1F8F3344004675FE /* LoginViewController.h */,
+				9C1CFC3B1F8F3344004675FE /* LoginViewController.m */,
+				9C1CFC3C1F8F3344004675FE /* LoginViewController.xib */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		9C1CFC3D1F8F3344004675FE /* RegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RegisterViewController;
+			sourceTree = "<group>";
+		};
+		9C1CFC521F8F3344004675FE /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC531F8F3344004675FE /* ReaeCell */,
+				9C1CFC571F8F3344004675FE /* RearViewController.h */,
+				9C1CFC581F8F3344004675FE /* RearViewController.m */,
+				9C1CFC591F8F3344004675FE /* RearViewController.xib */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		9C1CFC531F8F3344004675FE /* ReaeCell */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC541F8F3344004675FE /* RearCell.h */,
+				9C1CFC551F8F3344004675FE /* RearCell.m */,
+				9C1CFC561F8F3344004675FE /* RearCell.xib */,
+			);
+			path = ReaeCell;
+			sourceTree = "<group>";
+		};
+		9C1CFC5C1F8F3344004675FE /* SplashScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC5D1F8F3344004675FE /* SplashScreenViewController.h */,
+				9C1CFC5E1F8F3344004675FE /* SplashScreenViewController.m */,
+				9C1CFC5F1F8F3344004675FE /* SplashScreenViewController.xib */,
+			);
+			path = SplashScreenViewController;
+			sourceTree = "<group>";
+		};
+		9C1CFC881F8F3816004675FE /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC891F8F3816004675FE /* Reachability.h */,
+				9C1CFC8A1F8F3816004675FE /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		9C1CFC8C1F8F483C004675FE /* Patient */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFC901F8F483C004675FE /* RegisterViewController.h */,
+				9C1CFC911F8F483C004675FE /* RegisterViewController.m */,
+				9C1CFC921F8F483C004675FE /* RegisterViewController.xib */,
+			);
+			path = Patient;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C1CFC001F8F32E6004675FE /* Grocery Bazaar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C1CFC1B1F8F32E7004675FE /* Build configuration list for PBXNativeTarget "Grocery Bazaar" */;
+			buildPhases = (
+				CF2E0612BD2EE68724B3E8EA /* 📦 Check Pods Manifest.lock */,
+				9C1CFBFD1F8F32E6004675FE /* Sources */,
+				9C1CFBFE1F8F32E6004675FE /* Frameworks */,
+				9C1CFBFF1F8F32E6004675FE /* Resources */,
+				4CCEEA8801E79E4322275887 /* 📦 Embed Pods Frameworks */,
+				A6F9B64DDC01551C15EA54E9 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Grocery Bazaar";
+			productName = "Grocery Bazaar";
+			productReference = 9C1CFC011F8F32E6004675FE /* Grocery Bazaar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C1CFBF91F8F32E6004675FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Netprophets;
+				TargetAttributes = {
+					9C1CFC001F8F32E6004675FE = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = L6C9ZLGJJD;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9C1CFBFC1F8F32E6004675FE /* Build configuration list for PBXProject "Grocery Bazaar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C1CFBF81F8F32E6004675FE;
+			productRefGroup = 9C1CFC021F8F32E6004675FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C1CFC001F8F32E6004675FE /* Grocery Bazaar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C1CFBFF1F8F32E6004675FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1CFC171F8F32E7004675FE /* LaunchScreen.storyboard in Resources */,
+				9C1CFC961F8F483C004675FE /* RegisterViewController.xib in Resources */,
+				9C1CFC141F8F32E7004675FE /* Assets.xcassets in Resources */,
+				9C1CFC681F8F3344004675FE /* LoderView.xib in Resources */,
+				9C1CFC811F8F3344004675FE /* RearViewController.xib in Resources */,
+				9C1CFC711F8F3344004675FE /* LoginViewController.xib in Resources */,
+				9C1CFC841F8F3344004675FE /* SplashScreenViewController.xib in Resources */,
+				9C1CFC6F1F8F3344004675FE /* HomeViewController.xib in Resources */,
+				9C1CFC7F1F8F3344004675FE /* RearCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CCEEA8801E79E4322275887 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6F9B64DDC01551C15EA54E9 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF2E0612BD2EE68724B3E8EA /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C1CFBFD1F8F32E6004675FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1CFC091F8F32E7004675FE /* AppDelegate.m in Sources */,
+				9C1CFC801F8F3344004675FE /* RearViewController.m in Sources */,
+				9C1CFC651F8F3344004675FE /* CustomButton.m in Sources */,
+				9C1CFC691F8F3344004675FE /* WebServicesCall.m in Sources */,
+				9C1CFC8B1F8F3816004675FE /* Reachability.m in Sources */,
+				9C1CFC671F8F3344004675FE /* LoderView.m in Sources */,
+				9C1CFC831F8F3344004675FE /* SplashScreenViewController.m in Sources */,
+				9C1CFC951F8F483C004675FE /* RegisterViewController.m in Sources */,
+				9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */,
+				9C1CFC6E1F8F3344004675FE /* HomeViewController.m in Sources */,
+				9C1CFC701F8F3344004675FE /* LoginViewController.m in Sources */,
+				9C1CFC641F8F3344004675FE /* CommonFunction.m in Sources */,
+				9C1CFC661F8F3344004675FE /* CustomTextField.m in Sources */,
+				9C1CFC061F8F32E7004675FE /* main.m in Sources */,
+				9C1CFC7E1F8F3344004675FE /* RearCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9C1CFC151F8F32E7004675FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C1CFC161F8F32E7004675FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C1CFC191F8F32E7004675FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C1CFC1A1F8F32E7004675FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C1CFC1C1F8F32E7004675FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4D4C68173C581AB44307385 /* Pods-Grocery Bazaar.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L6C9ZLGJJD;
+				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
+				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.npglobal.Grocery-Bazaar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9C1CFC1D1F8F32E7004675FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86D4C7A63EA7312FBD1CAA20 /* Pods-Grocery Bazaar.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L6C9ZLGJJD;
+				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
+				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.npglobal.Grocery-Bazaar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C1CFBFC1F8F32E6004675FE /* Build configuration list for PBXProject "Grocery Bazaar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C1CFC191F8F32E7004675FE /* Debug */,
+				9C1CFC1A1F8F32E7004675FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C1CFC1B1F8F32E7004675FE /* Build configuration list for PBXNativeTarget "Grocery Bazaar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C1CFC1C1F8F32E7004675FE /* Debug */,
+				9C1CFC1D1F8F32E7004675FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9C1CFC101F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C1CFC111F8F32E7004675FE /* Grocery_Bazaar.xcdatamodel */,
+			);
+			currentVersion = 9C1CFC111F8F32E7004675FE /* Grocery_Bazaar.xcdatamodel */;
+			path = Grocery_Bazaar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9C1CFBF91F8F32E6004675FE /* Project object */;
+}

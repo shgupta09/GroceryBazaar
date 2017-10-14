@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8289a3ed-7895-4553-886e-87c2beee11fb++8709",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "8289a3ed-7895-4553-886e-87c2beee11fb++8709" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8289a3ed-7895-4553-886e-87c2beee11fb++8709" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B1077F7D-7900-45F0-B35A-8982F99417C1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8289a3ed-7895-4553-886e-87c2beee11fb++8709" : "Projects\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Grocery Bazaar",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Bazar\/Grocery Bazaar\/Grocery Bazaar.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/coreapps.npglobal.in\/svn\/ShreeAirlines",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8289a3ed-7895-4553-886e-87c2beee11fb++8709"
+    }
+  ]
+}
