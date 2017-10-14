@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,26 +33,14 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQj-RR-Vnu">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="233.5"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="u5q-Sq-m4Q">
-                                            <rect key="frame" x="175" y="122" width="25" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="25" id="ozs-hE-JWt"/>
-                                                <constraint firstAttribute="height" constant="25" id="sYu-IE-QTa"/>
-                                            </constraints>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="u5q-Sq-m4Q">
+                                            <rect key="frame" x="77.5" y="157.5" width="220" height="61"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grocery Bazaar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAQ-p6-BcA">
-                                            <rect key="frame" x="128" y="165" width="118.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.92941176470588238" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="u5q-Sq-m4Q" firstAttribute="centerX" secondItem="cQj-RR-Vnu" secondAttribute="centerX" id="8zg-HD-goS"/>
-                                        <constraint firstItem="eAQ-p6-BcA" firstAttribute="top" secondItem="u5q-Sq-m4Q" secondAttribute="bottom" constant="18" id="f6N-kZ-RY2"/>
-                                        <constraint firstItem="u5q-Sq-m4Q" firstAttribute="top" secondItem="cQj-RR-Vnu" secondAttribute="top" constant="122" id="fXN-1j-Q4M"/>
-                                        <constraint firstItem="eAQ-p6-BcA" firstAttribute="centerX" secondItem="u5q-Sq-m4Q" secondAttribute="centerX" id="jQY-CP-ihl"/>
+                                        <constraint firstAttribute="bottom" secondItem="u5q-Sq-m4Q" secondAttribute="bottom" constant="15" id="9JU-G4-cna"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKS-Yk-m0l">
@@ -211,6 +199,6 @@
         </view>
     </objects>
     <resources>
-        <image name="logo" width="374" height="417"/>
+        <image name="logo" width="220" height="61"/>
     </resources>
 </document>
