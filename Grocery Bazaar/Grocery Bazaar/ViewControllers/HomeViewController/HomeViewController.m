@@ -83,11 +83,9 @@
 -(void)receiveNotification{
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"Logout Successfully" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//                UserSelectViewController* vc = [[UserSelectViewController alloc] initWithNibName:@"UserSelectViewController" bundle:nil];
-//                vc.isRegistrationSelection = false;
-//                UINavigationController* navCon = [[UINavigationController alloc] initWithRootViewController:vc];
-//                vc.navigationController.navigationBarHidden = true;
-//                [self presentViewController:navCon animated:YES completion:nil];
+                [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:false];
+                LoginViewController* vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+                [self presentViewController:vc animated:YES completion:nil];
             }];
             [alertController addAction:ok];
             [self presentViewController:alertController animated:YES completion:nil];

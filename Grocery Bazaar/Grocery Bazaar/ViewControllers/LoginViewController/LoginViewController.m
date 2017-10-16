@@ -25,8 +25,8 @@
     [CommonFunction setResignTapGestureToView:self.view andsender:self];
     _btn_Register.layer.borderWidth = 2;
     _btn_Register.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
-//    _txtPassword.text = @"Abc@123456";
-//    _txtUsername.text = @"shag16346223456@gmail.com";
+    _txtPassword.text = @"Abc@123456";
+    _txtUsername.text = @"ravimahajan1409@gmail.com";
     // Do any additional setup after loading the view from its nib.
 
 }
@@ -93,7 +93,7 @@
 -(void) loginFunction {
     NSMutableDictionary *parameterDict = [[NSMutableDictionary alloc]init];
     [parameterDict setValue:[CommonFunction trimString:_txtUsername.text] forKey:loginemail];
-    [parameterDict setValue:_txtPassword.text forKey:loginPassword];
+    [parameterDict setValue:@"123" forKey:loginPassword];
     
     if ([ CommonFunction reachability]) {
         [self addLoder];
@@ -102,14 +102,13 @@
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_LOGIN_URL]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 
-                if ([[responseObj valueForKey:@"status_code"] isEqualToString:@"HK001"] == true){
+                if ([responseObj valueForKey:@"status"] ){
                    
                     
                     [self performBlock:^{
                         
                         
-                        [CommonFunction storeValueInDefault:@"true" andKey:@"isLoggedIn"];
-                        
+                        [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:true];
                         [CommonFunction storeValueInDefault:[CommonFunction trimString:_txtUsername.text] andKey:loginfirstname];
                         [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserId] andKey:loginuserId];
                         [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserType] andKey:loginuserType];
@@ -118,25 +117,19 @@
                         [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginemail] andKey:loginemail];
                         [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginUserToken] andKey:loginUserToken];
                         [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginfirstname] andKey:loginfirstname];
-                        if ([CommonFunction getValueFromDefaultWithKey:loginuseIsComplete] != 1){
-                        
-//                            RegisterCompleteViewController* vc;
-//                            vc = [[RegisterCompleteViewController alloc] initWithNibName:@"RegisterCompleteViewController" bundle:nil];
-//                            [self presentViewController:vc animated:true completion:nil];
+                        RearViewController *rearViewController = [[RearViewController alloc]initWithNibName:@"RearViewController" bundle:nil];
+                        SWRevealViewController *mainRevealController;
 
-                        }else{
-                            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Under Development" preferredStyle:UIAlertControllerStyleAlert];
-                            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-                            [alertController addAction:ok];
-                            //                    [CommonFunction storeValueInDefault:@"true" andKey:@"isLoggedIn"];
-                            [self presentViewController:alertController animated:YES completion:^{
-                            }];
+                        HomeViewController *frontViewController = [[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil];
+                        mainRevealController = [[SWRevealViewController alloc]initWithRearViewController:rearViewController frontViewController:frontViewController];
+                        mainRevealController.delegate = self;
+                        mainRevealController.view.backgroundColor = [UIColor blackColor];
+                        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mainRevealController];
+                        ((AppDelegate *)[[UIApplication sharedApplication] delegate]).window.rootViewController = nav;
                         
-                        }
-                       
+                        [self resignResponder];
                         
-                        
-                    } afterDelay:1.5];
+                    } afterDelay:.2];
                     
                     [self removeloder];
                 }

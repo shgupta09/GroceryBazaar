@@ -35,8 +35,8 @@
 #define loginemail @"email"
 #define loginfirstname @"first_name"
 #define loginlastname @"last_name"
-#define loginDob @"DOB"
-#define loginPrimarymobile @"mobile_number"
+#define loginDob @"date_of_birth"
+#define loginPrimarymobile @"mobile_primary"
 #define loginSecondarymobile @"mobile_number"
 #define loginusergroup @"user_group"
 #define loginuserId @"user_id"
@@ -46,7 +46,6 @@
 #define loginUserToken @"token"
 #define loginUser @"user"
 #define isLoggedIn @"isLoggedIn"
-#define Gender @"gender"
 #define Nationality @"nationality"
 #define Residence @"residence"
 #define WorkPlace @"workplace"
@@ -112,23 +111,13 @@ static NSString* const COLORCODE_FOR_TEXTFIELD = @"#00b1dd";
 
 
 
-static NSString* const API_BASE_URL = @"http://www.dataheadstudio.com/test/api/";
+static NSString* const API_BASE_URL = @"http://dataheadstudio.com/bazar/api/";
+static NSString* const API_Header = @"ummuhlLUAqkxEINRyKbg7Lzt5sEKzOEg";
 
-static NSString* const API_SA_BASE_URL = @"sa-service/";
-static NSString* const API_USER_URL = @"np-user-service/users/";
-static NSString* const API_LOCATION_URL = @"np-location-service/locations/";
 
-static NSString* const API_REGISTER_USER_URL = @"registerpatient";
-static NSString* const API_LOGIN_URL = @"login";
-static NSString* const API_ADD_PATIENT_URL = @"addpatient";
+static NSString* const API_REGISTER_USER_URL = @"users/register";
+static NSString* const API_LOGIN_URL = @"users/login";
 static NSString* const API_CHANGE_PASSWORD_URL = @"manage/AdminUser";
 static NSString* const API_RESET_PASSWORD_URL = @"forgotPassword/AdminUser";
-static NSString* const API_HISTORY = @"mybookings";
-static NSString* const API_HISTORY_DETAIL = @"getBookingDetails";
 
-static NSString* const API_COUNTRY_CODE = @"list/NpCountry";
-static NSString* const API_WEATHER = @"list/Weather";
-
-static NSString* const API_UploadDocument = @"upload";
-static NSString* const API_RegisterDoctor = @"registerdoctor";
 #endif /* Constant_h */ 

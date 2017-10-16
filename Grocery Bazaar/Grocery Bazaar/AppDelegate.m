@@ -19,10 +19,22 @@
     // Override point for customization after application launch.
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    LoginViewController* vc;
-    vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    _window.rootViewController = vc;
-    
+       if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]) {
+           RearViewController *rearViewController = [[RearViewController alloc]initWithNibName:@"RearViewController" bundle:nil];
+           SWRevealViewController *mainRevealController;
+           
+           HomeViewController *frontViewController = [[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil];
+           mainRevealController = [[SWRevealViewController alloc]initWithRearViewController:rearViewController frontViewController:frontViewController];
+           mainRevealController.delegate = self;
+           mainRevealController.view.backgroundColor = [UIColor blackColor];
+           UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mainRevealController];
+           ((AppDelegate *)[[UIApplication sharedApplication] delegate]).window.rootViewController = nav;
+    }else{
+        LoginViewController* vc;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        _window.rootViewController = vc;
+
+    }
     
     [self.window makeKeyAndVisible];
     return YES;

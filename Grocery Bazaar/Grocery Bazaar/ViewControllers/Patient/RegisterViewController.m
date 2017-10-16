@@ -85,7 +85,7 @@
     return NO;
 }
 
-#pragma picker - data Source
+#pragma mark - picker data Source
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
    
     return 1;
@@ -222,7 +222,7 @@ numberOfRowsInComponent:(NSInteger)component{
     if (![[dictForValidation valueForKey:BoolValueKey] isEqualToString:@"0"]){
         NSLog(@"Successful");
         [CommonFunction resignFirstResponderOfAView:self.view];
-        [self setHomeScreen];
+        [self hitApiForRegister];
     }
     else{
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[dictForValidation valueForKey:AlertKey] preferredStyle:UIAlertControllerStyleAlert];
@@ -315,7 +315,12 @@ numberOfRowsInComponent:(NSInteger)component{
 }
 
 #pragma mark - hit api
--(void)hitApiForLogin{
+
+
+
+
+
+-(void)hitApiForRegister{
     NSMutableDictionary *parameterDict = [[NSMutableDictionary alloc]init];
     [parameterDict setValue:[CommonFunction trimString:_txtName.text] forKey:loginfirstname];
     [parameterDict setValue:[CommonFunction trimString:_txtLastName.text] forKey:loginlastname];
@@ -330,15 +335,14 @@ numberOfRowsInComponent:(NSInteger)component{
         [self addLoder];
         
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_LOGIN_URL]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_REGISTER_USER_URL]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 
-                if ([[responseObj valueForKey:@"status_code"] isEqualToString:@"HK001"] == true){
+                if ([responseObj valueForKey:@"status"]){
                     
+                    [self loginFunction];
                     
-                    [self setHomeScreen];
-                    
-                    [self removeloder];
+
                 }
                 else
                 {
@@ -367,6 +371,70 @@ numberOfRowsInComponent:(NSInteger)component{
         [alertController addAction:ok];
         [self presentViewController:alertController animated:YES completion:nil];
     }
+}
+-(void) loginFunction {
+    NSMutableDictionary *parameterDict = [[NSMutableDictionary alloc]init];
+    [parameterDict setValue:[CommonFunction trimString:_txtEmail.text] forKey:loginemail];
+    [parameterDict setValue:[CommonFunction trimString:_txtPassword.text] forKey:loginPassword];
+    
+    if ([ CommonFunction reachability]) {
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_LOGIN_URL]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                
+                if ([responseObj valueForKey:@"status"] ){
+                    
+                    
+                    
+                    [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:true];
+                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginlastname]  andKey:loginlastname];
+                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserId] andKey:loginuserId];
+                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserType] andKey:loginuserType];
+                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserGender] andKey:loginuserGender];
+                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuseIsComplete] andKey:loginuseIsComplete];
+                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginemail] andKey:loginemail];
+                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginUserToken] andKey:loginUserToken];
+                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginfirstname] andKey:loginfirstname];
+                    [self setHomeScreen];
+                    
+                        [self resignResponder];
+                        
+                    
+                    [self removeloder];
+                }
+                else
+                {
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    [alertController addAction:ok];
+                    //                    [CommonFunction storeValueInDefault:@"true" andKey:@"isLoggedIn"];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                    [self removeloder];
+                }
+                
+                
+                
+            }
+            
+            else {
+                [self removeloder];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[error description] preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alertController addAction:ok];
+                [self presentViewController:alertController animated:YES completion:nil];
+            }
+            
+            
+        }];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network Error" message:@"No Network Access" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    
+    
 }
 
 -(void)addLoder{
