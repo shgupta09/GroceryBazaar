@@ -22,5 +22,5 @@
 #import "HomeViewController.h"
 #import "RearViewController.h"
 #import "AppDelegate.h"
-
+#import "ForgetPasswordVC.h"
 #endif /* PrefixHeader_pch */

@@ -25,8 +25,8 @@
     [CommonFunction setResignTapGestureToView:self.view andsender:self];
     _btn_Register.layer.borderWidth = 2;
     _btn_Register.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
-    _txtPassword.text = @"Abc@123456";
-    _txtUsername.text = @"ravimahajan1409@gmail.com";
+//    _txtPassword.text = @"Abc@123456";
+//    _txtUsername.text = @"ravimahajan1409@gmail.com";
     // Do any additional setup after loading the view from its nib.
 
 }
@@ -65,11 +65,12 @@
     
     RegisterViewController *objVC = [[RegisterViewController alloc]initWithNibName:@"RegisterViewController" bundle:nil];
    
-    [[[[[UIApplication sharedApplication] delegate] window] rootViewController] presentViewController:objVC animated:true completion:nil];
+    [self presentViewController:objVC animated:true completion:nil];
     
 }
 - (IBAction)btnAction_ForgotPassword:(id)sender {
-    
+    ForgetPasswordVC *vc = [[ForgetPasswordVC alloc] initWithNibName:@"ForgetPasswordVC" bundle:nil];
+    [self presentViewController:vc animated:true completion:nil];
     
 }
 
@@ -93,7 +94,7 @@
 -(void) loginFunction {
     NSMutableDictionary *parameterDict = [[NSMutableDictionary alloc]init];
     [parameterDict setValue:[CommonFunction trimString:_txtUsername.text] forKey:loginemail];
-    [parameterDict setValue:@"123" forKey:loginPassword];
+    [parameterDict setValue:[CommonFunction trimString:_txtPassword.text] forKey:loginPassword];
     
     if ([ CommonFunction reachability]) {
         [self addLoder];
@@ -102,7 +103,7 @@
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_LOGIN_URL]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 
-                if ([responseObj valueForKey:@"status"] ){
+                if ([[responseObj valueForKey:API_Status] integerValue] == 1){
                    
                     
                     [self performBlock:^{
@@ -135,7 +136,7 @@
                 }
                 else
                 {
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
                     [alertController addAction:ok];
                     //                    [CommonFunction storeValueInDefault:@"true" andKey:@"isLoggedIn"];

@@ -32,6 +32,8 @@
 		9C1CFC8B1F8F3816004675FE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC8A1F8F3816004675FE /* Reachability.m */; };
 		9C1CFC951F8F483C004675FE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC911F8F483C004675FE /* RegisterViewController.m */; };
 		9C1CFC961F8F483C004675FE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC921F8F483C004675FE /* RegisterViewController.xib */; };
+		9CC440D81F948E5100117801 /* ForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC440D61F948E5100117801 /* ForgetPasswordVC.m */; };
+		9CC440D91F948E5100117801 /* ForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC440D71F948E5100117801 /* ForgetPasswordVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,9 @@
 		9C1CFC901F8F483C004675FE /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		9C1CFC911F8F483C004675FE /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		9C1CFC921F8F483C004675FE /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		9CC440D51F948E5100117801 /* ForgetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordVC.h; sourceTree = "<group>"; };
+		9CC440D61F948E5100117801 /* ForgetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordVC.m; sourceTree = "<group>"; };
+		9CC440D71F948E5100117801 /* ForgetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPasswordVC.xib; sourceTree = "<group>"; };
 		E4D4C68173C581AB44307385 /* Pods-Grocery Bazaar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery Bazaar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +189,7 @@
 		9C1CFC2C1F8F3344004675FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9CC440D41F948E5100117801 /* ForgetPassword */,
 				9C1CFC8C1F8F483C004675FE /* Patient */,
 				9C1CFC351F8F3344004675FE /* HomeViewController */,
 				9C1CFC391F8F3344004675FE /* LoginViewController */,
@@ -271,6 +277,16 @@
 			path = Patient;
 			sourceTree = "<group>";
 		};
+		9CC440D41F948E5100117801 /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				9CC440D51F948E5100117801 /* ForgetPasswordVC.h */,
+				9CC440D61F948E5100117801 /* ForgetPasswordVC.m */,
+				9CC440D71F948E5100117801 /* ForgetPasswordVC.xib */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,6 +353,7 @@
 				9C1CFC961F8F483C004675FE /* RegisterViewController.xib in Resources */,
 				9C1CFC141F8F32E7004675FE /* Assets.xcassets in Resources */,
 				9C1CFC681F8F3344004675FE /* LoderView.xib in Resources */,
+				9CC440D91F948E5100117801 /* ForgetPasswordVC.xib in Resources */,
 				9C1CFC811F8F3344004675FE /* RearViewController.xib in Resources */,
 				9C1CFC711F8F3344004675FE /* LoginViewController.xib in Resources */,
 				9C1CFC841F8F3344004675FE /* SplashScreenViewController.xib in Resources */,
@@ -400,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CC440D81F948E5100117801 /* ForgetPasswordVC.m in Sources */,
 				9C1CFC091F8F32E7004675FE /* AppDelegate.m in Sources */,
 				9C1CFC801F8F3344004675FE /* RearViewController.m in Sources */,
 				9C1CFC651F8F3344004675FE /* CustomButton.m in Sources */,

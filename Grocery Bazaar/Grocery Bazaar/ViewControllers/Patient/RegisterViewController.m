@@ -338,7 +338,7 @@ numberOfRowsInComponent:(NSInteger)component{
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_REGISTER_USER_URL]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 
-                if ([responseObj valueForKey:@"status"]){
+                if ([[responseObj valueForKey:API_Status] integerValue] == 1){
                     
                     [self loginFunction];
                     
@@ -346,7 +346,7 @@ numberOfRowsInComponent:(NSInteger)component{
                 }
                 else
                 {
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
                     [alertController addAction:ok];
                     //                    [CommonFunction storeValueInDefault:@"true" andKey:@"isLoggedIn"];

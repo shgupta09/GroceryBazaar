@@ -62,7 +62,7 @@
 #define IBAN @"iban"
 #define Photo @"photo"
 #define Document @"document"
-
+#define API_Status @"status"
 
 
 #define codeForActivatedAccount @"NP001"
@@ -84,7 +84,7 @@
 #define isValidHitNP @"NP001"
 #define isValidHitOther @"SA001"
 #define LoginData @"userPojo"
-#define NPHeaderName @"np-usr-rest:internal@123"
+#define NPHeaderName @""
 #define ShreeHeaderName @"np-appusr-rest:Xy#!@#@123"
 #define LocationHeaderName @"np-loc-rest:internal@123"
 
@@ -118,6 +118,6 @@ static NSString* const API_Header = @"ummuhlLUAqkxEINRyKbg7Lzt5sEKzOEg";
 static NSString* const API_REGISTER_USER_URL = @"users/register";
 static NSString* const API_LOGIN_URL = @"users/login";
 static NSString* const API_CHANGE_PASSWORD_URL = @"manage/AdminUser";
-static NSString* const API_RESET_PASSWORD_URL = @"forgotPassword/AdminUser";
+static NSString* const API_RESET_PASSWORD_URL = @"users/forgot";
 
 #endif /* Constant_h */ 
