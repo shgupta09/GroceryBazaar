@@ -43,9 +43,9 @@
     [super viewDidLoad];
     
     
-    _txtPassword.text = @"Abc@123456";
-    _txtName.text = @"Rahul";
-    _txtEmail.text = @"adsfadsf@yopmail.com";
+//    _txtPassword.text = @"Abc@123456";
+//    _txtName.text = @"Rahul";
+//    _txtEmail.text = @"adsfadsf@yopmail.com";
     
     
     [self setData];
@@ -335,8 +335,11 @@ numberOfRowsInComponent:(NSInteger)component{
         [self addLoder];
         
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_REGISTER_USER_URL]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+        
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_REGISTER_USER_URL]   postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
+                
+       
                 
                 if ([[responseObj valueForKey:API_Status] integerValue] == 1){
                     

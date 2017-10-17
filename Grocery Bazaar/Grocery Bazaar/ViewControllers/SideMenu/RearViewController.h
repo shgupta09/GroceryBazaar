@@ -10,5 +10,10 @@
 
 @interface RearViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tbl_View;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_ShortName;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_Name;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_number;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_address;
+@property (weak, nonatomic) IBOutlet UIView *round_View;
 
 @end
