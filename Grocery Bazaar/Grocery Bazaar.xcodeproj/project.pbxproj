@@ -321,7 +321,7 @@
 				TargetAttributes = {
 					9C1CFC001F8F32E6004675FE = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = L6C9ZLGJJD;
+						DevelopmentTeam = H7RFM2VSMC;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -547,12 +547,13 @@
 			baseConfigurationReference = E4D4C68173C581AB44307385 /* Pods-Grocery Bazaar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = L6C9ZLGJJD;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = H7RFM2VSMC;
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.npglobal.Grocery-Bazaar";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulab.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -562,12 +563,13 @@
 			baseConfigurationReference = 86D4C7A63EA7312FBD1CAA20 /* Pods-Grocery Bazaar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = L6C9ZLGJJD;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = H7RFM2VSMC;
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.npglobal.Grocery-Bazaar";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulab.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
