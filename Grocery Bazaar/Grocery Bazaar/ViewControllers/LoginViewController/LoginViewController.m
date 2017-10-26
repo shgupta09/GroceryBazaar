@@ -25,8 +25,8 @@
     [CommonFunction setResignTapGestureToView:self.view andsender:self];
     _btn_Register.layer.borderWidth = 2;
     _btn_Register.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
-//    _txtPassword.text = @"Abc@123456";
-//    _txtUsername.text = @"ravimahajan1409@gmail.com";
+    _txtPassword.text = @"Admin@123";
+    _txtUsername.text = @"sh@gmail.com";
     // Do any additional setup after loading the view from its nib.
 
 }

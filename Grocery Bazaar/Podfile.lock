@@ -20,19 +20,24 @@ PODS:
   - AFNetworking/UIKit (2.5.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
   - SWRevealViewController (2.3.0)
-  - TPKeyboardAvoiding (1.3.1)
+  - TPKeyboardAvoiding (1.3)
 
 DEPENDENCIES:
   - AFNetworking (= 2.5.0)
+  - SDWebImage
   - SWRevealViewController (~> 2.3)
-  - TPKeyboardAvoiding (~> 1.3)
+  - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
   AFNetworking: 96ac9bf3eda33582701cb1fcc5b896aa1e20311e
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
-  TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
+  TPKeyboardAvoiding: a5138f318c06fb3e151f886e18ce4a72695d9cbe
 
-PODFILE CHECKSUM: e36700654990ce8e3e90f99cc5b09de97c03b966
+PODFILE CHECKSUM: a4138230b3f2bd5cc4c96d0aa386ca8959c7a64e
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.3.1

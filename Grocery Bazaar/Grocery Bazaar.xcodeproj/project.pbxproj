@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FD799C01FA1FE7200746C93 /* OfferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD799BF1FA1FE7200746C93 /* OfferView.m */; };
+		5FD799C31FA1FF0400746C93 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD799C21FA1FF0400746C93 /* Offer.m */; };
+		5FD799C81FA20DA500746C93 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD799C61FA20DA500746C93 /* CategoryCollectionViewCell.m */; };
+		5FD799C91FA20DA500746C93 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FD799C71FA20DA500746C93 /* CategoryCollectionViewCell.xib */; };
 		7E68207B1AADCE3F9AD0D39A /* libPods-Grocery Bazaar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F87295F796482A6C6CD21B8 /* libPods-Grocery Bazaar.a */; };
 		9C1CFC061F8F32E7004675FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC051F8F32E7004675FE /* main.m */; };
 		9C1CFC091F8F32E7004675FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC081F8F32E7004675FE /* AppDelegate.m */; };
@@ -38,6 +42,13 @@
 
 /* Begin PBXFileReference section */
 		2F87295F796482A6C6CD21B8 /* libPods-Grocery Bazaar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Grocery Bazaar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FD799BE1FA1FE7200746C93 /* OfferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferView.h; sourceTree = "<group>"; };
+		5FD799BF1FA1FE7200746C93 /* OfferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferView.m; sourceTree = "<group>"; };
+		5FD799C11FA1FF0400746C93 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
+		5FD799C21FA1FF0400746C93 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
+		5FD799C51FA20DA500746C93 /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
+		5FD799C61FA20DA500746C93 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		5FD799C71FA20DA500746C93 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		86D4C7A63EA7312FBD1CAA20 /* Pods-Grocery Bazaar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery Bazaar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar.release.xcconfig"; sourceTree = "<group>"; };
 		9C1CFC011F8F32E6004675FE /* Grocery Bazaar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Bazaar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1CFC051F8F32E7004675FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +118,65 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5F0DB8B81FA1EB0900F8550F /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		5F0DB8B91FA1EB0900F8550F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5FD799C11FA1FF0400746C93 /* Offer.h */,
+				5FD799C21FA1FF0400746C93 /* Offer.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5F0DB8BA1FA1EB0900F8550F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F0DB8BB1FA1EB0900F8550F /* Documents */,
+				5F0DB8BC1FA1EB0900F8550F /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F0DB8BB1FA1EB0900F8550F /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		5F0DB8BC1FA1EB0900F8550F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		5FD799BC1FA1FDF000746C93 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				5FD799C41FA20D7A00746C93 /* CategoryCollectionCellView */,
+				5FD799BE1FA1FE7200746C93 /* OfferView.h */,
+				5FD799BF1FA1FE7200746C93 /* OfferView.m */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		5FD799C41FA20D7A00746C93 /* CategoryCollectionCellView */ = {
+			isa = PBXGroup;
+			children = (
+				5FD799C51FA20DA500746C93 /* CategoryCollectionViewCell.h */,
+				5FD799C61FA20DA500746C93 /* CategoryCollectionViewCell.m */,
+				5FD799C71FA20DA500746C93 /* CategoryCollectionViewCell.xib */,
+			);
+			path = CategoryCollectionCellView;
+			sourceTree = "<group>";
+		};
 		9425F5EA68FC397375313925 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +206,9 @@
 		9C1CFC031F8F32E6004675FE /* Grocery Bazaar */ = {
 			isa = PBXGroup;
 			children = (
+				5F0DB8B81FA1EB0900F8550F /* Libraries */,
+				5F0DB8B91FA1EB0900F8550F /* Models */,
+				5F0DB8BA1FA1EB0900F8550F /* Resources */,
 				9C1CFC1E1F8F3344004675FE /* CommonFiles */,
 				9C1CFC2C1F8F3344004675FE /* ViewControllers */,
 				9C1CFC071F8F32E7004675FE /* AppDelegate.h */,
@@ -161,6 +234,7 @@
 		9C1CFC1E1F8F3344004675FE /* CommonFiles */ = {
 			isa = PBXGroup;
 			children = (
+				5FD799BC1FA1FDF000746C93 /* CustomViews */,
 				9C1CFC881F8F3816004675FE /* Reachability */,
 				9C1CFC261F8F3344004675FE /* Loder VIew */,
 				9C1CFC1F1F8F3344004675FE /* CommonFunction.h */,
@@ -294,12 +368,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C1CFC1B1F8F32E7004675FE /* Build configuration list for PBXNativeTarget "Grocery Bazaar" */;
 			buildPhases = (
-				CF2E0612BD2EE68724B3E8EA /* 📦 Check Pods Manifest.lock */,
+				CF2E0612BD2EE68724B3E8EA /* [CP] Check Pods Manifest.lock */,
 				9C1CFBFD1F8F32E6004675FE /* Sources */,
 				9C1CFBFE1F8F32E6004675FE /* Frameworks */,
 				9C1CFBFF1F8F32E6004675FE /* Resources */,
-				4CCEEA8801E79E4322275887 /* 📦 Embed Pods Frameworks */,
-				A6F9B64DDC01551C15EA54E9 /* 📦 Copy Pods Resources */,
+				4CCEEA8801E79E4322275887 /* [CP] Embed Pods Frameworks */,
+				A6F9B64DDC01551C15EA54E9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,7 +395,7 @@
 				TargetAttributes = {
 					9C1CFC001F8F32E6004675FE = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = H7RFM2VSMC;
+						DevelopmentTeam = MK5HXMKD83;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -358,6 +432,7 @@
 				9C1CFC711F8F3344004675FE /* LoginViewController.xib in Resources */,
 				9C1CFC841F8F3344004675FE /* SplashScreenViewController.xib in Resources */,
 				9C1CFC6F1F8F3344004675FE /* HomeViewController.xib in Resources */,
+				5FD799C91FA20DA500746C93 /* CategoryCollectionViewCell.xib in Resources */,
 				9C1CFC7F1F8F3344004675FE /* RearCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,14 +440,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4CCEEA8801E79E4322275887 /* 📦 Embed Pods Frameworks */ = {
+		4CCEEA8801E79E4322275887 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,14 +455,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A6F9B64DDC01551C15EA54E9 /* 📦 Copy Pods Resources */ = {
+		A6F9B64DDC01551C15EA54E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,19 +470,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF2E0612BD2EE68724B3E8EA /* 📦 Check Pods Manifest.lock */ = {
+		CF2E0612BD2EE68724B3E8EA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Grocery Bazaar-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -423,9 +501,12 @@
 				9C1CFC651F8F3344004675FE /* CustomButton.m in Sources */,
 				9C1CFC691F8F3344004675FE /* WebServicesCall.m in Sources */,
 				9C1CFC8B1F8F3816004675FE /* Reachability.m in Sources */,
+				5FD799C31FA1FF0400746C93 /* Offer.m in Sources */,
 				9C1CFC671F8F3344004675FE /* LoderView.m in Sources */,
 				9C1CFC831F8F3344004675FE /* SplashScreenViewController.m in Sources */,
 				9C1CFC951F8F483C004675FE /* RegisterViewController.m in Sources */,
+				5FD799C01FA1FE7200746C93 /* OfferView.m in Sources */,
+				5FD799C81FA20DA500746C93 /* CategoryCollectionViewCell.m in Sources */,
 				9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */,
 				9C1CFC6E1F8F3344004675FE /* HomeViewController.m in Sources */,
 				9C1CFC701F8F3344004675FE /* LoginViewController.m in Sources */,
@@ -548,12 +629,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = H7RFM2VSMC;
+				DEVELOPMENT_TEAM = MK5HXMKD83;
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ulab.SSCreative;
+				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -564,12 +645,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = H7RFM2VSMC;
+				DEVELOPMENT_TEAM = MK5HXMKD83;
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ulab.SSCreative;
+				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

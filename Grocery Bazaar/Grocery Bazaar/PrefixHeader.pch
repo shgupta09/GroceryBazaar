@@ -23,4 +23,8 @@
 #import "RearViewController.h"
 #import "AppDelegate.h"
 #import "ForgetPasswordVC.h"
+#import "Offer.h"
+#import "OfferView.h"
+#import "CategoryCollectionViewCell.h"
+
 #endif /* PrefixHeader_pch */
