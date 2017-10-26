@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      revealController = [self revealViewController];
-    titleArray  = [[NSArray alloc]initWithObjects:@"Abc",@"Awareness",@"Logout", nil];
+    titleArray  = [[NSArray alloc]initWithObjects:@"Address",@"Awareness",@"Logout", nil];
      [_tbl_View registerNib:[UINib nibWithNibName:@"RearCell" bundle:nil]forCellReuseIdentifier:@"RearCell"];
     _lbl_ShortName.text = [[NSString stringWithFormat:@"%@%@",[[CommonFunction getValueFromDefaultWithKey:loginfirstname] substringToIndex:1],[[CommonFunction getValueFromDefaultWithKey:loginlastname] substringToIndex:1]] uppercaseString];
     _round_View.layer.cornerRadius = _round_View.frame.size.height/2;
@@ -57,16 +57,14 @@
         switch (indexPath.row) {
                 
             case 0:{
-                
+                AddressVC *addressVCObj = [[AddressVC alloc]initWithNibName:@"AddressVC" bundle:nil];
+                [self.navigationController pushViewController:addressVCObj animated:true];
             }
                 break;
             case 1 :{
-             
             }
-                
                 break;
             case 2 :{
-                
                 UIAlertController * alert=   [UIAlertController
                                               alertControllerWithTitle:@"Logout"
                                               message:@"Are you sure you want to Logout?"
@@ -99,26 +97,10 @@
                 
                 [alert addAction:ok];
                 [alert addAction:cancel];
-                
                 [self presentViewController:alert animated:YES completion:nil];
-                
             }break;
             default:
                 break;
         }
-        
-    
-    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
