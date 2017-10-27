@@ -41,46 +41,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Grocery Bazaar/ViewControllers/LoginViewController/LoginViewController.m"
-            timestampString = "529830773.183715"
+            filePath = "Grocery Bazaar/ViewControllers/SideMenu/AddressVC/AddressVC.m"
+            timestampString = "530792872.400354"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "-loginFunction"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-hitApiForAddress"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__36-[LoginViewController loginFunction]_block_invoke"
-                  moduleName = "Grocery Bazaar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/netprophetsmac/Projects/Bazar/GroceryBazaar/Grocery%20Bazaar/Grocery%20Bazaar/ViewControllers/LoginViewController/LoginViewController.m"
-                  timestampString = "530705555.356547"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "341">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__36-[LoginViewController loginFunction]_block_invoke_2"
-                  moduleName = "Grocery Bazaar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/netprophetsmac/Projects/Bazar/GroceryBazaar/Grocery%20Bazaar/Grocery%20Bazaar/ViewControllers/LoginViewController/LoginViewController.m"
-                  timestampString = "530705555.358932"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "27">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocery Bazaar/ViewControllers/LoginViewController/LoginViewController.m"
-            timestampString = "529830944.031367"
+            timestampString = "530792944.75088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -105,44 +73,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Grocery Bazaar/ViewControllers/SideMenu/AddressVC/AddressVC.m"
-            timestampString = "530705533.41827"
+            filePath = "Grocery Bazaar/ViewControllers/LoginViewController/LoginViewController.m"
+            timestampString = "530792945.454871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-hitApiForAddress"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "-loginFunction"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[AddressVC hitApiForAddress]"
+                  symbolName = "-[LoginViewController loginFunction]"
                   moduleName = "Grocery Bazaar"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/netprophetsmac/Projects/Bazar/GroceryBazaar/Grocery%20Bazaar/Grocery%20Bazaar/ViewControllers/SideMenu/AddressVC/AddressVC.m"
-                  timestampString = "530705555.371293"
+                  urlString = "file:///Users/netprophetsmac/Projects/Bazar/GroceryBazaar/Grocery%20Bazaar/Grocery%20Bazaar/ViewControllers/LoginViewController/LoginViewController.m"
+                  timestampString = "530797739.082734"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "100">
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "517">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__29-[AddressVC hitApiForAddress]_block_invoke"
+                  symbolName = "__36-[LoginViewController loginFunction]_block_invoke"
                   moduleName = "Grocery Bazaar"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/netprophetsmac/Projects/Bazar/GroceryBazaar/Grocery%20Bazaar/Grocery%20Bazaar/ViewControllers/SideMenu/AddressVC/AddressVC.m"
-                  timestampString = "530705555.373766"
+                  urlString = "file:///Users/netprophetsmac/Projects/Bazar/GroceryBazaar/Grocery%20Bazaar/Grocery%20Bazaar/ViewControllers/LoginViewController/LoginViewController.m"
+                  timestampString = "530797739.085262"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "195">
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "213">
                </Location>
             </Locations>
          </BreakpointContent>

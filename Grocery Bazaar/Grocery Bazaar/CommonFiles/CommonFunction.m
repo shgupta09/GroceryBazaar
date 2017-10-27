@@ -151,12 +151,21 @@
 
 
 +(BOOL)validateName:(NSString *)name{
-    
-    
     NSString *nameExpression = @"[a-zA-Z. ]{2,50}";
     NSPredicate *regex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", nameExpression];
     return [regex evaluateWithObject:[self trimString:name]];
    }
+
++(BOOL)validateAddress:(NSString *)name{
+    NSString *nameExpression = @"[a-zA-Z0-9.,-_ ]{5,50}";
+    NSPredicate *regex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", nameExpression];
+    return [regex evaluateWithObject:[self trimString:name]];
+}
++(BOOL)validatePinCode:(NSString *)name{
+    NSString *nameExpression = @"[0-9]{6,6}";
+    NSPredicate *regex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", nameExpression];
+    return [regex evaluateWithObject:[self trimString:name]];
+}
 
 
 // set the User Interface
