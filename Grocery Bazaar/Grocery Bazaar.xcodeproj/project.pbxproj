@@ -38,6 +38,8 @@
 		9C1CFC961F8F483C004675FE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC921F8F483C004675FE /* RegisterViewController.xib */; };
 		9CC440D81F948E5100117801 /* ForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC440D61F948E5100117801 /* ForgetPasswordVC.m */; };
 		9CC440D91F948E5100117801 /* ForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC440D71F948E5100117801 /* ForgetPasswordVC.xib */; };
+		9CC97C201FA1E94E00DB8C88 /* AddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC97C1E1FA1E94E00DB8C88 /* AddressVC.m */; };
+		9CC97C211FA1E94E00DB8C88 /* AddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC97C1F1FA1E94E00DB8C88 /* AddressVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,9 @@
 		9CC440D51F948E5100117801 /* ForgetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordVC.h; sourceTree = "<group>"; };
 		9CC440D61F948E5100117801 /* ForgetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordVC.m; sourceTree = "<group>"; };
 		9CC440D71F948E5100117801 /* ForgetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPasswordVC.xib; sourceTree = "<group>"; };
+		9CC97C1D1FA1E94E00DB8C88 /* AddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressVC.h; sourceTree = "<group>"; };
+		9CC97C1E1FA1E94E00DB8C88 /* AddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressVC.m; sourceTree = "<group>"; };
+		9CC97C1F1FA1E94E00DB8C88 /* AddressVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressVC.xib; sourceTree = "<group>"; };
 		E4D4C68173C581AB44307385 /* Pods-Grocery Bazaar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery Bazaar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -304,6 +309,7 @@
 		9C1CFC521F8F3344004675FE /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				9CC97C1C1FA1E93600DB8C88 /* AddressVC */,
 				9C1CFC531F8F3344004675FE /* ReaeCell */,
 				9C1CFC571F8F3344004675FE /* RearViewController.h */,
 				9C1CFC581F8F3344004675FE /* RearViewController.m */,
@@ -359,6 +365,16 @@
 				9CC440D71F948E5100117801 /* ForgetPasswordVC.xib */,
 			);
 			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
+		9CC97C1C1FA1E93600DB8C88 /* AddressVC */ = {
+			isa = PBXGroup;
+			children = (
+				9CC97C1D1FA1E94E00DB8C88 /* AddressVC.h */,
+				9CC97C1E1FA1E94E00DB8C88 /* AddressVC.m */,
+				9CC97C1F1FA1E94E00DB8C88 /* AddressVC.xib */,
+			);
+			path = AddressVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CC97C211FA1E94E00DB8C88 /* AddressVC.xib in Resources */,
 				9C1CFC171F8F32E7004675FE /* LaunchScreen.storyboard in Resources */,
 				9C1CFC961F8F483C004675FE /* RegisterViewController.xib in Resources */,
 				9C1CFC141F8F32E7004675FE /* Assets.xcassets in Resources */,
@@ -508,6 +525,7 @@
 				5FD799C01FA1FE7200746C93 /* OfferView.m in Sources */,
 				5FD799C81FA20DA500746C93 /* CategoryCollectionViewCell.m in Sources */,
 				9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */,
+				9CC97C201FA1E94E00DB8C88 /* AddressVC.m in Sources */,
 				9C1CFC6E1F8F3344004675FE /* HomeViewController.m in Sources */,
 				9C1CFC701F8F3344004675FE /* LoginViewController.m in Sources */,
 				9C1CFC641F8F3344004675FE /* CommonFunction.m in Sources */,
