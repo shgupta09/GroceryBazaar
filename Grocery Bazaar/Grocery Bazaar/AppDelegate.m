@@ -30,8 +30,8 @@
            UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mainRevealController];
            ((AppDelegate *)[[UIApplication sharedApplication] delegate]).window.rootViewController = nav;
     }else{
-        AddressVC* vc;
-        vc = [[AddressVC alloc] initWithNibName:@"AddressVC" bundle:nil];
+        LoginViewController* vc;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
         _window.rootViewController = vc;
 
     }

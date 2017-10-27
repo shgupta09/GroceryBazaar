@@ -26,8 +26,8 @@
     _btn_Register.layer.borderWidth = 2;
     _btn_Register.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
 
-    _txtPassword.text = @"Admin@123";
-    _txtUsername.text = @"sh@gmail.com";
+    _txtPassword.text = @"Abc@123456";
+    _txtUsername.text = @"shag01@gmail.com";
 
     // Do any additional setup after loading the view from its nib.
 

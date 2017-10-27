@@ -123,6 +123,10 @@
     self.view.userInteractionEnabled = YES;
 }
 #pragma mark -btnAction
+-(void)backTapped{
+    [self.navigationController popViewControllerAnimated:true];
+
+}
 - (IBAction)add_BtnAction:(id)sender {
     NSDictionary *dictForValidation = [self validateData];
     if (![[dictForValidation valueForKey:BoolValueKey] isEqualToString:@"0"]){
