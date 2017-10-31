@@ -120,5 +120,9 @@ static NSString* const API_LOGIN_URL = @"users/login";
 static NSString* const API_CHANGE_PASSWORD_URL = @"manage/AdminUser";
 static NSString* const API_RESET_PASSWORD_URL = @"users/forgot";
 static NSString* const API_FOR_ADDRESS = @"http://postalpincode.in/api/pincode/";
+static NSString* const API_FOR_CREATE_ADDRESS = @"users/createaddress";
+static NSString* const API_FOR_Update_ADDRESS = @"users/updateaddress";
+static NSString* const API_FOR_ADDRESS_LIST = @"users/addresses";
+
 
 #endif /* Constant_h */ 

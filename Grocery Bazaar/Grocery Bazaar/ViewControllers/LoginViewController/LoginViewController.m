@@ -113,7 +113,7 @@
                         
                         [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:true];
                         [CommonFunction storeValueInDefault:[CommonFunction trimString:_txtUsername.text] andKey:loginfirstname];
-                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserId] andKey:loginuserId];
+                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:@"id"] andKey:loginuserId];
                         [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserType] andKey:loginuserType];
                         [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserGender] andKey:loginuserGender];
                         [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginemail] andKey:loginemail];

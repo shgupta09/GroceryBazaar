@@ -27,7 +27,7 @@
     return statusBarView;
 }
 
-+(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross{
++(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross isAddRightButton:(BOOL)isAddButton{
 //    title = [title capitalizedString];
     [viewController.view addSubview:[CommonFunction setStatusBarColor]];
     [viewController.navigationController setNavigationBarHidden:YES animated:NO];
@@ -64,6 +64,14 @@
     dashboard.tintColor = [UIColor colorWithRed:233.0f/255.0f green:141.0f/255.0f blue:25.0f/255.0f alpha:1];
     dashboard.tintColor = [UIColor whiteColor];
     newItem.leftBarButtonItem = dashboard;
+    
+    if (isAddButton) {
+        UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"add" style:UIBarButtonItemStylePlain target:viewController action:@selector(addAddress)];
+        newItem.rightBarButtonItem = anotherButton;
+
+    }
+    
+    
     [newNavBar setItems:@[newItem]];
     
 //    UINavigationController *xyz = [[UINavigationController alloc] initWithRootViewController:<#(nonnull UIViewController *)#>];
@@ -343,6 +351,18 @@
     
     view.backgroundColor = [UIColor colorWithPatternImage:image];
     
+}
+
++(void)addNoDataLabel:(UIView*)view{
+
+    UILabel *lbl = [UILabel new];
+    [lbl sizeToFit];
+    lbl.frame = CGRectMake(0, 0, 100, 50);
+    lbl.center = view.center;
+    lbl.text = @"No Data";
+    lbl.textColor = [UIColor blackColor];
+    lbl.textAlignment = NSTextAlignmentLeft;
+    [view addSubview:lbl];
 }
 
 @end

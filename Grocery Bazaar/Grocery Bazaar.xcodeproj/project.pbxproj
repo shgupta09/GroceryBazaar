@@ -40,6 +40,11 @@
 		9CC440D91F948E5100117801 /* ForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC440D71F948E5100117801 /* ForgetPasswordVC.xib */; };
 		9CC97C201FA1E94E00DB8C88 /* AddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC97C1E1FA1E94E00DB8C88 /* AddressVC.m */; };
 		9CC97C211FA1E94E00DB8C88 /* AddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC97C1F1FA1E94E00DB8C88 /* AddressVC.xib */; };
+		D8C77BDF1FA8EBF400066D10 /* AddressList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C77BDD1FA8EBF400066D10 /* AddressList.m */; };
+		D8C77BE01FA8EBF400066D10 /* AddressList.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C77BDE1FA8EBF400066D10 /* AddressList.xib */; };
+		D8C77BE41FA8EC2100066D10 /* AddessListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C77BE21FA8EC2100066D10 /* AddessListCell.m */; };
+		D8C77BE51FA8EC2100066D10 /* AddessListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C77BE31FA8EC2100066D10 /* AddessListCell.xib */; };
+		D8C77BE81FA8EEB900066D10 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C77BE71FA8EEB900066D10 /* Address.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +104,14 @@
 		9CC97C1D1FA1E94E00DB8C88 /* AddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressVC.h; sourceTree = "<group>"; };
 		9CC97C1E1FA1E94E00DB8C88 /* AddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressVC.m; sourceTree = "<group>"; };
 		9CC97C1F1FA1E94E00DB8C88 /* AddressVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressVC.xib; sourceTree = "<group>"; };
+		D8C77BDC1FA8EBF400066D10 /* AddressList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressList.h; sourceTree = "<group>"; };
+		D8C77BDD1FA8EBF400066D10 /* AddressList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressList.m; sourceTree = "<group>"; };
+		D8C77BDE1FA8EBF400066D10 /* AddressList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressList.xib; sourceTree = "<group>"; };
+		D8C77BE11FA8EC2100066D10 /* AddessListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddessListCell.h; sourceTree = "<group>"; };
+		D8C77BE21FA8EC2100066D10 /* AddessListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddessListCell.m; sourceTree = "<group>"; };
+		D8C77BE31FA8EC2100066D10 /* AddessListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddessListCell.xib; sourceTree = "<group>"; };
+		D8C77BE61FA8EEB900066D10 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		D8C77BE71FA8EEB900066D10 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 		E4D4C68173C581AB44307385 /* Pods-Grocery Bazaar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery Bazaar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +148,8 @@
 			children = (
 				5FD799C11FA1FF0400746C93 /* Offer.h */,
 				5FD799C21FA1FF0400746C93 /* Offer.m */,
+				D8C77BE61FA8EEB900066D10 /* Address.h */,
+				D8C77BE71FA8EEB900066D10 /* Address.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -370,11 +385,25 @@
 		9CC97C1C1FA1E93600DB8C88 /* AddressVC */ = {
 			isa = PBXGroup;
 			children = (
+				D8C77BDB1FA8EBD000066D10 /* AddressList */,
 				9CC97C1D1FA1E94E00DB8C88 /* AddressVC.h */,
 				9CC97C1E1FA1E94E00DB8C88 /* AddressVC.m */,
 				9CC97C1F1FA1E94E00DB8C88 /* AddressVC.xib */,
 			);
 			path = AddressVC;
+			sourceTree = "<group>";
+		};
+		D8C77BDB1FA8EBD000066D10 /* AddressList */ = {
+			isa = PBXGroup;
+			children = (
+				D8C77BDC1FA8EBF400066D10 /* AddressList.h */,
+				D8C77BDD1FA8EBF400066D10 /* AddressList.m */,
+				D8C77BDE1FA8EBF400066D10 /* AddressList.xib */,
+				D8C77BE11FA8EC2100066D10 /* AddessListCell.h */,
+				D8C77BE21FA8EC2100066D10 /* AddessListCell.m */,
+				D8C77BE31FA8EC2100066D10 /* AddessListCell.xib */,
+			);
+			path = AddressList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,7 +471,9 @@
 				9CC97C211FA1E94E00DB8C88 /* AddressVC.xib in Resources */,
 				9C1CFC171F8F32E7004675FE /* LaunchScreen.storyboard in Resources */,
 				9C1CFC961F8F483C004675FE /* RegisterViewController.xib in Resources */,
+				D8C77BE01FA8EBF400066D10 /* AddressList.xib in Resources */,
 				9C1CFC141F8F32E7004675FE /* Assets.xcassets in Resources */,
+				D8C77BE51FA8EC2100066D10 /* AddessListCell.xib in Resources */,
 				9C1CFC681F8F3344004675FE /* LoderView.xib in Resources */,
 				9CC440D91F948E5100117801 /* ForgetPasswordVC.xib in Resources */,
 				9C1CFC811F8F3344004675FE /* RearViewController.xib in Resources */,
@@ -521,14 +552,17 @@
 				5FD799C31FA1FF0400746C93 /* Offer.m in Sources */,
 				9C1CFC671F8F3344004675FE /* LoderView.m in Sources */,
 				9C1CFC831F8F3344004675FE /* SplashScreenViewController.m in Sources */,
+				D8C77BE41FA8EC2100066D10 /* AddessListCell.m in Sources */,
 				9C1CFC951F8F483C004675FE /* RegisterViewController.m in Sources */,
 				5FD799C01FA1FE7200746C93 /* OfferView.m in Sources */,
 				5FD799C81FA20DA500746C93 /* CategoryCollectionViewCell.m in Sources */,
 				9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */,
 				9CC97C201FA1E94E00DB8C88 /* AddressVC.m in Sources */,
+				D8C77BE81FA8EEB900066D10 /* Address.m in Sources */,
 				9C1CFC6E1F8F3344004675FE /* HomeViewController.m in Sources */,
 				9C1CFC701F8F3344004675FE /* LoginViewController.m in Sources */,
 				9C1CFC641F8F3344004675FE /* CommonFunction.m in Sources */,
+				D8C77BDF1FA8EBF400066D10 /* AddressList.m in Sources */,
 				9C1CFC661F8F3344004675FE /* CustomTextField.m in Sources */,
 				9C1CFC061F8F32E7004675FE /* main.m in Sources */,
 				9C1CFC7E1F8F3344004675FE /* RearCell.m in Sources */,

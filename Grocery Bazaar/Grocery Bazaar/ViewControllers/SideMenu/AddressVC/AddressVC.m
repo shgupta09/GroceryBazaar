@@ -11,6 +11,7 @@
 @interface AddressVC ()
 {
     LoderView *loderObj;
+    BOOL isEdit;
 }
 @end
 
@@ -24,7 +25,31 @@
 
 
 -(void)setData{
- [CommonFunction setNavToController:self title:@"Address" isCrossBusston:false];
+ 
+    if (_isFromList) {
+        isEdit = false;
+        _txt_address1.text = _addressObj.address_line1;
+        _txt_address2.text = _addressObj.address_line2;
+        _txt_city.text = _addressObj.city;
+        _txt_State.text = _addressObj.state;
+        _txt_Pincode.text = _addressObj.pincode;
+        _txt_Landmark.text = _addressObj.landmark;
+        _txt_Country.text = _addressObj.country;
+        [self textFieldEdit:false];
+        [_btnadd setTitle:@"Edit" forState:UIControlStateNormal];
+        [CommonFunction setNavToController:self title:@"Update Address" isCrossBusston:false isAddRightButton:false];
+    }
+    else{
+        [CommonFunction setNavToController:self title:@"Address" isCrossBusston:false isAddRightButton:false];
+        [_btnadd setTitle:@"Add" forState:UIControlStateNormal];
+    }
+}
+
+-(void)textFieldEdit:(BOOL)boolValue{
+    _txt_address1.userInteractionEnabled = boolValue;
+    _txt_address2.userInteractionEnabled = boolValue;
+    _txt_Pincode.userInteractionEnabled = boolValue;
+    _txt_Landmark.userInteractionEnabled = boolValue;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -106,6 +131,8 @@
     }
 }
 
+
+
 #pragma mark - add loder
 
 -(void)addLoder{
@@ -128,9 +155,25 @@
 
 }
 - (IBAction)add_BtnAction:(id)sender {
+    if (_isFromList) {
+        if (!isEdit) {
+            [_btnadd setTitle:@"Update" forState:UIControlStateNormal];
+            isEdit = true;
+            [self textFieldEdit:true];
+        }else{
+            [self checkForDataForadd:false];
+        }
+    }else{
+        [self checkForDataForadd:true];
+    }
+   
+}
+
+-(void)checkForDataForadd:(BOOL)isAdd{
     NSDictionary *dictForValidation = [self validateData];
     if (![[dictForValidation valueForKey:BoolValueKey] isEqualToString:@"0"]){
         NSLog(@"Successful");
+            [self addressApiIsAdd:isAdd];
         [CommonFunction resignFirstResponderOfAView:self.view];
     }
     else{
@@ -139,6 +182,80 @@
         [alertController addAction:ok];
         [self presentViewController:alertController animated:YES completion:nil];
     }
+}
+
+#pragma mark - api related
+-(void) addressApiIsAdd:(BOOL)isadd{
+    NSMutableDictionary *parameterDict = [[NSMutableDictionary alloc]init];
+    [parameterDict setValue:[CommonFunction trimString:_txt_address1.text] forKey:@"address_line1"];
+    [parameterDict setValue:[CommonFunction trimString:_txt_address2.text] forKey:@"address_line2"];
+    [parameterDict setValue:[CommonFunction trimString:_txt_city.text] forKey:@"city"];
+    [parameterDict setValue:[CommonFunction trimString:_txt_State.text] forKey:@"state"];
+    [parameterDict setValue:[CommonFunction trimString:_txt_Pincode.text] forKey:@"pincode"];
+    [parameterDict setValue:[CommonFunction trimString:_txt_Landmark.text] forKey:@"landmark"];
+    [parameterDict setValue:[CommonFunction trimString:_txt_Country.text] forKey:@"country"];
+    [parameterDict setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:@"user_id"];
+    [parameterDict setValue:_addressObj.address_id forKey:@"address_id"];
+
+    
+    NSString *urlstring;
+    if (isadd) {
+        urlstring = API_FOR_CREATE_ADDRESS;
+    }else{
+        urlstring = API_FOR_Update_ADDRESS;
+    }
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,urlstring]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                
+                if ([[responseObj valueForKey:API_Status] integerValue] == 1){
+                    
+                    
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[responseObj valueForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [self.navigationController popViewControllerAnimated:true];
+                    }];
+                    [alertController addAction:ok];
+                    //                    [CommonFunction storeValueInDefault:@"true" andKey:@"isLoggedIn"];
+                    [self presentViewController:alertController animated:YES completion:nil];
+
+                    [self removeloder];
+                }
+                else
+                {
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    [alertController addAction:ok];
+                    //                    [CommonFunction storeValueInDefault:@"true" andKey:@"isLoggedIn"];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                    [self removeloder];
+                }
+                
+                
+                
+            }
+            
+            else {
+                [self removeloder];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[error description] preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alertController addAction:ok];
+                [self presentViewController:alertController animated:YES completion:nil];
+            }
+            
+            
+        }];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network Error" message:@"No Network Access" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    
+    
 }
 
 #pragma mark -other
@@ -191,4 +308,6 @@
     }
     return validationDict.mutableCopy;
 }
+
+
 @end

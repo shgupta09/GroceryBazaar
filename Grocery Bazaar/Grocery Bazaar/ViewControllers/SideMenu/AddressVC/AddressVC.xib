@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddressVC">
             <connections>
+                <outlet property="btnadd" destination="tVM-3a-MeS" id="h39-eB-HvP"/>
                 <outlet property="txt_Country" destination="8mh-kF-2Ph" id="4Gt-DJ-het"/>
                 <outlet property="txt_Landmark" destination="a27-P2-fb5" id="m3A-aj-K0M"/>
                 <outlet property="txt_Pincode" destination="hob-ws-XZf" id="pSI-D5-0xk"/>
@@ -26,14 +27,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="qkv-44-Tk9" customClass="TPKeyboardAvoidingCollectionView">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="qkv-44-Tk9" customClass="TPKeyboardAvoidingScrollView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5m-Fd-bpb">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfY-Yx-uJO">
-                                    <rect key="frame" x="0.0" y="84" width="375" height="520"/>
+                                    <rect key="frame" x="0.0" y="64" width="375" height="520"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address Line 1 (House No.)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wia-Xv-gBB" customClass="CustomTextField">
                                             <rect key="frame" x="20" y="0.0" width="335" height="45"/>
@@ -167,12 +168,13 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="tfY-Yx-uJO" firstAttribute="top" secondItem="G5m-Fd-bpb" secondAttribute="top" constant="84" id="Pv4-CP-8FR"/>
+                                <constraint firstItem="tfY-Yx-uJO" firstAttribute="top" secondItem="G5m-Fd-bpb" secondAttribute="top" constant="64" id="Pv4-CP-8FR"/>
                                 <constraint firstAttribute="trailing" secondItem="tfY-Yx-uJO" secondAttribute="trailing" id="Wvv-aa-zYA"/>
                                 <constraint firstItem="tfY-Yx-uJO" firstAttribute="leading" secondItem="G5m-Fd-bpb" secondAttribute="leading" id="xD2-Mf-vxj"/>
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="G5m-Fd-bpb" firstAttribute="centerY" secondItem="qkv-44-Tk9" secondAttribute="centerY" id="07Z-eX-CTS"/>
                         <constraint firstAttribute="bottom" secondItem="G5m-Fd-bpb" secondAttribute="bottom" id="7mT-Sa-qt7"/>
