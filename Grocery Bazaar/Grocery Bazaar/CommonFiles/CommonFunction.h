@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface CommonFunction : NSObject
++(BOOL)validatePinCode:(NSString *)name;
++(BOOL)validateAddress:(NSString *)name;
 +(BOOL)isValidPassword:(NSString*)password;
 +(UIView *)setStatusBarColor;
-+(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross;
++(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross isAddRightButton:(BOOL)isAddButton;
 +(void)storeValueInDefault:(NSString *)valueString andKey:(NSString *)keyString;
 +(NSString *)getValueFromDefaultWithKey:(NSString *)keyString;
 +(void)stroeBoolValueForKey:(NSString *)keyString withBoolValue:(BOOL)boolValue;
@@ -40,5 +42,6 @@
 +(NSString *)ConvertDateTime:(NSString *)dateStr andTime:(NSString *)time;
 +(NSDate *)convertStringToDate:(NSString *)dtrDate;
 +(NSString *)getThePrice:(NSString *)price;
++(void)addNoDataLabel:(UIView*)view;
 
 @end

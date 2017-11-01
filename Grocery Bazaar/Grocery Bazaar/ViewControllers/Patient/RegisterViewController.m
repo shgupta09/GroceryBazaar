@@ -57,7 +57,7 @@
                    @"Female",@"Other", nil];
     departDate = [NSDate date];
     [CommonFunction setResignTapGestureToView:self.view andsender:self];
-    [CommonFunction setNavToController:self title:@"Register" isCrossBusston:true ];
+    [CommonFunction setNavToController:self title:@"Register" isCrossBusston:true isAddRightButton:false];
     
     
     

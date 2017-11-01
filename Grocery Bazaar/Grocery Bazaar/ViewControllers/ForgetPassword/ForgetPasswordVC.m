@@ -24,7 +24,7 @@
     [super viewDidLoad];
     isEmail = false;
 //    txt_Username.text = @"ravimahajan1409@gmail.com";
-    [CommonFunction setNavToController:self title:@"Forgot Password" isCrossBusston:true];
+    [CommonFunction setNavToController:self title:@"Forgot Password" isCrossBusston:true isAddRightButton:false];
     innerView.layer.cornerRadius = 5;
     [txt_Username becomeFirstResponder];
     //txt_Username.text = @"shgupta09@gmail.com";
