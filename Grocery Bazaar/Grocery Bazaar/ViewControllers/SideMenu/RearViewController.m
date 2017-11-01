@@ -57,7 +57,7 @@
         switch (indexPath.row) {
                 
             case 0:{
-                AddressVC *addressVCObj = [[AddressVC alloc]initWithNibName:@"AddressVC" bundle:nil];
+                AddressList *addressVCObj = [[AddressList alloc]initWithNibName:@"AddressList" bundle:nil];
                 [self.navigationController pushViewController:addressVCObj animated:true];
             }
                 break;

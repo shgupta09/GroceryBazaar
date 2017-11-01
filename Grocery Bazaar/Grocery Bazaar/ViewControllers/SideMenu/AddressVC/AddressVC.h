@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AddressVC : UIViewController
-
+#import "Address.h"
+@interface AddressVC : UIViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet CustomTextField *txt_address1;
+@property (weak, nonatomic) IBOutlet CustomTextField *txt_address2;
+@property (weak, nonatomic) IBOutlet CustomTextField *txt_Landmark;
+@property (weak, nonatomic) IBOutlet CustomTextField *txt_Pincode;
+@property (weak, nonatomic) IBOutlet CustomTextField *txt_city;
+@property (weak, nonatomic) IBOutlet CustomTextField *txt_State;
+@property (weak, nonatomic) IBOutlet CustomTextField *txt_Country;
+@property ( nonatomic) BOOL isFromList;;
+@property (weak, nonatomic) IBOutlet UIButton *btnadd;
+@property(strong,nonatomic)Address *addressObj;
 @end

@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>SWRevealViewController.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -32,6 +37,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>15E6680DF88D0A385AE4D4B7CE709BA2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2602F3D0DAC534568B6AD7EEA0DD1959</key>
 		<dict>
 			<key>primary</key>
@@ -42,7 +52,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A9870E36CDED78C343FB9FC583815F6D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ACDA3CE9961167A37FC2BF228D361147</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C4F5EA2B1EAC83C8651B9BF1BDD15322</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C95C45974D77E3E41FE9D2A80E093179</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D586CC9FD091D24BE5A4335D328D256C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
