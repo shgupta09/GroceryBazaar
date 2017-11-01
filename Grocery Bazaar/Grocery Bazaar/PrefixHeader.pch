@@ -29,4 +29,11 @@
 #import "AddressList.h"
 #import "AddressVC.h"
 #import "Address.h"
+#import "Category.h"
+#import "SubCategory.h"
+#import "SubCategoriesViewController.h"
+#import "CategoryTableViewCell.h"
+#import "ProductTableViewCell.h"
+#import "Product.h"
+#import "ProductListViewController.h"
 #endif /* PrefixHeader_pch */

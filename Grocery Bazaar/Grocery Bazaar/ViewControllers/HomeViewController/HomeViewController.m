@@ -17,6 +17,9 @@
     __weak IBOutlet UIScrollView *scrlViewOffers;
     __weak IBOutlet UICollectionView *collectionView;
     __weak IBOutlet UIPageControl *pageControl;
+    LoderView *loderObj;
+    NSMutableArray* arrCategories;
+
 }
 @end
 
@@ -34,6 +37,10 @@
                                                object:nil];
     [collectionView registerNib:[UINib nibWithNibName:@"CategoryCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CategoryCollectionViewCell"];
 
+    arrCategories = [[NSMutableArray alloc] init];
+    
+    [self hitApiForCategories];
+    
     
 }
 
@@ -144,7 +151,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 10;
+    return arrCategories.count;
 }
 
 
@@ -155,10 +162,14 @@
 //    cell.contentView.layer.cornerRadius = cell.frame.size.height/2;
 //    cell.contentView.layer.masksToBounds = true;
     
+    Category* obj = [[Category alloc] init];
+    obj = [arrCategories objectAtIndex:indexPath.row];
+    
     CAShapeLayer* layering = [CAShapeLayer layer];
     [layering setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(10, 10, cell.frame.size.width-20, cell.frame.size.height-20)] CGPath ]];
 
-    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:@"http://dataheadstudio.com/bazar/assets/uploads/product_subcategory/e8364-atta.jpg"]];
+    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.category_icon]];
+    cell.lblName.text = obj.name;
     
 //    [[cell.contentView layer] addSublayer:layering];
 //    [[cell.contentView layer] setMask:layering];
@@ -178,6 +189,95 @@
     
     return size;
 }
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    SubCategoriesViewController* vc = [[SubCategoriesViewController alloc ] initWithNibName:@"SubCategoriesViewController" bundle:nil];
+    
+    vc.arrSubCategories = [[arrCategories objectAtIndex:indexPath.row] subcategories];
+    
+    [self.navigationController pushViewController:vc animated:true];
+    
+    
+    
+}
+
+#pragma mark - Api Related Methods
+-(void)hitApiForCategories{
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        
+               //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_CATEGORIES]  postResponse:nil postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                if ([[responseObj valueForKey:API_Status] integerValue] == 1){
+                    
+                    NSArray *tempAray = [responseObj valueForKey:@"categories"];
+                    [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        Category *categoryObj = [Category new];
+                        categoryObj.cat_id= [obj valueForKey:@"cat_id"];
+                        categoryObj.category_icon= [obj valueForKey:@"category_icon"];
+                        categoryObj.name = [obj valueForKey:@"name"];
+                        
+                        NSArray *subAray = [obj valueForKey:@"subcategories"];
+                        categoryObj.subcategories = [NSMutableArray new];
+                        [subAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                            SubCategory *subobj = [SubCategory new];
+                            subobj.subcat_id= [obj valueForKey:@"subcat_id"];
+                            subobj.title= [obj valueForKey:@"title"];
+                            subobj.subcat_icon = [obj valueForKey:@"subcat_icon"];
+                            subobj.catId = categoryObj.cat_id;
+                            [categoryObj.subcategories addObject:subobj];
+                        }];
+                        
+                        [arrCategories addObject:categoryObj];
+                    }];
+                    [collectionView reloadData];
+                    
+                }
+                else{
+                    collectionView.hidden = true;
+                    [CommonFunction addNoDataLabel:self.view];
+                }
+                [self removeloder];
+                
+            }
+            else {
+                [self removeloder];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[error description] preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alertController addAction:ok];
+                [self presentViewController:alertController animated:YES completion:nil];
+            }
+        }];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network Error" message:@"No Network Access" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+}
+
+
+
+#pragma mark - add loder
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
+    loderObj.lbl_title.text = @"Fetching Data...";
+    [self.view addSubview:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
+}
+
+
 
 
 @end

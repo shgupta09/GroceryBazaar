@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F91588A1FA9A050002DA4C0 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9158891FA9A050002DA4C0 /* Category.m */; };
+		5F9158941FA9AA90002DA4C0 /* SubCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9158921FA9AA90002DA4C0 /* SubCategoriesViewController.m */; };
+		5F9158951FA9AA90002DA4C0 /* SubCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9158931FA9AA90002DA4C0 /* SubCategoriesViewController.xib */; };
+		5F91589A1FA9AAD6002DA4C0 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9158981FA9AAD6002DA4C0 /* CategoryTableViewCell.m */; };
+		5F91589B1FA9AAD6002DA4C0 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9158991FA9AAD6002DA4C0 /* CategoryTableViewCell.xib */; };
+		5F91589E1FA9AC1E002DA4C0 /* SubCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F91589D1FA9AC1E002DA4C0 /* SubCategory.m */; };
+		5F9158A31FA9D717002DA4C0 /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9158A11FA9D717002DA4C0 /* ProductListViewController.m */; };
+		5F9158A41FA9D717002DA4C0 /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9158A21FA9D717002DA4C0 /* ProductListViewController.xib */; };
+		5F9158A91FA9D821002DA4C0 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9158A71FA9D821002DA4C0 /* ProductTableViewCell.m */; };
+		5F9158AA1FA9D821002DA4C0 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9158A81FA9D821002DA4C0 /* ProductTableViewCell.xib */; };
+		5F9158AD1FA9DA04002DA4C0 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9158AC1FA9DA03002DA4C0 /* Product.m */; };
 		5FD799C01FA1FE7200746C93 /* OfferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD799BF1FA1FE7200746C93 /* OfferView.m */; };
 		5FD799C31FA1FF0400746C93 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD799C21FA1FF0400746C93 /* Offer.m */; };
 		5FD799C81FA20DA500746C93 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD799C61FA20DA500746C93 /* CategoryCollectionViewCell.m */; };
@@ -49,6 +60,24 @@
 
 /* Begin PBXFileReference section */
 		2F87295F796482A6C6CD21B8 /* libPods-Grocery Bazaar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Grocery Bazaar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9158881FA9A050002DA4C0 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		5F9158891FA9A050002DA4C0 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		5F9158911FA9AA90002DA4C0 /* SubCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoriesViewController.h; sourceTree = "<group>"; };
+		5F9158921FA9AA90002DA4C0 /* SubCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoriesViewController.m; sourceTree = "<group>"; };
+		5F9158931FA9AA90002DA4C0 /* SubCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubCategoriesViewController.xib; sourceTree = "<group>"; };
+		5F9158971FA9AAD6002DA4C0 /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewCell.h; sourceTree = "<group>"; };
+		5F9158981FA9AAD6002DA4C0 /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewCell.m; sourceTree = "<group>"; };
+		5F9158991FA9AAD6002DA4C0 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		5F91589C1FA9AC1E002DA4C0 /* SubCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategory.h; sourceTree = "<group>"; };
+		5F91589D1FA9AC1E002DA4C0 /* SubCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategory.m; sourceTree = "<group>"; };
+		5F9158A01FA9D717002DA4C0 /* ProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListViewController.h; sourceTree = "<group>"; };
+		5F9158A11FA9D717002DA4C0 /* ProductListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListViewController.m; sourceTree = "<group>"; };
+		5F9158A21FA9D717002DA4C0 /* ProductListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
+		5F9158A61FA9D821002DA4C0 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
+		5F9158A71FA9D821002DA4C0 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
+		5F9158A81FA9D821002DA4C0 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		5F9158AB1FA9DA03002DA4C0 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		5F9158AC1FA9DA03002DA4C0 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		5FD799BE1FA1FE7200746C93 /* OfferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferView.h; sourceTree = "<group>"; };
 		5FD799BF1FA1FE7200746C93 /* OfferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferView.m; sourceTree = "<group>"; };
 		5FD799C11FA1FF0400746C93 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
@@ -150,6 +179,12 @@
 				5FD799C21FA1FF0400746C93 /* Offer.m */,
 				D8C77BE61FA8EEB900066D10 /* Address.h */,
 				D8C77BE71FA8EEB900066D10 /* Address.m */,
+				5F9158881FA9A050002DA4C0 /* Category.h */,
+				5F9158891FA9A050002DA4C0 /* Category.m */,
+				5F91589C1FA9AC1E002DA4C0 /* SubCategory.h */,
+				5F91589D1FA9AC1E002DA4C0 /* SubCategory.m */,
+				5F9158AB1FA9DA03002DA4C0 /* Product.h */,
+				5F9158AC1FA9DA03002DA4C0 /* Product.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,9 +212,51 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		5F9158901FA9AA40002DA4C0 /* SubCategoriesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F9158911FA9AA90002DA4C0 /* SubCategoriesViewController.h */,
+				5F9158921FA9AA90002DA4C0 /* SubCategoriesViewController.m */,
+				5F9158931FA9AA90002DA4C0 /* SubCategoriesViewController.xib */,
+			);
+			path = SubCategoriesViewController;
+			sourceTree = "<group>";
+		};
+		5F9158961FA9AAC1002DA4C0 /* CategoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F9158971FA9AAD6002DA4C0 /* CategoryTableViewCell.h */,
+				5F9158981FA9AAD6002DA4C0 /* CategoryTableViewCell.m */,
+				5F9158991FA9AAD6002DA4C0 /* CategoryTableViewCell.xib */,
+			);
+			path = CategoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		5F91589F1FA9D6FE002DA4C0 /* ProductListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F9158A01FA9D717002DA4C0 /* ProductListViewController.h */,
+				5F9158A11FA9D717002DA4C0 /* ProductListViewController.m */,
+				5F9158A21FA9D717002DA4C0 /* ProductListViewController.xib */,
+			);
+			path = ProductListViewController;
+			sourceTree = "<group>";
+		};
+		5F9158A51FA9D80A002DA4C0 /* ProductTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F9158A61FA9D821002DA4C0 /* ProductTableViewCell.h */,
+				5F9158A71FA9D821002DA4C0 /* ProductTableViewCell.m */,
+				5F9158A81FA9D821002DA4C0 /* ProductTableViewCell.xib */,
+			);
+			path = ProductTableViewCell;
+			sourceTree = "<group>";
+		};
 		5FD799BC1FA1FDF000746C93 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				5F9158A51FA9D80A002DA4C0 /* ProductTableViewCell */,
+				5F9158961FA9AAC1002DA4C0 /* CategoryTableViewCell */,
 				5FD799C41FA20D7A00746C93 /* CategoryCollectionCellView */,
 				5FD799BE1FA1FE7200746C93 /* OfferView.h */,
 				5FD799BF1FA1FE7200746C93 /* OfferView.m */,
@@ -283,6 +360,8 @@
 		9C1CFC2C1F8F3344004675FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5F91589F1FA9D6FE002DA4C0 /* ProductListViewController */,
+				5F9158901FA9AA40002DA4C0 /* SubCategoriesViewController */,
 				9CC440D41F948E5100117801 /* ForgetPassword */,
 				9C1CFC8C1F8F483C004675FE /* Patient */,
 				9C1CFC351F8F3344004675FE /* HomeViewController */,
@@ -475,13 +554,17 @@
 				9C1CFC141F8F32E7004675FE /* Assets.xcassets in Resources */,
 				D8C77BE51FA8EC2100066D10 /* AddessListCell.xib in Resources */,
 				9C1CFC681F8F3344004675FE /* LoderView.xib in Resources */,
+				5F9158AA1FA9D821002DA4C0 /* ProductTableViewCell.xib in Resources */,
 				9CC440D91F948E5100117801 /* ForgetPasswordVC.xib in Resources */,
 				9C1CFC811F8F3344004675FE /* RearViewController.xib in Resources */,
 				9C1CFC711F8F3344004675FE /* LoginViewController.xib in Resources */,
 				9C1CFC841F8F3344004675FE /* SplashScreenViewController.xib in Resources */,
+				5F91589B1FA9AAD6002DA4C0 /* CategoryTableViewCell.xib in Resources */,
 				9C1CFC6F1F8F3344004675FE /* HomeViewController.xib in Resources */,
 				5FD799C91FA20DA500746C93 /* CategoryCollectionViewCell.xib in Resources */,
 				9C1CFC7F1F8F3344004675FE /* RearCell.xib in Resources */,
+				5F9158A41FA9D717002DA4C0 /* ProductListViewController.xib in Resources */,
+				5F9158951FA9AA90002DA4C0 /* SubCategoriesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CC440D81F948E5100117801 /* ForgetPasswordVC.m in Sources */,
+				5F9158A91FA9D821002DA4C0 /* ProductTableViewCell.m in Sources */,
 				9C1CFC091F8F32E7004675FE /* AppDelegate.m in Sources */,
 				9C1CFC801F8F3344004675FE /* RearViewController.m in Sources */,
 				9C1CFC651F8F3344004675FE /* CustomButton.m in Sources */,
@@ -555,16 +639,22 @@
 				D8C77BE41FA8EC2100066D10 /* AddessListCell.m in Sources */,
 				9C1CFC951F8F483C004675FE /* RegisterViewController.m in Sources */,
 				5FD799C01FA1FE7200746C93 /* OfferView.m in Sources */,
+				5F9158941FA9AA90002DA4C0 /* SubCategoriesViewController.m in Sources */,
 				5FD799C81FA20DA500746C93 /* CategoryCollectionViewCell.m in Sources */,
 				9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */,
 				9CC97C201FA1E94E00DB8C88 /* AddressVC.m in Sources */,
 				D8C77BE81FA8EEB900066D10 /* Address.m in Sources */,
 				9C1CFC6E1F8F3344004675FE /* HomeViewController.m in Sources */,
 				9C1CFC701F8F3344004675FE /* LoginViewController.m in Sources */,
+				5F91589A1FA9AAD6002DA4C0 /* CategoryTableViewCell.m in Sources */,
+				5F9158AD1FA9DA04002DA4C0 /* Product.m in Sources */,
 				9C1CFC641F8F3344004675FE /* CommonFunction.m in Sources */,
+				5F91588A1FA9A050002DA4C0 /* Category.m in Sources */,
 				D8C77BDF1FA8EBF400066D10 /* AddressList.m in Sources */,
 				9C1CFC661F8F3344004675FE /* CustomTextField.m in Sources */,
 				9C1CFC061F8F32E7004675FE /* main.m in Sources */,
+				5F91589E1FA9AC1E002DA4C0 /* SubCategory.m in Sources */,
+				5F9158A31FA9D717002DA4C0 /* ProductListViewController.m in Sources */,
 				9C1CFC7E1F8F3344004675FE /* RearCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

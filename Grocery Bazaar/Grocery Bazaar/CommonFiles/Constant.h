@@ -79,6 +79,8 @@
 #define recordID @"recordId"
 #define isdCode @"isdCode"
 #define passwordToStore @"password"
+#define productCategory_id @"category_id"
+#define productsubcategory_id @"subcategory_id"
 
 
 #define isValidHitNP @"NP001"
@@ -123,6 +125,8 @@ static NSString* const API_FOR_ADDRESS = @"http://postalpincode.in/api/pincode/"
 static NSString* const API_FOR_CREATE_ADDRESS = @"users/createaddress";
 static NSString* const API_FOR_Update_ADDRESS = @"users/updateaddress";
 static NSString* const API_FOR_ADDRESS_LIST = @"users/addresses";
+static NSString* const API_FOR_CATEGORIES = @"product/categories";
+static NSString* const API_FOR_PRODUCTLIST = @"product/productbycategories";
 
 
 #endif /* Constant_h */ 
