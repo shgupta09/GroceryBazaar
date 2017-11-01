@@ -38,7 +38,7 @@
     _tblView.estimatedRowHeight = 100;
     _tblView.multipleTouchEnabled = NO;
     [_tblView reloadData];
-    [CommonFunction setNavToController:self title:@"Address" isCrossBusston:false isAddRightButton:true];
+    [CommonFunction setNavToController:self title:@"Address" isCrossBusston:false isAddRightButton:false];
 }
 #pragma mark - Api Related Methods
 -(void)hitApiForAddressList{

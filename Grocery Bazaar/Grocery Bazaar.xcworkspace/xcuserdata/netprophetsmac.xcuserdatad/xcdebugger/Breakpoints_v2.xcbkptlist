@@ -90,12 +90,12 @@
                   moduleName = "Grocery Bazaar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/netprophetsmac/Projects/Bazar/GroceryBazaar/Grocery%20Bazaar/Grocery%20Bazaar/ViewControllers/LoginViewController/LoginViewController.m"
-                  timestampString = "530798900.896861"
+                  timestampString = "531206690.383733"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "105"
                   endingLineNumber = "105"
-                  offsetFromSymbolStart = "517">
+                  offsetFromSymbolStart = "592">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -105,46 +105,14 @@
                   moduleName = "Grocery Bazaar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/netprophetsmac/Projects/Bazar/GroceryBazaar/Grocery%20Bazaar/Grocery%20Bazaar/ViewControllers/LoginViewController/LoginViewController.m"
-                  timestampString = "530798900.899488"
+                  timestampString = "531206690.385326"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"
                   endingLineNumber = "106"
-                  offsetFromSymbolStart = "213">
+                  offsetFromSymbolStart = "172">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Grocery Bazaar/AppDelegate.m"
-            timestampString = "530798763.382809"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Grocery Bazaar/AppDelegate.m"
-            timestampString = "530798779.975489"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -170,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocery Bazaar/CommonFiles/CommonFunction.m"
-            timestampString = "530798887.500159"
+            timestampString = "531232087.769661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "+stroeBoolValueForKey:withBoolValue:"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "+getObjectFromDefaultWithKey:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
