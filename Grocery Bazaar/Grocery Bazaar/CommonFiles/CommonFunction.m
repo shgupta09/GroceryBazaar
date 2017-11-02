@@ -71,6 +71,7 @@
         UIBarButtonItem *anotherButton =  [[UIBarButtonItem alloc]
          initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
          target:viewController action:@selector(addAddress)];
+        anotherButton.tintColor = [UIColor whiteColor];
         newItem.rightBarButtonItem = anotherButton;
     }
     [newNavBar setItems:@[newItem]];

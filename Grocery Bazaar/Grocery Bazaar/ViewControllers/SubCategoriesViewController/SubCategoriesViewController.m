@@ -19,13 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     [self setData];
-    
+     [CommonFunction addNoDataLabel:self.view];
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -38,7 +39,7 @@
     _tblView.estimatedRowHeight = 100;
     _tblView.multipleTouchEnabled = NO;
     [_tblView reloadData];
-    [CommonFunction setNavToController:self title:@"Address" isCrossBusston:false isAddRightButton:false];
+    [CommonFunction setNavToController:self title:_catObj.name isCrossBusston:false isAddRightButton:false];
 }
 #pragma mark - Api Related Methods
 -(void)hitApiForAddressList{
@@ -133,6 +134,7 @@
         _tblView.hidden = false;
     }else{
         _tblView.hidden = true;
+       
     }
     return _arrSubCategories.count;
 }

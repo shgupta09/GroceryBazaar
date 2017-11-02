@@ -43,6 +43,9 @@
     
     
 }
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:true];
@@ -195,7 +198,7 @@
     SubCategoriesViewController* vc = [[SubCategoriesViewController alloc ] initWithNibName:@"SubCategoriesViewController" bundle:nil];
     
     vc.arrSubCategories = [[arrCategories objectAtIndex:indexPath.row] subcategories];
-    
+    vc.catObj = [arrCategories objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:vc animated:true];
     
     
@@ -215,23 +218,28 @@
                     NSArray *tempAray = [responseObj valueForKey:@"categories"];
                     [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         Category *categoryObj = [Category new];
-                        categoryObj.cat_id= [obj valueForKey:@"cat_id"];
-                        categoryObj.category_icon= [obj valueForKey:@"category_icon"];
-                        categoryObj.name = [obj valueForKey:@"name"];
+                        
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                            [categoryObj setValue:obj forKey:key];
+                        }];
+                        
                         
                         NSArray *subAray = [obj valueForKey:@"subcategories"];
                         categoryObj.subcategories = [NSMutableArray new];
                         [subAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                             SubCategory *subobj = [SubCategory new];
-                            subobj.subcat_id= [obj valueForKey:@"subcat_id"];
-                            subobj.title= [obj valueForKey:@"title"];
-                            subobj.subcat_icon = [obj valueForKey:@"subcat_icon"];
+                            
+                            [obj enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                                [subobj setValue:obj forKey:key];
+                            }];
+                           
                             subobj.catId = categoryObj.cat_id;
                             [categoryObj.subcategories addObject:subobj];
                         }];
                         
                         [arrCategories addObject:categoryObj];
                     }];
+                    
                     [collectionView reloadData];
                     
                 }

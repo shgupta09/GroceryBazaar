@@ -26,6 +26,10 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -68,7 +72,10 @@
                             [arrProducts addObject:c];
                         }];
                         [_tblView reloadData];
-    
+                        if([[responseObj valueForKey:@"message"] isEqualToString:@"Product not found"]){
+                            _tblView.hidden = true;
+                            [CommonFunction addNoDataLabel:self.view];
+                        }
                     }
                     else{
                         _tblView.hidden = true;
