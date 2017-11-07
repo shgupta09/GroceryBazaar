@@ -83,7 +83,7 @@
 #define productsubcategory_id @"subcategory_id"
 
 
-#define isValidHitNP @"NP001"
+#define isValidHitGB @"GB001"
 #define isValidHitOther @"SA001"
 #define LoginData @"userPojo"
 #define NPHeaderName @""

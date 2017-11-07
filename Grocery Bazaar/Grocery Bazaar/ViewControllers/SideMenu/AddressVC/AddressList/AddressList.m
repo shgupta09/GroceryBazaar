@@ -61,7 +61,7 @@
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_ADDRESS_LIST]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
-               if ([[responseObj valueForKey:API_Status] integerValue] == 1){
+              if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
                     
                    NSArray *tempAray = [responseObj valueForKey:@"addresses"];
                    [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

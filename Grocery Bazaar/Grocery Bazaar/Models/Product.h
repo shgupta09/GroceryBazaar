@@ -22,5 +22,5 @@
 @property (strong,nonatomic) NSString* brand_name;
 @property (strong,nonatomic) NSString* stock;
 @property (strong,nonatomic) NSString* publish_time;
-
+@property (strong,nonatomic) NSString* offer_code;
 @end

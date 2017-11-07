@@ -58,7 +58,7 @@
             //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
             [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_PRODUCTLIST]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
                 if (error == nil) {
-                    if ([[responseObj valueForKey:API_Status] integerValue] == 1){
+                    if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
     
                         NSArray *tempAray = [responseObj valueForKey:@"product"];
                         [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -66,13 +66,14 @@
                             Product* c = [[Product alloc] init  ];
                             
                             [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
-                                [c setValue:obj forKey:(NSString *)key];
+                                [CommonFunction checkForNull:obj] ;
+                                [c setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
                             }];
                             
                             [arrProducts addObject:c];
                         }];
                         [_tblView reloadData];
-                        if([[responseObj valueForKey:@"message"] isEqualToString:@"Product not found"]){
+                        if(arrProducts.count == 0){
                             _tblView.hidden = true;
                             [CommonFunction addNoDataLabel:self.view];
                         }

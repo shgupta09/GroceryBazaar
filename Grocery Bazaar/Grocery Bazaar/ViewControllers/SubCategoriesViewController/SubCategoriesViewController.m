@@ -20,12 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setData];
-     [CommonFunction addNoDataLabel:self.view];
+//     [CommonFunction addNoDataLabel:self.view];
     // Do any additional setup after loading the view from its nib.
 }
 
 -(void)viewDidLayoutSubviews{
     loderObj.frame = self.view.frame;
+    if (_arrSubCategories.count==0) {
+        [CommonFunction addNoDataLabel:self.view];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -134,6 +137,7 @@
         _tblView.hidden = false;
     }else{
         _tblView.hidden = true;
+//        [CommonFunction addNoDataLabel:self.view];
        
     }
     return _arrSubCategories.count;
