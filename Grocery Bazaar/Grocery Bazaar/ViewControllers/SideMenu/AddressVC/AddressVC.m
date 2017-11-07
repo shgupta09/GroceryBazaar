@@ -37,6 +37,7 @@
         _txt_Country.text = _addressObj.country;
         [self textFieldEdit:false];
         [_btnadd setTitle:@"Edit" forState:UIControlStateNormal];
+        [CommonFunction setResignTapGestureToView:self.view andsender:self];
         [CommonFunction setNavToController:self title:@"Update Address" isCrossBusston:false isAddRightButton:false];
     }
     else{

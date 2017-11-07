@@ -23,6 +23,8 @@
 		5FD799C81FA20DA500746C93 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD799C61FA20DA500746C93 /* CategoryCollectionViewCell.m */; };
 		5FD799C91FA20DA500746C93 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FD799C71FA20DA500746C93 /* CategoryCollectionViewCell.xib */; };
 		7E68207B1AADCE3F9AD0D39A /* libPods-Grocery Bazaar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F87295F796482A6C6CD21B8 /* libPods-Grocery Bazaar.a */; };
+		9C0E19551FB071EE00BB65CE /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0E19531FB071EE00BB65CE /* ProfileVC.m */; };
+		9C0E19561FB071EE00BB65CE /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C0E19541FB071EE00BB65CE /* ProfileVC.xib */; };
 		9C1CFC061F8F32E7004675FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC051F8F32E7004675FE /* main.m */; };
 		9C1CFC091F8F32E7004675FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC081F8F32E7004675FE /* AppDelegate.m */; };
 		9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC101F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld */; };
@@ -86,6 +88,9 @@
 		5FD799C61FA20DA500746C93 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
 		5FD799C71FA20DA500746C93 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		86D4C7A63EA7312FBD1CAA20 /* Pods-Grocery Bazaar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery Bazaar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar.release.xcconfig"; sourceTree = "<group>"; };
+		9C0E19521FB071EE00BB65CE /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
+		9C0E19531FB071EE00BB65CE /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
+		9C0E19541FB071EE00BB65CE /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		9C1CFC011F8F32E6004675FE /* Grocery Bazaar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Bazaar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1CFC051F8F32E7004675FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C1CFC071F8F32E7004675FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -282,6 +287,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9C0E19511FB071E100BB65CE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9C0E19521FB071EE00BB65CE /* ProfileVC.h */,
+				9C0E19531FB071EE00BB65CE /* ProfileVC.m */,
+				9C0E19541FB071EE00BB65CE /* ProfileVC.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		9C1CFBF81F8F32E6004675FE = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +418,7 @@
 		9C1CFC521F8F3344004675FE /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				9C0E19511FB071E100BB65CE /* Profile */,
 				9CC97C1C1FA1E93600DB8C88 /* AddressVC */,
 				9C1CFC531F8F3344004675FE /* ReaeCell */,
 				9C1CFC571F8F3344004675FE /* RearViewController.h */,
@@ -549,6 +565,7 @@
 			files = (
 				9CC97C211FA1E94E00DB8C88 /* AddressVC.xib in Resources */,
 				9C1CFC171F8F32E7004675FE /* LaunchScreen.storyboard in Resources */,
+				9C0E19561FB071EE00BB65CE /* ProfileVC.xib in Resources */,
 				9C1CFC961F8F483C004675FE /* RegisterViewController.xib in Resources */,
 				D8C77BE01FA8EBF400066D10 /* AddressList.xib in Resources */,
 				9C1CFC141F8F32E7004675FE /* Assets.xcassets in Resources */,
@@ -651,6 +668,7 @@
 				9C1CFC641F8F3344004675FE /* CommonFunction.m in Sources */,
 				5F91588A1FA9A050002DA4C0 /* Category.m in Sources */,
 				D8C77BDF1FA8EBF400066D10 /* AddressList.m in Sources */,
+				9C0E19551FB071EE00BB65CE /* ProfileVC.m in Sources */,
 				9C1CFC661F8F3344004675FE /* CustomTextField.m in Sources */,
 				9C1CFC061F8F32E7004675FE /* main.m in Sources */,
 				5F91589E1FA9AC1E002DA4C0 /* SubCategory.m in Sources */,

@@ -36,4 +36,5 @@
 #import "ProductTableViewCell.h"
 #import "Product.h"
 #import "ProductListViewController.h"
+#import "ProfileVC.h"
 #endif /* PrefixHeader_pch */

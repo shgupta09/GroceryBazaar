@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      revealController = [self revealViewController];
-    titleArray  = [[NSArray alloc]initWithObjects:@"Address",@"Awareness",@"Logout", nil];
+    titleArray  = [[NSArray alloc]initWithObjects:@"Address",@"My Account",@"Logout", nil];
      [_tbl_View registerNib:[UINib nibWithNibName:@"RearCell" bundle:nil]forCellReuseIdentifier:@"RearCell"];
     _lbl_ShortName.text = [[NSString stringWithFormat:@"%@%@",[[CommonFunction getValueFromDefaultWithKey:loginfirstname] substringToIndex:1],[[CommonFunction getValueFromDefaultWithKey:loginlastname] substringToIndex:1]] uppercaseString];
     _round_View.layer.cornerRadius = _round_View.frame.size.height/2;
@@ -62,6 +62,8 @@
             }
                 break;
             case 1 :{
+                ProfileVC *addressVCObj = [[ProfileVC alloc]initWithNibName:@"ProfileVC" bundle:nil];
+                [self.navigationController pushViewController:addressVCObj animated:true];
             }
                 break;
             case 2 :{
