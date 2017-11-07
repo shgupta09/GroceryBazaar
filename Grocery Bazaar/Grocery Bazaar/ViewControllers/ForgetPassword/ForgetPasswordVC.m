@@ -96,7 +96,7 @@
             [self addLoder];
             [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_RESET_PASSWORD_URL]  postResponse:[parameter mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
                 if (error == nil) {
-                     if ([[responseObj valueForKey:API_Status] integerValue] == 1){
+                    if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
                         [self removeloder];
                         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:@"We have sent an email with link to reset your password, Please check your inbox!" preferredStyle:UIAlertControllerStyleAlert];
                         UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

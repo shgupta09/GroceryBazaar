@@ -213,7 +213,7 @@
                //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_CATEGORIES]  postResponse:nil postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
-                if ([[responseObj valueForKey:API_Status] integerValue] == 1){
+                if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
                     
                     NSArray *tempAray = [responseObj valueForKey:@"categories"];
                     [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -239,14 +239,17 @@
                         
                         [arrCategories addObject:categoryObj];
                     }];
-                    
+                    if (arrCategories.count== 0) {
+                        collectionView.hidden = true;
+                        [CommonFunction addNoDataLabel:self.view];
+                    }else{
                     [collectionView reloadData];
+                    }
+                    
+                    
                     
                 }
-                else{
-                    collectionView.hidden = true;
-                    [CommonFunction addNoDataLabel:self.view];
-                }
+                
                 [self removeloder];
                 
             }

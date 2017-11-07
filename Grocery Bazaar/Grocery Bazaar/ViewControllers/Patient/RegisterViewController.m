@@ -341,7 +341,7 @@ numberOfRowsInComponent:(NSInteger)component{
                 
        
                 
-                if ([[responseObj valueForKey:API_Status] integerValue] == 1){
+                 if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
                     
                     [self loginFunction];
                     

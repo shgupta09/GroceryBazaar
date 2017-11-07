@@ -519,8 +519,7 @@
 				TargetAttributes = {
 					9C1CFC001F8F32E6004675FE = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = MK5HXMKD83;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -771,7 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MK5HXMKD83;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -787,7 +786,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MK5HXMKD83;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

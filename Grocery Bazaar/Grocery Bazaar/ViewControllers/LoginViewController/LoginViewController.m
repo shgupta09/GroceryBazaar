@@ -26,8 +26,8 @@
     _btn_Register.layer.borderWidth = 2;
     _btn_Register.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
 
-    _txtPassword.text = @"Abc@123456";
-    _txtUsername.text = @"shag01@gmail.com";
+//    _txtPassword.text = @"Abc@123456";
+//    _txtUsername.text = @"shag01@gmail.com";
 
     // Do any additional setup after loading the view from its nib.
 
@@ -105,7 +105,7 @@
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_LOGIN_URL]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 
-                if ([[responseObj valueForKey:API_Status] integerValue] == 1){
+             if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
                    
                     
                     [self performBlock:^{
