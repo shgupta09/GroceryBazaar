@@ -10,6 +10,7 @@
 {
     LoderView *loderObj;
     NSMutableArray* arrProducts;
+    NSMutableArray* cartItemArray;
 }
 @end
 
@@ -42,7 +43,7 @@
     _tblView.estimatedRowHeight = 100;
     _tblView.multipleTouchEnabled = NO;
     [_tblView reloadData];
-    [CommonFunction setNavToController:self title:@"Address" isCrossBusston:false isAddRightButton:false];
+    [CommonFunction setNavToController:self title:@"Products" isCrossBusston:false isAddRightButton:false];
 }
 #pragma mark - Api Related Methods
 -(void)hitApiForProductList{
@@ -73,6 +74,7 @@
                             [arrProducts addObject:c];
                         }];
                         [_tblView reloadData];
+                        
                         if(arrProducts.count == 0){
                             _tblView.hidden = true;
                             [CommonFunction addNoDataLabel:self.view];
@@ -82,7 +84,7 @@
                         _tblView.hidden = true;
                         [CommonFunction addNoDataLabel:self.view];
                     }
-                    [self removeloder];
+                    [self hitApiForCartItems];
     
                 }
                 else {
@@ -100,6 +102,94 @@
             [self presentViewController:alertController animated:YES completion:nil];
         }
 }
+
+-(void)hitApiForCartItems{
+    if ([ CommonFunction reachability]) {
+        NSMutableDictionary *parameter = [NSMutableDictionary new];
+        
+        [parameter setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];
+        
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_CART_ITEMS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
+                    
+                    NSArray *tempAray = [responseObj valueForKey:@"cart"];
+                    [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        CartItem* productObj = [[CartItem alloc] init  ];
+                        
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            [productObj setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
+                        }];
+                        
+                        [[CartItem sharedInstance].myDataArray addObject:productObj];
+                    }];
+                    cartItemArray = [NSMutableArray new];
+                    cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
+                    [_tblView reloadData];
+                }
+                [self removeloder];
+                
+            }
+            else {
+                [self removeloder];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[error description] preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alertController addAction:ok];
+                [self presentViewController:alertController animated:YES completion:nil];
+            }
+        }];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network Error" message:@"No Network Access" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+}
+
+-(void)hitApiForAddToCart:(Product *)product{
+    [self addLoder];
+    if ([ CommonFunction reachability]) {
+        NSMutableDictionary *parameter = [NSMutableDictionary new];
+        
+        [parameter setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];
+        [parameter setValue:product.product_id forKey:@"product_id"];
+        
+        [parameter setObject:@"1" forKey:@"quantity"];
+
+
+        
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_ADD_TO_CART]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
+                    [[CartItem sharedInstance].myDataArray addObject:product];
+                    cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
+                    [_tblView reloadData];
+                    
+                }
+                [self removeloder];
+                
+            }
+            else {
+                [self removeloder];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[error description] preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alertController addAction:ok];
+                [self presentViewController:alertController animated:YES completion:nil];
+            }
+        }];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network Error" message:@"No Network Access" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+}
+
 
 #pragma mark - add loder
 
@@ -147,18 +237,37 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ProductTableViewCell *cell = [_tblView dequeueReusableCellWithIdentifier:@"ProductTableViewCell"];
-    Product *obj = [arrProducts objectAtIndex:indexPath.row];
-    cell.lblHeading.text = obj.product_name;
-    cell.lblPrice.text = obj.product_price;
-    cell.lblStock.text = obj.stock;
-    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.product_thum]] ;
+    Product *productObj = [arrProducts objectAtIndex:indexPath.row];
+    cell.lblHeading.text = productObj.product_name;
+    cell.lblPrice.text = productObj.product_price;
+    cell.lblStock.text = productObj.stock;
+    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:productObj.product_thum]] ;
     
+    
+    cell.btn_AddToCart.tintColor = [CommonFunction colorWithHexString:COLORCODE];
+    UIImage * image = [UIImage imageNamed:@"addButton"];
+    [cell.btn_AddToCart setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [cell.btn_AddToCart addTarget:self action:@selector(addToCart:) forControlEvents:UIControlEventTouchUpInside];
+    cell.btn_AddToCart.tag = indexPath.row;
+    
+    [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([((CartItem *)obj).product_id isEqualToString:productObj.product_id]) {
+            cell.btn_AddToCart.userInteractionEnabled = false;
+            UIImage * image = [UIImage imageNamed:@"check_active"];
+            [cell.btn_AddToCart setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        }
+    }];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     
     return cell;
     
+}
+
+-(void)addToCart:(UIButton *)sender{
+    
+    [self hitApiForAddToCart:[arrProducts objectAtIndex:sender.tag]];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

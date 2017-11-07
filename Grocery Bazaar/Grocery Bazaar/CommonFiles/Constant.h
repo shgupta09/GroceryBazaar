@@ -129,6 +129,9 @@ static NSString* const API_FOR_DELETE_ADDRESS = @"users/deladdress";
 static NSString* const API_FOR_CATEGORIES = @"product/categories";
 static NSString* const API_FOR_PRODUCTLIST = @"product/productbycategories";
 static NSString* const API_FOR_UPDATE_PROFILE = @"users/updateuser";
+static NSString* const API_FOR_CART_ITEMS = @"product/cart";
+static NSString* const API_FOR_ADD_TO_CART = @"product/addcart";
+static NSString* const API_FOR_DELETE_FROM_CART = @"product/deletecart";
 
 static NSString* const API_FOR_CHANGE_PASSWORD = @"users/updateuser";
 #endif /* Constant_h */ 

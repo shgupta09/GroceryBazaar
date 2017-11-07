@@ -10,5 +10,6 @@
 
 @interface HomeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *btn_Home;
+@property (weak, nonatomic) IBOutlet UIButton *btn_Cart;
 
 @end

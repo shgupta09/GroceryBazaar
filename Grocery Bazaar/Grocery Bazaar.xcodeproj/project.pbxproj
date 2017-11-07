@@ -62,6 +62,11 @@
 		D8C77BE41FA8EC2100066D10 /* AddessListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C77BE21FA8EC2100066D10 /* AddessListCell.m */; };
 		D8C77BE51FA8EC2100066D10 /* AddessListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C77BE31FA8EC2100066D10 /* AddessListCell.xib */; };
 		D8C77BE81FA8EEB900066D10 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C77BE71FA8EEB900066D10 /* Address.m */; };
+		D8F30A1D1FB2404C0083ADAF /* CartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F30A1C1FB2404C0083ADAF /* CartItem.m */; };
+		D8F30A271FB24AF40083ADAF /* CartVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F30A251FB24AF40083ADAF /* CartVCViewController.m */; };
+		D8F30A281FB24AF40083ADAF /* CartVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F30A261FB24AF40083ADAF /* CartVCViewController.xib */; };
+		D8F30A2D1FB24CCF0083ADAF /* CartCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F30A2B1FB24CCF0083ADAF /* CartCellTableViewCell.m */; };
+		D8F30A2E1FB24CCF0083ADAF /* CartCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F30A2C1FB24CCF0083ADAF /* CartCellTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +161,14 @@
 		D8C77BE31FA8EC2100066D10 /* AddessListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddessListCell.xib; sourceTree = "<group>"; };
 		D8C77BE61FA8EEB900066D10 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		D8C77BE71FA8EEB900066D10 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		D8F30A1B1FB2404C0083ADAF /* CartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartItem.h; sourceTree = "<group>"; };
+		D8F30A1C1FB2404C0083ADAF /* CartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartItem.m; sourceTree = "<group>"; };
+		D8F30A241FB24AF40083ADAF /* CartVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartVCViewController.h; sourceTree = "<group>"; };
+		D8F30A251FB24AF40083ADAF /* CartVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartVCViewController.m; sourceTree = "<group>"; };
+		D8F30A261FB24AF40083ADAF /* CartVCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartVCViewController.xib; sourceTree = "<group>"; };
+		D8F30A2A1FB24CCF0083ADAF /* CartCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartCellTableViewCell.h; sourceTree = "<group>"; };
+		D8F30A2B1FB24CCF0083ADAF /* CartCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartCellTableViewCell.m; sourceTree = "<group>"; };
+		D8F30A2C1FB24CCF0083ADAF /* CartCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartCellTableViewCell.xib; sourceTree = "<group>"; };
 		E4D4C68173C581AB44307385 /* Pods-Grocery Bazaar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grocery Bazaar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Grocery Bazaar/Pods-Grocery Bazaar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +213,8 @@
 				5F91589D1FA9AC1E002DA4C0 /* SubCategory.m */,
 				5F9158AB1FA9DA03002DA4C0 /* Product.h */,
 				5F9158AC1FA9DA03002DA4C0 /* Product.m */,
+				D8F30A1B1FB2404C0083ADAF /* CartItem.h */,
+				D8F30A1C1FB2404C0083ADAF /* CartItem.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -405,6 +420,7 @@
 		9C1CFC2C1F8F3344004675FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D8F30A231FB24AC90083ADAF /* CartVC */,
 				5F91589F1FA9D6FE002DA4C0 /* ProductListViewController */,
 				5F9158901FA9AA40002DA4C0 /* SubCategoriesViewController */,
 				9CC440D41F948E5100117801 /* ForgetPassword */,
@@ -534,6 +550,27 @@
 			path = AddressList;
 			sourceTree = "<group>";
 		};
+		D8F30A231FB24AC90083ADAF /* CartVC */ = {
+			isa = PBXGroup;
+			children = (
+				D8F30A291FB24CB00083ADAF /* CartCell */,
+				D8F30A241FB24AF40083ADAF /* CartVCViewController.h */,
+				D8F30A251FB24AF40083ADAF /* CartVCViewController.m */,
+				D8F30A261FB24AF40083ADAF /* CartVCViewController.xib */,
+			);
+			path = CartVC;
+			sourceTree = "<group>";
+		};
+		D8F30A291FB24CB00083ADAF /* CartCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8F30A2A1FB24CCF0083ADAF /* CartCellTableViewCell.h */,
+				D8F30A2B1FB24CCF0083ADAF /* CartCellTableViewCell.m */,
+				D8F30A2C1FB24CCF0083ADAF /* CartCellTableViewCell.xib */,
+			);
+			path = CartCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -568,7 +605,7 @@
 				TargetAttributes = {
 					9C1CFC001F8F32E6004675FE = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = MK5HXMKD83;
+						DevelopmentTeam = L6C9ZLGJJD;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -605,6 +642,7 @@
 				D8C77BE51FA8EC2100066D10 /* AddessListCell.xib in Resources */,
 				9C1CFC681F8F3344004675FE /* LoderView.xib in Resources */,
 				9C0E19621FB1CB9C00BB65CE /* OrderListVC.xib in Resources */,
+				D8F30A281FB24AF40083ADAF /* CartVCViewController.xib in Resources */,
 				5F9158AA1FA9D821002DA4C0 /* ProductTableViewCell.xib in Resources */,
 				9CC440D91F948E5100117801 /* ForgetPasswordVC.xib in Resources */,
 				9C1CFC811F8F3344004675FE /* RearViewController.xib in Resources */,
@@ -613,6 +651,7 @@
 				5F91589B1FA9AAD6002DA4C0 /* CategoryTableViewCell.xib in Resources */,
 				9C1CFC6F1F8F3344004675FE /* HomeViewController.xib in Resources */,
 				9C0E195C1FB1BB6400BB65CE /* ChangePasswordVC.xib in Resources */,
+				D8F30A2E1FB24CCF0083ADAF /* CartCellTableViewCell.xib in Resources */,
 				5FD799C91FA20DA500746C93 /* CategoryCollectionViewCell.xib in Resources */,
 				9C1CFC7F1F8F3344004675FE /* RearCell.xib in Resources */,
 				5F9158A41FA9D717002DA4C0 /* ProductListViewController.xib in Resources */,
@@ -706,10 +745,13 @@
 				D8C77BDF1FA8EBF400066D10 /* AddressList.m in Sources */,
 				9C0E19551FB071EE00BB65CE /* ProfileVC.m in Sources */,
 				9C1CFC661F8F3344004675FE /* CustomTextField.m in Sources */,
+				D8F30A271FB24AF40083ADAF /* CartVCViewController.m in Sources */,
 				9C1CFC061F8F32E7004675FE /* main.m in Sources */,
 				5F91589E1FA9AC1E002DA4C0 /* SubCategory.m in Sources */,
+				D8F30A2D1FB24CCF0083ADAF /* CartCellTableViewCell.m in Sources */,
 				5F9158A31FA9D717002DA4C0 /* ProductListViewController.m in Sources */,
 				9C1CFC7E1F8F3344004675FE /* RearCell.m in Sources */,
+				D8F30A1D1FB2404C0083ADAF /* CartItem.m in Sources */,
 				9C0E195B1FB1BB6400BB65CE /* ChangePasswordVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -826,7 +868,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MK5HXMKD83;
+				DEVELOPMENT_TEAM = L6C9ZLGJJD;
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -844,7 +886,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MK5HXMKD83;
+				DEVELOPMENT_TEAM = L6C9ZLGJJD;
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

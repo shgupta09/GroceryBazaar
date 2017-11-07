@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="btn_Cart" destination="cxM-Za-Cxc" id="Nro-0Z-KeO"/>
                 <outlet property="btn_Home" destination="6nq-SV-KH4" id="cgl-OL-DXN"/>
                 <outlet property="collectionView" destination="j7e-V5-kzO" id="RW0-Xk-Ywi"/>
                 <outlet property="pageControl" destination="DZK-wX-snd" id="cI3-4U-o5C"/>
@@ -89,12 +90,28 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxM-Za-Cxc">
+                    <rect key="frame" x="325" y="26" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="u3o-jw-ses"/>
+                        <constraint firstAttribute="width" constant="30" id="v4U-Pz-R56"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" backgroundImage="Cart"/>
+                    <connections>
+                        <action selector="btnAction_CArt:" destination="-1" eventType="touchUpInside" id="sJE-zX-Axc"/>
+                        <action selector="revealAction:" destination="-1" eventType="touchUpInside" id="oBl-2M-WDo"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="FXF-hS-kH4" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.25" id="28X-8c-DBz"/>
                 <constraint firstAttribute="trailing" secondItem="FXF-hS-kH4" secondAttribute="trailing" id="3ii-Fg-r3d"/>
+                <constraint firstItem="cxM-Za-Cxc" firstAttribute="centerY" secondItem="6nq-SV-KH4" secondAttribute="centerY" id="508-eL-pOp"/>
                 <constraint firstItem="I6J-jj-Q9N" firstAttribute="centerY" secondItem="6nq-SV-KH4" secondAttribute="centerY" id="6jD-Kk-lRw"/>
+                <constraint firstAttribute="trailing" secondItem="cxM-Za-Cxc" secondAttribute="trailing" constant="20" id="875-aR-ITO"/>
                 <constraint firstItem="j7e-V5-kzO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9lp-L7-qcU"/>
                 <constraint firstItem="j7e-V5-kzO" firstAttribute="top" secondItem="f5L-Ol-xel" secondAttribute="bottom" constant="1" id="DQd-fB-Fmf"/>
                 <constraint firstAttribute="trailing" secondItem="j7e-V5-kzO" secondAttribute="trailing" id="Fks-EV-ajv"/>
@@ -122,6 +139,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Cart" width="50" height="50"/>
         <image name="Icon---Menu" width="42" height="34"/>
     </resources>
 </document>

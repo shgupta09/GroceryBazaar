@@ -28,8 +28,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _btn_Home.tintColor = [CommonFunction colorWithHexString:COLORCODE];
+     _btn_Cart.tintColor = [CommonFunction colorWithHexString:COLORCODE];
     UIImage * image = [UIImage imageNamed:@"Icon---Menu"];
     [_btn_Home setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    image = [UIImage imageNamed:@"Cart"];
+    [_btn_Cart setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
    
      isOpen = false;
     revealController = [self revealViewController];
@@ -205,6 +208,14 @@
     vc.catObj = [arrCategories objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:vc animated:true];
     
+    
+    
+}
+#pragma mark - btnAction
+- (IBAction)btnAction_CArt:(id)sender {
+    CartVCViewController* vc = [[CartVCViewController alloc ] initWithNibName:@"CartVCViewController" bundle:nil];
+    
+      [self.navigationController pushViewController:vc animated:true];
     
     
 }

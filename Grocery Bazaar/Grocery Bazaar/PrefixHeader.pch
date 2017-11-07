@@ -38,4 +38,7 @@
 #import "ProductListViewController.h"
 #import "ProfileVC.h"
 #import "ChangePasswordVC.h"
+#import "CartVCViewController.h"
+#import "CartCellTableViewCell.h"
+#import "CartItem.h"
 #endif /* PrefixHeader_pch */
