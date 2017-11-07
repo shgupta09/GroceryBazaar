@@ -23,6 +23,10 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+}
 
 -(void)setData{
  
@@ -140,7 +144,14 @@
     self.view.userInteractionEnabled = NO;
     //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
     loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
-    loderObj.lbl_title.text = @"Fetching Data...";
+    
+    if (_isFromList) {
+         loderObj.lbl_title.text = @"Updating...";
+    }
+    else{
+     loderObj.lbl_title.text = @"Adding address...";
+    }
+   
     [self.view addSubview:loderObj];
 }
 

@@ -25,6 +25,8 @@
 		7E68207B1AADCE3F9AD0D39A /* libPods-Grocery Bazaar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F87295F796482A6C6CD21B8 /* libPods-Grocery Bazaar.a */; };
 		9C0E19551FB071EE00BB65CE /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0E19531FB071EE00BB65CE /* ProfileVC.m */; };
 		9C0E19561FB071EE00BB65CE /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C0E19541FB071EE00BB65CE /* ProfileVC.xib */; };
+		9C0E195B1FB1BB6400BB65CE /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0E19591FB1BB6400BB65CE /* ChangePasswordVC.m */; };
+		9C0E195C1FB1BB6400BB65CE /* ChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C0E195A1FB1BB6400BB65CE /* ChangePasswordVC.xib */; };
 		9C1CFC061F8F32E7004675FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC051F8F32E7004675FE /* main.m */; };
 		9C1CFC091F8F32E7004675FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC081F8F32E7004675FE /* AppDelegate.m */; };
 		9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC101F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld */; };
@@ -91,6 +93,9 @@
 		9C0E19521FB071EE00BB65CE /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
 		9C0E19531FB071EE00BB65CE /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
 		9C0E19541FB071EE00BB65CE /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		9C0E19581FB1BB6400BB65CE /* ChangePasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordVC.h; sourceTree = "<group>"; };
+		9C0E19591FB1BB6400BB65CE /* ChangePasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
+		9C0E195A1FB1BB6400BB65CE /* ChangePasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordVC.xib; sourceTree = "<group>"; };
 		9C1CFC011F8F32E6004675FE /* Grocery Bazaar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Bazaar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1CFC051F8F32E7004675FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C1CFC071F8F32E7004675FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -297,6 +302,16 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		9C0E19571FB1BB5200BB65CE /* CahngePassword */ = {
+			isa = PBXGroup;
+			children = (
+				9C0E19581FB1BB6400BB65CE /* ChangePasswordVC.h */,
+				9C0E19591FB1BB6400BB65CE /* ChangePasswordVC.m */,
+				9C0E195A1FB1BB6400BB65CE /* ChangePasswordVC.xib */,
+			);
+			path = CahngePassword;
+			sourceTree = "<group>";
+		};
 		9C1CFBF81F8F32E6004675FE = {
 			isa = PBXGroup;
 			children = (
@@ -379,7 +394,6 @@
 				5F9158901FA9AA40002DA4C0 /* SubCategoriesViewController */,
 				9CC440D41F948E5100117801 /* ForgetPassword */,
 				9C1CFC8C1F8F483C004675FE /* Patient */,
-				9C1CFC351F8F3344004675FE /* HomeViewController */,
 				9C1CFC391F8F3344004675FE /* LoginViewController */,
 				9C1CFC3D1F8F3344004675FE /* RegisterViewController */,
 				9C1CFC521F8F3344004675FE /* SideMenu */,
@@ -395,7 +409,8 @@
 				9C1CFC371F8F3344004675FE /* HomeViewController.m */,
 				9C1CFC381F8F3344004675FE /* HomeViewController.xib */,
 			);
-			path = HomeViewController;
+			name = HomeViewController;
+			path = ../../HomeViewController;
 			sourceTree = "<group>";
 		};
 		9C1CFC391F8F3344004675FE /* LoginViewController */ = {
@@ -418,6 +433,7 @@
 		9C1CFC521F8F3344004675FE /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				9C0E19571FB1BB5200BB65CE /* CahngePassword */,
 				9C0E19511FB071E100BB65CE /* Profile */,
 				9CC97C1C1FA1E93600DB8C88 /* AddressVC */,
 				9C1CFC531F8F3344004675FE /* ReaeCell */,
@@ -484,6 +500,7 @@
 				9CC97C1D1FA1E94E00DB8C88 /* AddressVC.h */,
 				9CC97C1E1FA1E94E00DB8C88 /* AddressVC.m */,
 				9CC97C1F1FA1E94E00DB8C88 /* AddressVC.xib */,
+				9C1CFC351F8F3344004675FE /* HomeViewController */,
 			);
 			path = AddressVC;
 			sourceTree = "<group>";
@@ -578,6 +595,7 @@
 				9C1CFC841F8F3344004675FE /* SplashScreenViewController.xib in Resources */,
 				5F91589B1FA9AAD6002DA4C0 /* CategoryTableViewCell.xib in Resources */,
 				9C1CFC6F1F8F3344004675FE /* HomeViewController.xib in Resources */,
+				9C0E195C1FB1BB6400BB65CE /* ChangePasswordVC.xib in Resources */,
 				5FD799C91FA20DA500746C93 /* CategoryCollectionViewCell.xib in Resources */,
 				9C1CFC7F1F8F3344004675FE /* RearCell.xib in Resources */,
 				5F9158A41FA9D717002DA4C0 /* ProductListViewController.xib in Resources */,
@@ -674,6 +692,7 @@
 				5F91589E1FA9AC1E002DA4C0 /* SubCategory.m in Sources */,
 				5F9158A31FA9D717002DA4C0 /* ProductListViewController.m in Sources */,
 				9C1CFC7E1F8F3344004675FE /* RearCell.m in Sources */,
+				9C0E195B1FB1BB6400BB65CE /* ChangePasswordVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

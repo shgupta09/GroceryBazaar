@@ -374,6 +374,7 @@
     lbl.text = @"No Data";
     lbl.textColor = [UIColor blackColor];
     lbl.textAlignment = NSTextAlignmentCenter;
+    lbl.tag = 500;
     [view addSubview:lbl];
 }
 

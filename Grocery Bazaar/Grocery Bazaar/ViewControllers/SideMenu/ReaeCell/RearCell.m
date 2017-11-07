@@ -14,7 +14,7 @@
     [super awakeFromNib];
     // Initialization code
 //    _imgView.layer.cornerRadius = 20;
-    _imgView.layer.masksToBounds = true;
+//    _imgView.layer.masksToBounds = true;
     
     
 }

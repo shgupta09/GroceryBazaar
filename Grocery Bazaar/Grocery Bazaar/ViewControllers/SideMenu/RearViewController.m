@@ -11,7 +11,7 @@
 @interface RearViewController ()
 {
     NSArray *titleArray;
-     SWRevealViewController *revealController;
+    SWRevealViewController *revealController;
 
 }
 @end
@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      revealController = [self revealViewController];
-    titleArray  = [[NSArray alloc]initWithObjects:@"Address",@"My Account",@"Logout", nil];
+    titleArray  = [[NSArray alloc]initWithObjects:@"Address",@"My Account",@"Change Password",@"Logout", nil];
      [_tbl_View registerNib:[UINib nibWithNibName:@"RearCell" bundle:nil]forCellReuseIdentifier:@"RearCell"];
   
     _round_View.layer.cornerRadius = _round_View.frame.size.height/2;
@@ -52,13 +52,18 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
    
-    return 3;
+    return titleArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RearCell *rearCell = [_tbl_View dequeueReusableCellWithIdentifier:@"RearCell"];
     rearCell.lbl_title.text = [titleArray objectAtIndex:indexPath.row];
+    rearCell.imgView.tintColor = [CommonFunction colorWithHexString:COLORCODE];
+    UIImage * image = [UIImage imageNamed:[titleArray objectAtIndex:indexPath.row]];
+    [rearCell.imgView setImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+  
     rearCell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return rearCell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -78,6 +83,11 @@
             }
                 break;
             case 2 :{
+                ChangePasswordVC *changeVCObj = [[ChangePasswordVC alloc]initWithNibName:@"ChangePasswordVC" bundle:nil];
+                [self.navigationController pushViewController:changeVCObj animated:true];
+            }
+                break;
+            case 3 :{
                 UIAlertController * alert=   [UIAlertController
                                               alertControllerWithTitle:@"Logout"
                                               message:@"Are you sure you want to Logout?"

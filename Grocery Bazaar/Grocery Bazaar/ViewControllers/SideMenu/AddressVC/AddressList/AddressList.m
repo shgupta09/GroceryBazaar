@@ -37,6 +37,15 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    for (UIView *i in self.view.subviews){
+        if([i isKindOfClass:[UILabel class]]){
+            UILabel *newLbl = (UILabel *)i;
+            if(newLbl.tag == 500){
+                [i removeFromSuperview];
+                /// Write your code
+            }
+        }
+    }
     [self hitApiForAddressList];
 
 }
@@ -95,6 +104,58 @@
                        [self removeloder];
                    }
                
+                [self removeloder];
+                
+            }
+            else {
+                [self removeloder];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[error description] preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alertController addAction:ok];
+                [self presentViewController:alertController animated:YES completion:nil];
+            }
+        }];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network Error" message:@"No Network Access" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+}
+
+
+-(void)hitApiForAddress:(NSIndexPath *)indexPath{
+
+    if ([ CommonFunction reachability]) {
+           NSMutableDictionary *parameter = [NSMutableDictionary new];
+        
+        [parameter setValue:((Address *)[listArray objectAtIndex:indexPath.row]).address_id forKey:@"address_id"];
+        
+        [self addLoder];
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_DELETE_ADDRESS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
+                    
+                    [listArray removeObjectAtIndex:indexPath.row];
+                    
+                    if (listArray.count == 0){
+                        _tbl_List.hidden = true;
+                        [CommonFunction addNoDataLabel:self.view];
+                    }else{
+                        [_tbl_List reloadData];
+                    }
+                }
+                else
+                {
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    [alertController addAction:ok];
+                    //                    [CommonFunction storeValueInDefault:@"true" andKey:@"isLoggedIn"];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                    [self removeloder];
+                }
+                
                 [self removeloder];
                 
             }
@@ -173,12 +234,34 @@
     
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *button = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+                                    {
+                                         [self hitApiForAddress:indexPath];
+                                    }];
+    button.backgroundColor = [CommonFunction colorWithHexString:COLORCODE]; //arbitrary color
+
+    return @[button];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     AddressVC *addressVCObj = [[AddressVC alloc]initWithNibName:@"AddressVC" bundle:nil];
     addressVCObj.isFromList = true;
     addressVCObj.addressObj = [listArray objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:addressVCObj animated:true];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //remove the deleted object from your data source.
+        //If your data source is an NSMutableArray, do this
+       
+    }
 }
 
 

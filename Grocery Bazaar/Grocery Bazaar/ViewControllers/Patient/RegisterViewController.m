@@ -391,7 +391,7 @@ numberOfRowsInComponent:(NSInteger)component{
                     
                     
                     [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:true];
-
+                    [CommonFunction storeValueInDefault:[CommonFunction trimString:_txtPassword.text] andKey:loginPassword];
                     [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginfirstname] andKey:loginfirstname];
                     [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:@"id"] andKey:loginuserId];
                     [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserGender] andKey:loginuserGender];

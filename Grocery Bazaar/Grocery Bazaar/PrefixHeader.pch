@@ -37,4 +37,5 @@
 #import "Product.h"
 #import "ProductListViewController.h"
 #import "ProfileVC.h"
+#import "ChangePasswordVC.h"
 #endif /* PrefixHeader_pch */

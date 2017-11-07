@@ -108,7 +108,7 @@
 //testing url
 
 
-static NSString* const COLORCODE = @"#d22424";
+static NSString* const COLORCODE = @"#E91463";
 static NSString* const COLORCODE_FOR_TEXTFIELD = @"#00b1dd";
 
 
@@ -125,9 +125,10 @@ static NSString* const API_FOR_ADDRESS = @"http://postalpincode.in/api/pincode/"
 static NSString* const API_FOR_CREATE_ADDRESS = @"users/createaddress";
 static NSString* const API_FOR_Update_ADDRESS = @"users/updateaddress";
 static NSString* const API_FOR_ADDRESS_LIST = @"users/addresses";
+static NSString* const API_FOR_DELETE_ADDRESS = @"users/deladdress";
 static NSString* const API_FOR_CATEGORIES = @"product/categories";
 static NSString* const API_FOR_PRODUCTLIST = @"product/productbycategories";
 static NSString* const API_FOR_UPDATE_PROFILE = @"users/updateuser";
 
-
+static NSString* const API_FOR_CHANGE_PASSWORD = @"users/updateuser";
 #endif /* Constant_h */ 
