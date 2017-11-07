@@ -27,6 +27,8 @@
 		9C0E19561FB071EE00BB65CE /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C0E19541FB071EE00BB65CE /* ProfileVC.xib */; };
 		9C0E195B1FB1BB6400BB65CE /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0E19591FB1BB6400BB65CE /* ChangePasswordVC.m */; };
 		9C0E195C1FB1BB6400BB65CE /* ChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C0E195A1FB1BB6400BB65CE /* ChangePasswordVC.xib */; };
+		9C0E19611FB1CB9C00BB65CE /* OrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0E195F1FB1CB9C00BB65CE /* OrderListVC.m */; };
+		9C0E19621FB1CB9C00BB65CE /* OrderListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C0E19601FB1CB9C00BB65CE /* OrderListVC.xib */; };
 		9C1CFC061F8F32E7004675FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC051F8F32E7004675FE /* main.m */; };
 		9C1CFC091F8F32E7004675FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC081F8F32E7004675FE /* AppDelegate.m */; };
 		9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC101F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld */; };
@@ -96,6 +98,9 @@
 		9C0E19581FB1BB6400BB65CE /* ChangePasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordVC.h; sourceTree = "<group>"; };
 		9C0E19591FB1BB6400BB65CE /* ChangePasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
 		9C0E195A1FB1BB6400BB65CE /* ChangePasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordVC.xib; sourceTree = "<group>"; };
+		9C0E195E1FB1CB9C00BB65CE /* OrderListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListVC.h; sourceTree = "<group>"; };
+		9C0E195F1FB1CB9C00BB65CE /* OrderListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListVC.m; sourceTree = "<group>"; };
+		9C0E19601FB1CB9C00BB65CE /* OrderListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListVC.xib; sourceTree = "<group>"; };
 		9C1CFC011F8F32E6004675FE /* Grocery Bazaar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Bazaar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1CFC051F8F32E7004675FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C1CFC071F8F32E7004675FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -312,6 +317,16 @@
 			path = CahngePassword;
 			sourceTree = "<group>";
 		};
+		9C0E195D1FB1CAF100BB65CE /* My Order */ = {
+			isa = PBXGroup;
+			children = (
+				9C0E195E1FB1CB9C00BB65CE /* OrderListVC.h */,
+				9C0E195F1FB1CB9C00BB65CE /* OrderListVC.m */,
+				9C0E19601FB1CB9C00BB65CE /* OrderListVC.xib */,
+			);
+			path = "My Order";
+			sourceTree = "<group>";
+		};
 		9C1CFBF81F8F32E6004675FE = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +448,7 @@
 		9C1CFC521F8F3344004675FE /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				9C0E195D1FB1CAF100BB65CE /* My Order */,
 				9C0E19571FB1BB5200BB65CE /* CahngePassword */,
 				9C0E19511FB071E100BB65CE /* Profile */,
 				9CC97C1C1FA1E93600DB8C88 /* AddressVC */,
@@ -588,6 +604,7 @@
 				9C1CFC141F8F32E7004675FE /* Assets.xcassets in Resources */,
 				D8C77BE51FA8EC2100066D10 /* AddessListCell.xib in Resources */,
 				9C1CFC681F8F3344004675FE /* LoderView.xib in Resources */,
+				9C0E19621FB1CB9C00BB65CE /* OrderListVC.xib in Resources */,
 				5F9158AA1FA9D821002DA4C0 /* ProductTableViewCell.xib in Resources */,
 				9CC440D91F948E5100117801 /* ForgetPasswordVC.xib in Resources */,
 				9C1CFC811F8F3344004675FE /* RearViewController.xib in Resources */,
@@ -676,6 +693,7 @@
 				5FD799C01FA1FE7200746C93 /* OfferView.m in Sources */,
 				5F9158941FA9AA90002DA4C0 /* SubCategoriesViewController.m in Sources */,
 				5FD799C81FA20DA500746C93 /* CategoryCollectionViewCell.m in Sources */,
+				9C0E19611FB1CB9C00BB65CE /* OrderListVC.m in Sources */,
 				9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */,
 				9CC97C201FA1E94E00DB8C88 /* AddressVC.m in Sources */,
 				D8C77BE81FA8EEB900066D10 /* Address.m in Sources */,
