@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileVC : UIViewController
+@interface ProfileVC : UIViewController<UITextFieldDelegate,UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet CustomTextField *txt_FirstName;
 @property (weak, nonatomic) IBOutlet CustomTextField *txt_LastName;
 @property (weak, nonatomic) IBOutlet CustomTextField *txt_DOB;

@@ -27,6 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _btn_Home.tintColor = [CommonFunction colorWithHexString:COLORCODE];
+    UIImage * image = [UIImage imageNamed:@"Icon---Menu"];
+    [_btn_Home setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+   
      isOpen = false;
     revealController = [self revealViewController];
     singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self

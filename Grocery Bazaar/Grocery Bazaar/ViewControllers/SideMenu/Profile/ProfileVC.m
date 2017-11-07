@@ -35,6 +35,91 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)resignResponder{
+    [CommonFunction resignFirstResponderOfAView:self.view];
+}
+
+-(void)setData{
+    departDate = [NSDate date];
+    pickerArray = [[NSArray alloc]initWithObjects:@"Male",
+                   @"Female",@"Other", nil];
+        isEdit = false;
+      [CommonFunction setResignTapGestureToView:self.view andsender:self];
+        _txt_FirstName.text = [CommonFunction getValueFromDefaultWithKey:loginfirstname];
+        _txt_LastName.text = [CommonFunction getValueFromDefaultWithKey:loginlastname];
+        _txt_DOB.text = [CommonFunction getValueFromDefaultWithKey:loginDob];
+        _txt_Gender.text = [CommonFunction getValueFromDefaultWithKey:loginuserGender];
+        _txt_Mobile.text = [CommonFunction getValueFromDefaultWithKey:loginPrimarymobile];
+        [self textFieldEdit:false];
+        [_btnadd setTitle:@"Edit" forState:UIControlStateNormal];
+        [CommonFunction setNavToController:self title:@"My Account" isCrossBusston:false isAddRightButton:false];
+   
+    
+}
+-(void)textFieldEdit:(BOOL)boolValue{
+    _txt_FirstName.userInteractionEnabled = boolValue;
+    _txt_LastName.userInteractionEnabled = boolValue;
+    _btnDOB.userInteractionEnabled = boolValue;
+    _btnGender.userInteractionEnabled = boolValue;
+    _txt_DOB.userInteractionEnabled = boolValue;
+    _txt_Gender.userInteractionEnabled = boolValue;
+    _txt_Mobile.userInteractionEnabled = boolValue;
+}
+#pragma mark - TextField Delegate
+//! for change the current first responder
+//! @param: TextField
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    UIResponder *nextResponder = [self.view viewWithTag:textField.tag+1];
+    if(nextResponder){
+        [nextResponder becomeFirstResponder];   //next responder found
+    } else {
+        [CommonFunction resignFirstResponderOfAView:self.view];
+    }
+    return NO;
+}
+#pragma mark - picker data Source
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    
+    return 1;
+}
+-(NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component{
+    
+    return [pickerArray count];
+}
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:
+(NSInteger)row forComponent:(NSInteger)component{
+    return [pickerArray objectAtIndex:row];
+    
+}
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:
+(NSInteger)row inComponent:(NSInteger)component{
+    _txt_Gender.text = [pickerArray objectAtIndex:row];
+}
+
+#pragma mark - add loder
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
+    loderObj.lbl_title.text = @"Fetching Data...";
+    [self.view addSubview:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
+}
+#pragma mark -btnAction
+
+-(void)doneForPicker:(id)sender{
+    [viewOverPicker removeFromSuperview];
+    
+}
 - (IBAction)btnAction_DOB:(id)sender {
     [CommonFunction resignFirstResponderOfAView:self.view];
     pickerForDate = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150)];
@@ -52,7 +137,7 @@
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Done" style:UIBarButtonItemStyleDone
                                    target:self action:@selector(doneForPicker:)];
-    doneButton.tintColor = [CommonFunction colorWithHexString:@"f7a41e"];
+    doneButton.tintColor = [UIColor whiteColor];
     UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     toolBar = [[UIToolbar alloc]initWithFrame:
                CGRectMake(0, self.view.frame.size.height-
@@ -132,56 +217,6 @@
     
 }
 
--(void)setData{
-        isEdit = false;
-      [CommonFunction setResignTapGestureToView:self.view andsender:self];
-        _txt_FirstName.text = [CommonFunction getValueFromDefaultWithKey:loginfirstname];
-        _txt_LastName.text = [CommonFunction getValueFromDefaultWithKey:loginlastname];
-        _txt_DOB.text = [CommonFunction getValueFromDefaultWithKey:loginDob];
-        _txt_Gender.text = [CommonFunction getValueFromDefaultWithKey:loginuserGender];
-        _txt_Mobile.text = [CommonFunction getValueFromDefaultWithKey:loginPrimarymobile];
-        [self textFieldEdit:false];
-        [_btnadd setTitle:@"Edit" forState:UIControlStateNormal];
-        [CommonFunction setNavToController:self title:@"My Account" isCrossBusston:false isAddRightButton:false];
-   
-    
-}
--(void)textFieldEdit:(BOOL)boolValue{
-    _txt_FirstName.userInteractionEnabled = boolValue;
-    _txt_LastName.userInteractionEnabled = boolValue;
-    _btnDOB.userInteractionEnabled = boolValue;
-    _btnGender.userInteractionEnabled = boolValue;
-    _txt_Mobile.userInteractionEnabled = boolValue;
-}
-#pragma mark - TextField Delegate
-//! for change the current first responder
-//! @param: TextField
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    UIResponder *nextResponder = [self.view viewWithTag:textField.tag+1];
-    if(nextResponder){
-        [nextResponder becomeFirstResponder];   //next responder found
-    } else {
-        [CommonFunction resignFirstResponderOfAView:self.view];
-    }
-    return NO;
-}
-#pragma mark - add loder
-
--(void)addLoder{
-    self.view.userInteractionEnabled = NO;
-    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-    loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
-    loderObj.lbl_title.text = @"Fetching Data...";
-    [self.view addSubview:loderObj];
-}
-
--(void)removeloder{
-    //loderObj = nil;
-    [loderObj removeFromSuperview];
-    //[loaderView removeFromSuperview];
-    self.view.userInteractionEnabled = YES;
-}
-#pragma mark -btnAction
 -(void)backTapped{
     [self.navigationController popViewControllerAnimated:true];
     
@@ -201,7 +236,7 @@
     NSDictionary *dictForValidation = [self validateData];
     if (![[dictForValidation valueForKey:BoolValueKey] isEqualToString:@"0"]){
         NSLog(@"Successful");
-        [self addressApiIsAdd:isAdd];
+        [self hitApiForUpdateProfile];
         [CommonFunction resignFirstResponderOfAView:self.view];
     }
     else{
@@ -213,7 +248,7 @@
 }
 
 #pragma mark - api related
--(void) addressApiIsAdd:(BOOL)isadd{
+-(void)hitApiForUpdateProfile{
 
     NSMutableDictionary *parameterDict = [[NSMutableDictionary alloc]init];
     [parameterDict setValue:[CommonFunction trimString:_txt_FirstName.text] forKey:loginfirstname];
@@ -223,22 +258,20 @@
     [parameterDict setValue:[CommonFunction trimString:_txt_Gender.text] forKey:loginuserGender];
     [parameterDict setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];    
     
-    NSString *urlstring;
-    if (isadd) {
-        urlstring = API_FOR_CREATE_ADDRESS;
-    }else{
-        urlstring = API_FOR_Update_ADDRESS;
-    }
-    if ([ CommonFunction reachability]) {
+   if ([ CommonFunction reachability]) {
         [self addLoder];
         
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,urlstring]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_UPDATE_PROFILE]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 
-                if ([[responseObj valueForKey:API_Status] integerValue] == 1){
+                 if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
                     
-                    
+                     [CommonFunction storeValueInDefault:[CommonFunction trimString:_txt_FirstName.text] andKey:loginfirstname];
+                     [CommonFunction storeValueInDefault:[CommonFunction trimString:_txt_Gender.text] andKey:loginuserGender];
+                     [CommonFunction storeValueInDefault:[CommonFunction trimString:_txt_LastName.text] andKey:loginlastname];
+                     [CommonFunction storeValueInDefault:[CommonFunction trimString:_txt_Mobile.text] andKey:loginPrimarymobile];
+                     [CommonFunction storeValueInDefault:[CommonFunction trimString:_txt_DOB.text] andKey:loginDob];
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[responseObj valueForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         [self.navigationController popViewControllerAnimated:true];

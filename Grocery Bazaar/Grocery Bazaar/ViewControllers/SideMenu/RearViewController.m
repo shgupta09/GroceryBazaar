@@ -23,13 +23,24 @@
      revealController = [self revealViewController];
     titleArray  = [[NSArray alloc]initWithObjects:@"Address",@"My Account",@"Logout", nil];
      [_tbl_View registerNib:[UINib nibWithNibName:@"RearCell" bundle:nil]forCellReuseIdentifier:@"RearCell"];
-    _lbl_ShortName.text = [[NSString stringWithFormat:@"%@%@",[[CommonFunction getValueFromDefaultWithKey:loginfirstname] substringToIndex:1],[[CommonFunction getValueFromDefaultWithKey:loginlastname] substringToIndex:1]] uppercaseString];
+  
     _round_View.layer.cornerRadius = _round_View.frame.size.height/2;
     _round_View.clipsToBounds = true;
-    _lbl_Name.text = [NSString stringWithFormat:@"%@ %@",[CommonFunction getValueFromDefaultWithKey:loginfirstname],[CommonFunction getValueFromDefaultWithKey:loginlastname]];
+   
+    // Do any additional setup after loading the view from its nib.
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self setData];
+}
+
+-(void)setData{
+    _lbl_ShortName.text = [[NSString stringWithFormat:@"%@%@",[[CommonFunction getValueFromDefaultWithKey:loginfirstname] substringToIndex:1],[[CommonFunction getValueFromDefaultWithKey:loginlastname] substringToIndex:1]] uppercaseString];
+    _lbl_Name.text = [[NSString stringWithFormat:@"%@ %@",[[CommonFunction getValueFromDefaultWithKey:loginfirstname] capitalizedString],[CommonFunction getValueFromDefaultWithKey:loginlastname]] capitalizedString];
     _lbl_number.text = [CommonFunction getValueFromDefaultWithKey:loginPrimarymobile];
     _lbl_address.text = [CommonFunction getValueFromDefaultWithKey:loginemail];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

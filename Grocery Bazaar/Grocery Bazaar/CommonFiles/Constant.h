@@ -127,6 +127,7 @@ static NSString* const API_FOR_Update_ADDRESS = @"users/updateaddress";
 static NSString* const API_FOR_ADDRESS_LIST = @"users/addresses";
 static NSString* const API_FOR_CATEGORIES = @"product/categories";
 static NSString* const API_FOR_PRODUCTLIST = @"product/productbycategories";
+static NSString* const API_FOR_UPDATE_PROFILE = @"users/updateuser";
 
 
 #endif /* Constant_h */ 

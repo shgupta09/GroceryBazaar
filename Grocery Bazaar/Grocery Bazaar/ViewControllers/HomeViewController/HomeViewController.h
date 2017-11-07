@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *btn_Home;
 
 @end

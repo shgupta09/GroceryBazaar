@@ -130,7 +130,7 @@ numberOfRowsInComponent:(NSInteger)component{
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Done" style:UIBarButtonItemStyleDone
                                    target:self action:@selector(doneForPicker:)];
-    doneButton.tintColor = [CommonFunction colorWithHexString:@"f7a41e"];
+    doneButton.tintColor = [UIColor whiteColor];
     UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     toolBar = [[UIToolbar alloc]initWithFrame:
                CGRectMake(0, self.view.frame.size.height-
@@ -349,7 +349,7 @@ numberOfRowsInComponent:(NSInteger)component{
                 }
                 else
                 {
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
                     [alertController addAction:ok];
                     //                    [CommonFunction storeValueInDefault:@"true" andKey:@"isLoggedIn"];
@@ -386,19 +386,19 @@ numberOfRowsInComponent:(NSInteger)component{
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_LOGIN_URL]  postResponse:[parameterDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 
-                if ([responseObj valueForKey:@"status"] ){
+                if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
                     
                     
                     
                     [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:true];
-                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginlastname]  andKey:loginlastname];
-                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserId] andKey:loginuserId];
-                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserType] andKey:loginuserType];
-                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserGender] andKey:loginuserGender];
-                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuseIsComplete] andKey:loginuseIsComplete];
-                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginemail] andKey:loginemail];
-                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginUserToken] andKey:loginUserToken];
-                        [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginfirstname] andKey:loginfirstname];
+
+                    [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginfirstname] andKey:loginfirstname];
+                    [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:@"id"] andKey:loginuserId];
+                    [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginuserGender] andKey:loginuserGender];
+                    [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginemail] andKey:loginemail];
+                    [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginlastname] andKey:loginlastname];
+                    [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:loginPrimarymobile] andKey:loginPrimarymobile];
+                    [CommonFunction storeValueInDefault:[[responseObj objectForKey:loginUser] valueForKey:@"dob"] andKey:loginDob];
                     [self setHomeScreen];
                     
                         [self resignResponder];

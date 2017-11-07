@@ -57,9 +57,24 @@
 //                                    action:@selector(backTapped)];
     UIBarButtonItem *dashboard;
     if (IsCross){
-     dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:viewController action:@selector(backTapped)];
+        UIButton *imageButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 22, 22)];
+        
+        imageButton.tintColor = [UIColor whiteColor];
+        UIImage * image = [UIImage imageNamed:@"back"];
+        [imageButton setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        [imageButton addTarget:viewController action:@selector(backTapped) forControlEvents:UIControlEventAllEvents];
+        
+        dashboard = [[UIBarButtonItem alloc]initWithCustomView:imageButton];
     }else{
-   dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:viewController action:@selector(backTapped)];
+        UIButton *imageButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 22, 22)];
+        imageButton.tintColor = [UIColor whiteColor];
+        UIImage * image = [UIImage imageNamed:@"back"];
+        [imageButton setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        
+        [imageButton addTarget:viewController action:@selector(backTapped) forControlEvents:UIControlEventAllEvents];
+        
+        dashboard = [[UIBarButtonItem alloc]initWithCustomView:imageButton];
+
     }
     dashboard.tintColor = [UIColor colorWithRed:233.0f/255.0f green:141.0f/255.0f blue:25.0f/255.0f alpha:1];
     dashboard.tintColor = [UIColor whiteColor];
@@ -358,7 +373,7 @@
     lbl.center = view.center;
     lbl.text = @"No Data";
     lbl.textColor = [UIColor blackColor];
-    lbl.textAlignment = NSTextAlignmentLeft;
+    lbl.textAlignment = NSTextAlignmentCenter;
     [view addSubview:lbl];
 }
 

@@ -77,13 +77,24 @@
                        addressObj.landmark= [obj valueForKey:@"landmark"];
                        [listArray addObject:addressObj];
                    }];
-                   [_tbl_List reloadData];
-                   
+                  
+                  if (listArray.count == 0){
+                      _tbl_List.hidden = true;
+                      [CommonFunction addNoDataLabel:self.view];
+                  }else{
+                       [_tbl_List reloadData];
+                  }
                 }
-               else{
-                   _tbl_List.hidden = true;
-                   [CommonFunction addNoDataLabel:self.view];
-               }
+               else
+                   {
+                       UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
+                       UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                       [alertController addAction:ok];
+                       //                    [CommonFunction storeValueInDefault:@"true" andKey:@"isLoggedIn"];
+                       [self presentViewController:alertController animated:YES completion:nil];
+                       [self removeloder];
+                   }
+               
                 [self removeloder];
                 
             }
