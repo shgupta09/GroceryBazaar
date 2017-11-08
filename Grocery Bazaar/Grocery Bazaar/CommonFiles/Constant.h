@@ -46,6 +46,7 @@
 #define loginUserToken @"token"
 #define loginUser @"user"
 #define isLoggedIn @"isLoggedIn"
+#define isCartApiHIt @"isCardHIt"
 #define Nationality @"nationality"
 #define Residence @"residence"
 #define WorkPlace @"workplace"

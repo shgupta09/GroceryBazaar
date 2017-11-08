@@ -23,7 +23,15 @@
    
     
     [self setData];
-    [self hitApiForProductList];
+    if (![CommonFunction getBoolValueFromDefaultWithKey:isCartApiHIt]) {
+        [self hitApiForCartItems];
+    }else{
+        cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
+
+        
+        [self hitApiForProductList];
+
+    }
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -65,14 +73,28 @@
                         NSArray *tempAray = [responseObj valueForKey:@"product"];
                         [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                             
-                            Product* c = [[Product alloc] init  ];
+                            Product* c = [[Product alloc] init ];
                             c.selectedQuantity = @"1";
                             [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
                                 [CommonFunction checkForNull:obj] ;
                                 [c setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
+                                
                             }];
                             
                             [arrProducts addObject:c];
+                        }];
+                        
+                        [arrProducts enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                            NSLog(@"%@", ((Product*)obj).product_id);
+                            [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj2, NSUInteger idx, BOOL * _Nonnull stop) {
+                                NSLog(@"%@",((CartItem *)obj2).product_id);
+
+                                if ([((CartItem *)obj2).product_cart_id isEqualToString:((Product*)obj).product_id]) {
+                                    Product *productObj = obj;
+                                    productObj.selectedQuantity = ((CartItem *)obj2).quantity;
+                                    [arrProducts replaceObjectAtIndex:idx withObject:productObj];
+                                }
+                            }];
                         }];
                         [_tblView reloadData];
                         
@@ -80,12 +102,14 @@
                             _tblView.hidden = true;
                             [CommonFunction addNoDataLabel:self.view];
                         }
+                        [self removeloder];
                     }
                     else{
                         _tblView.hidden = true;
                         [CommonFunction addNoDataLabel:self.view];
                     }
-                    [self hitApiForCartItems];
+                   
+                   
     
                 }
                 else {
@@ -115,8 +139,9 @@
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_CART_ITEMS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
-                    
+                    [CommonFunction stroeBoolValueForKey:isCartApiHIt withBoolValue:true];
                     NSArray *tempAray = [responseObj valueForKey:@"cart"];
+                   [[CartItem sharedInstance].myDataArray removeAllObjects];
                     [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         
                         CartItem* productObj = [[CartItem alloc] init  ];
@@ -129,7 +154,7 @@
                     }];
                     cartItemArray = [NSMutableArray new];
                     cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
-                    [_tblView reloadData];
+                    [self hitApiForProductList];
                 }
                 [self removeloder];
                 
@@ -158,7 +183,7 @@
         [parameter setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];
         [parameter setValue:product.product_id forKey:@"product_id"];
         
-        [parameter setObject:@"1" forKey:@"quantity"];
+        [parameter setObject:product.selectedQuantity forKey:@"quantity"];
 
 
         
@@ -167,9 +192,12 @@
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_ADD_TO_CART]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
-                    [[CartItem sharedInstance].myDataArray addObject:product];
-                    cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
-                    [_tblView reloadData];
+                    
+                    [CommonFunction stroeBoolValueForKey:isCartApiHIt withBoolValue:false];
+//                    [[CartItem sharedInstance].myDataArray addObject:product];
+//                    cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
+                    [self hitApiForCartItems];
+//                    [_tblView reloadData];
                     
                 }
                 [self removeloder];
@@ -241,25 +269,34 @@
     Product *productObj = [arrProducts objectAtIndex:indexPath.row];
     cell.lblHeading.text = productObj.product_name;
     cell.lblPrice.text = productObj.product_price;
-    cell.lblStock.text = productObj.stock;
+    
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:productObj.product_thum]] ;
     
+     UIImage * image = [UIImage imageNamed:@"addButton"];
     
-    cell.btn_AddToCart.tintColor = [CommonFunction colorWithHexString:COLORCODE];
-    UIImage * image = [UIImage imageNamed:@"addButton"];
-    [cell.btn_AddToCart setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [cell.btn_AddToCart addTarget:self action:@selector(addToCart:) forControlEvents:UIControlEventTouchUpInside];
-    cell.btn_AddToCart.tag = indexPath.row;
-    cell.btn_AddToCart.userInteractionEnabled = true;
-    [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([((CartItem *)obj).product_id isEqualToString:productObj.product_id]) {
-            cell.btn_AddToCart.userInteractionEnabled = false;
-            UIImage * image = [UIImage imageNamed:@"check_active"];
-            [cell.btn_AddToCart setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-        }else{
-        }
-    }];
-     cell.lbl_Quantity.text = productObj.selectedQuantity;
+    if ([self isItemFromCart:productObj.product_id]) {
+        cell.btn_AddToCart.tintColor = [CommonFunction colorWithHexString:COLORCODE];
+
+        cell.btn_AddToCart.userInteractionEnabled = false;
+        image = [UIImage imageNamed:@"check_active"];
+        [cell.btn_AddToCart setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        CartItem *tempObj = ((CartItem *)[self getItemFromCart:productObj.product_id]);
+        cell.lbl_Quantity.text = tempObj.quantity;
+        productObj.selectedQuantity = tempObj.quantity;
+        
+
+    }else{
+        
+        cell.btn_AddToCart.tintColor = [CommonFunction colorWithHexString:COLORCODE];
+        image = [UIImage imageNamed:@"addButton"];
+        [cell.btn_AddToCart setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        [cell.btn_AddToCart addTarget:self action:@selector(addToCart:) forControlEvents:UIControlEventTouchUpInside];
+        cell.btn_AddToCart.tag = indexPath.row;
+        cell.btn_AddToCart.userInteractionEnabled = true;
+
+        cell.lbl_Quantity.text = productObj.selectedQuantity;
+        
+    }
     cell.btnPlus.layer.cornerRadius = cell.btnPlus.frame.size.width/2;
     cell.btnPlus.clipsToBounds = true;
     cell.btnPlus.tintColor = [CommonFunction colorWithHexString:COLORCODE];
@@ -289,12 +326,37 @@
     return cell;
     
 }
+-(BOOL)isItemFromCart:(NSString *)productId{
+   
+    for (int i = 0; i<cartItemArray.count; i++) {
+        CartItem *obj = [cartItemArray objectAtIndex:i];
+        if ([productId isEqualToString:obj.product_id]) {
+            return true;
+        }
+    }
+
+            return false;
+}
+
+-(CartItem *)getItemFromCart:(NSString *)productId{
+    CartItem *obj;
+    for (int i = 0; i<cartItemArray.count; i++) {
+        obj = [cartItemArray objectAtIndex:i];
+        if ([productId isEqualToString:obj.product_id]) {
+            return obj;
+        }
+    }
+    
+    return obj;
+}
 
 -(void)plusBtnAction:(UIButton *)sender{
     
+    
     if ([((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity integerValue]<[((Product *)[arrProducts objectAtIndex:sender.tag]).stock integerValue]) {
-        ((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity = [NSString stringWithFormat:@"%d", ([((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity integerValue]+1)];
-        Product *proDuctObj = [arrProducts objectAtIndex:sender.tag];
+         Product *proDuctObj = [arrProducts objectAtIndex:sender.tag];
+        proDuctObj.selectedQuantity = [NSString stringWithFormat:@"%d", ([((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity integerValue]+1)];
+       
         [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([((CartItem *)(obj)).product_id isEqualToString:proDuctObj.product_id]) {
                 [cartItemArray removeObject:obj];
@@ -318,7 +380,10 @@
 -(void)minusBtnAction:(UIButton *)sender{
     
     if ([((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity integerValue]>1) {
-        ((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity = [NSString stringWithFormat:@"%d", ([((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity integerValue]-1)];
+        NSString *str =[NSString stringWithFormat:@"%d", ([((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity integerValue]-1)];
+        ((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity = str;
+        
+        
         Product *proDuctObj = [arrProducts objectAtIndex:sender.tag];
         [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([((CartItem *)(obj)).product_id isEqualToString:proDuctObj.product_id]) {

@@ -31,6 +31,9 @@
     cartItemArray = [NSMutableArray new];
     cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
     [CommonFunction setNavToController:self title:@"Cart" isCrossBusston:false isAddRightButton:false];
+    if (![CommonFunction getBoolValueFromDefaultWithKey:isCartApiHIt]) {
+        [self hitApiForCartItems];
+    }
 }
 
 
@@ -140,6 +143,39 @@
 }
 
 #pragma mark- Api Related
+-(void)hitApiForCartItems{
+    if ([ CommonFunction reachability]) {
+        NSMutableDictionary *parameter = [NSMutableDictionary new];
+        
+        [parameter setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];
+        
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_CART_ITEMS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
+                    [CommonFunction stroeBoolValueForKey:isCartApiHIt withBoolValue:true];
+                    NSArray *tempAray = [responseObj valueForKey:@"cart"];
+                    [[CartItem sharedInstance].myDataArray removeAllObjects];
+                    [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        CartItem* productObj = [[CartItem alloc] init  ];
+                        
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            [productObj setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
+                        }];
+                        [[CartItem sharedInstance].myDataArray addObject:productObj];
+                    }];
+                    [self setData];
+                    [_tblView reloadData];
+                }
+                
+            }
+            
+        }];
+    }
+}
+
 -(void)hitApiForDeleteFromCart:(CartItem *)cartItem{
     [self addLoder];
     if ([ CommonFunction reachability]) {
