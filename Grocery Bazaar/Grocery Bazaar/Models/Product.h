@@ -23,4 +23,5 @@
 @property (strong,nonatomic) NSString* stock;
 @property (strong,nonatomic) NSString* publish_time;
 @property (strong,nonatomic) NSString* offer_code;
+@property (strong,nonatomic) NSString* selectedQuantity;
 @end

@@ -11,4 +11,6 @@
 @interface CartVCViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (strong, nonatomic) IBOutlet UIView *popUpView;
+
 @end

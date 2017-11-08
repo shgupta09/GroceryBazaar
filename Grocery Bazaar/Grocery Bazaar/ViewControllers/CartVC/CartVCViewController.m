@@ -120,9 +120,15 @@
 }
 
 -(void)plusBtnAction:(UIButton *)sender{
+    CartItem *cartItemObj = [cartItemArray objectAtIndex:sender.tag];
+    
+    
+    
+    
 }
 
 -(void)minusBtnAction:(UIButton *)sender{
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
