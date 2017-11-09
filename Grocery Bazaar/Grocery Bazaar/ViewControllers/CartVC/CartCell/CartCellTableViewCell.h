@@ -14,10 +14,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbl_Product_Name;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_Product_Price;
 @property (weak, nonatomic) IBOutlet UIButton *btnCross;
-@property (weak, nonatomic) IBOutlet UIButton *btnPlus;
-@property (weak, nonatomic) IBOutlet UIButton *btnMinus;
-@property (weak, nonatomic) IBOutlet UILabel *lbl_Quantity;
-@property (weak, nonatomic) IBOutlet UIView *viewToRound;
-@property (weak, nonatomic) IBOutlet UIView *viewToRound2;
+@property (weak, nonatomic) IBOutlet UIButton *btnEdit;
+
+@property (weak, nonatomic) IBOutlet UILabel *lbl_CartQuantity;
+
+
 
 @end

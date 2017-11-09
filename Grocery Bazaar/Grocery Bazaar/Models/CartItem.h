@@ -15,6 +15,7 @@
 @property (strong,nonatomic) NSString* product_price;
 @property (strong,nonatomic) NSString* quantity;
 @property (strong,nonatomic) NSString* created_at;
+@property (strong,nonatomic) NSString* stock;
 @property(nonatomic, strong) NSMutableArray *myDataArray;
 
 

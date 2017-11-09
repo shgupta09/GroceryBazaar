@@ -33,4 +33,5 @@ static CartItem* _sharedInstance = nil;
     }
     return theArray;
 }
+
 @end

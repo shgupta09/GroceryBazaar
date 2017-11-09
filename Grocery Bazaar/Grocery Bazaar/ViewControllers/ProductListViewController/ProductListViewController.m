@@ -149,7 +149,7 @@
                         [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
                             [productObj setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
                         }];
-                        
+                        productObj.stock = @"5";
                         [[CartItem sharedInstance].myDataArray addObject:productObj];
                     }];
                     cartItemArray = [NSMutableArray new];
@@ -355,6 +355,8 @@
     
     if ([((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity integerValue]<[((Product *)[arrProducts objectAtIndex:sender.tag]).stock integerValue]) {
          Product *proDuctObj = [arrProducts objectAtIndex:sender.tag];
+        
+        
         proDuctObj.selectedQuantity = [NSString stringWithFormat:@"%d", ([((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity integerValue]+1)];
        
         [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

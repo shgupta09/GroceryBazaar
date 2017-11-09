@@ -11,6 +11,7 @@
 @interface CartVCViewController (){
     LoderView *loderObj;
     NSMutableArray *cartItemArray;
+    CartItem *proDuctObjToAddCArt;
 }
 @end
 
@@ -22,6 +23,22 @@
 
     // Do any additional setup after loading the view from its nib.
 }
+
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+    if (cartItemArray.count==0) {
+        for (UIView *i in self.view.subviews){
+            if([i isKindOfClass:[UILabel class]]){
+                UILabel *newLbl = (UILabel *)i;
+                if(newLbl.tag == 500){
+                    [i removeFromSuperview];
+                    /// Write your code
+                }
+            }
+        }
+        [CommonFunction addNoDataLabel:self.view];
+    }
+}
 -(void)setData{
     
     [_tblView registerNib:[UINib nibWithNibName:@"CartCellTableViewCell" bundle:nil]forCellReuseIdentifier:@"CartCellTableViewCell"];
@@ -30,7 +47,35 @@
     _tblView.multipleTouchEnabled = NO;
     cartItemArray = [NSMutableArray new];
     cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
-    [CommonFunction setNavToController:self title:@"Cart" isCrossBusston:false isAddRightButton:false];
+     [CommonFunction setResignTapGestureToView:_popUpView andsender:self];
+    _tblView.hidden = false;
+    _checkOutView.hidden = false;
+    _btn_CheckOut.tintColor = [UIColor whiteColor];
+    UIImage *image = [UIImage imageNamed:@"CheckOut"];
+    [_btn_CheckOut setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    if (cartItemArray.count>1) {
+        [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart (%d items)",cartItemArray.count] isCrossBusston:false isAddRightButton:false];
+        __block int priceCheckout = 0;
+        [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            priceCheckout += [((CartItem *)obj).product_price intValue];
+        }];
+        _lbl_price_checkout.text = [NSString stringWithFormat:@"₹ %d",priceCheckout];
+    }else if(cartItemArray.count == 1){
+        __block int priceCheckout = 0;
+        [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            priceCheckout += [((CartItem *)obj).product_price intValue];
+        }];
+        _lbl_price_checkout.text = [NSString stringWithFormat:@"₹ %d",priceCheckout];
+        [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart (1 item)"] isCrossBusston:false isAddRightButton:false];
+
+    }else{
+        _checkOutView.hidden = true;
+        [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart"] isCrossBusston:false isAddRightButton:false];
+        _tblView.hidden = true;
+        [self viewDidLayoutSubviews];
+    }
+    _VIEWTOCLIP.layer.cornerRadius = 5;
+    _VIEWTOCLIP.clipsToBounds = true;
     if (![CommonFunction getBoolValueFromDefaultWithKey:isCartApiHIt]) {
         [self hitApiForCartItems];
     }
@@ -42,6 +87,66 @@
     
     [self.navigationController popViewControllerAnimated:true];
     
+}
+#pragma mark -other methods
+-(void)resignResponder{
+    [CommonFunction resignFirstResponderOfAView:self.view];
+    if ([_popUpView isDescendantOfView:self.view]) {
+        [_popUpView removeFromSuperview];
+    }
+}
+
+- (IBAction)btnAction_CheckOut:(id)sender {
+    
+    
+
+}
+
+-(void)editBtnAction:(UIButton *)sender{
+  
+    
+    proDuctObjToAddCArt = [CartItem new];
+    proDuctObjToAddCArt.product_cart_id =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).product_cart_id;
+    proDuctObjToAddCArt.product_id =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]). product_id;
+    proDuctObjToAddCArt.quantity =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]). quantity;
+    proDuctObjToAddCArt.product_name =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).product_name;
+    proDuctObjToAddCArt.product_price =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).product_price;
+    proDuctObjToAddCArt.created_at =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).created_at;
+    proDuctObjToAddCArt.stock =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).stock;
+
+    _lbl_productName.text = proDuctObjToAddCArt.product_name;
+    _lbl_price.text = proDuctObjToAddCArt.product_price;
+    _lbl_Quantity.text = proDuctObjToAddCArt.quantity;
+    
+    _btnPlus.layer.cornerRadius = _btnPlus.frame.size.width/2;
+    _btnPlus.clipsToBounds = true;
+    _btnPlus.tintColor = [CommonFunction colorWithHexString:COLORCODE];
+    UIImage *image = [UIImage imageNamed:@"Cartadd2"];
+    [_btnPlus setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [_btnPlus addTarget:self action:@selector(plusBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    _btnPlus.tag = sender.tag;
+    
+    _btnMinus.tintColor = [CommonFunction colorWithHexString:COLORCODE];
+    _btnMinus.clipsToBounds = true;
+    _btnMinus.layer.cornerRadius = _btnMinus.frame.size.width/2;
+    image = [UIImage imageNamed:@"minus2"];
+    [_btnMinus setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [_btnMinus addTarget:self action:@selector(minusBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    _btnMinus.tag = sender.tag;
+    _viewToRound.clipsToBounds = true;
+    _viewToRound.layer.cornerRadius = _btnPlus.frame.size.width/2;
+    _viewToRound2.clipsToBounds = true;
+    _viewToRound2.layer.cornerRadius = _btnPlus.frame.size.width/2;
+    [[self popUpView] setAutoresizesSubviews:true];
+    [[self popUpView] setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+    CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) ;
+    frame.origin.y = 0.0f;
+    self.popUpView.center = CGPointMake(self.view.center.x, self.view.center.y);
+    [[self popUpView] setFrame:frame];
+    
+    
+ 
+    [self.view addSubview:_popUpView];
 }
 
 #pragma mark - add loder
@@ -82,7 +187,7 @@
     CartItem *productObj = [cartItemArray objectAtIndex:indexPath.row];
     cell.lbl_Product_Name.text = productObj.product_name;
     cell.lbl_Product_Price.text = productObj.product_price;
-    cell.lbl_Quantity.text = productObj.quantity;
+    cell.lbl_CartQuantity.text = productObj.quantity;
 //    [cell.imgView_Product sd_setImageWithURL:[NSURL URLWithString:productObj.product_cart_id]] ;
     
     
@@ -92,28 +197,13 @@
     [cell.btnCross addTarget:self action:@selector(crossBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     cell.btnCross.tag = indexPath.row;
     
+    cell.btnEdit.tintColor = [UIColor lightGrayColor];
+    image = [UIImage imageNamed:@"edit"];
+    [cell.btnEdit setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [cell.btnEdit addTarget:self action:@selector(editBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    cell.btnEdit.tag = indexPath.row;
     
-    cell.btnPlus.layer.cornerRadius = cell.btnPlus.frame.size.width/2;
-    cell.btnPlus.clipsToBounds = true;
-    cell.btnPlus.tintColor = [CommonFunction colorWithHexString:COLORCODE];
-    image = [UIImage imageNamed:@"Cartadd2"];
-    [cell.btnPlus setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [cell.btnPlus addTarget:self action:@selector(plusBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-    cell.btnPlus.tag = indexPath.row;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    cell.btnMinus.tintColor = [CommonFunction colorWithHexString:COLORCODE];
-    cell.btnMinus.clipsToBounds = true;
-    cell.btnMinus.layer.cornerRadius = cell.btnMinus.frame.size.width/2;
-    image = [UIImage imageNamed:@"minus2"];
-    [cell.btnMinus setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [cell.btnMinus addTarget:self action:@selector(minusBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-    cell.btnMinus.tag = indexPath.row;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.viewToRound.clipsToBounds = true;
-    cell.viewToRound.layer.cornerRadius = cell.btnMinus.frame.size.width/2;
-    cell.viewToRound2.clipsToBounds = true;
-    cell.viewToRound2.layer.cornerRadius = cell.btnMinus.frame.size.width/2;
     return cell;
     
 }
@@ -123,15 +213,46 @@
 }
 
 -(void)plusBtnAction:(UIButton *)sender{
-    CartItem *cartItemObj = [cartItemArray objectAtIndex:sender.tag];
     
     
-    
+    if ([((CartItem *)[cartItemArray objectAtIndex:sender.tag]).quantity integerValue]<[((CartItem *)[cartItemArray objectAtIndex:sender.tag]).stock integerValue]) {
+        
+        
+        proDuctObjToAddCArt.quantity = [NSString stringWithFormat:@"%d", ([((CartItem *)[cartItemArray objectAtIndex:sender.tag]).quantity integerValue]+1)];
+        _lbl_Quantity.text = proDuctObjToAddCArt.quantity;
+    }else{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"Upper limit reached" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+    }
     
 }
 
 -(void)minusBtnAction:(UIButton *)sender{
     
+    if ([((CartItem *)[cartItemArray objectAtIndex:sender.tag]).quantity integerValue]>1) {
+        NSString *str =[NSString stringWithFormat:@"%d", ([((CartItem *)[cartItemArray objectAtIndex:sender.tag]).quantity integerValue]-1)];
+        proDuctObjToAddCArt.quantity  = str;
+        _lbl_Quantity.text = proDuctObjToAddCArt.quantity;
+        
+    }else{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"Lower limit reached" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+    }
+}
+
+- (IBAction)doneBtnAction:(id)sender {
+    if (![proDuctObjToAddCArt.quantity isEqualToString:(((CartItem *)[cartItemArray objectAtIndex:((UIButton *)sender).tag])).quantity]) {
+        [self hitApiForAddToCart:proDuctObjToAddCArt];
+
+    }else{
+        [self resignResponder];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -164,9 +285,11 @@
                         [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
                             [productObj setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
                         }];
+                        productObj.stock = @"5";
                         [[CartItem sharedInstance].myDataArray addObject:productObj];
                     }];
                     [self setData];
+                    [self resignResponder];
                     [_tblView reloadData];
                 }
                 
@@ -189,6 +312,7 @@
                 if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
                     [[CartItem sharedInstance].myDataArray removeObject:cartItem];
                     cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
+                    [self setData];
                     [_tblView reloadData];
                 }
                 [self removeloder];
@@ -209,7 +333,7 @@
         [self presentViewController:alertController animated:YES completion:nil];
     }
 }
--(void)hitApiForAddToCart:(Product *)product{
+-(void)hitApiForAddToCart:(CartItem *)product{
     [self addLoder];
     if ([ CommonFunction reachability]) {
         NSMutableDictionary *parameter = [NSMutableDictionary new];
@@ -217,7 +341,7 @@
         [parameter setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];
         [parameter setValue:product.product_id forKey:@"product_id"];
         
-        [parameter setObject:@"1" forKey:@"quantity"];
+        [parameter setObject:proDuctObjToAddCArt.quantity forKey:@"quantity"];
         
         
         
@@ -228,7 +352,8 @@
                 if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
                     [[CartItem sharedInstance].myDataArray addObject:product];
                     cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
-                    [_tblView reloadData];
+                    [self hitApiForCartItems];
+                    
                     
                 }
                 [self removeloder];
