@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnEdit;
 
 @property (weak, nonatomic) IBOutlet UILabel *lbl_CartQuantity;
+@property (weak, nonatomic) IBOutlet UIView *viewToClip;
 
 
 

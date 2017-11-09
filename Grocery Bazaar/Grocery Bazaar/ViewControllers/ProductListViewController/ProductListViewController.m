@@ -269,9 +269,11 @@
     Product *productObj = [arrProducts objectAtIndex:indexPath.row];
     cell.lblHeading.text = productObj.product_name;
     cell.lblPrice.text = productObj.product_price;
-    
+    cell.viewToClip.layer.cornerRadius = 10;
+    cell.viewToClip.clipsToBounds = true;
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:productObj.product_thum]] ;
-    
+    cell.imgView.layer.cornerRadius = 20;
+    cell.imgView.clipsToBounds =true;
      UIImage * image = [UIImage imageNamed:@"addButton"];
     
     if ([self isItemFromCart:productObj.product_id]) {

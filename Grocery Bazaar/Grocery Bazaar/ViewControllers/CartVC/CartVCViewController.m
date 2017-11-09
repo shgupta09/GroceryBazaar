@@ -190,7 +190,8 @@
     cell.lbl_CartQuantity.text = productObj.quantity;
 //    [cell.imgView_Product sd_setImageWithURL:[NSURL URLWithString:productObj.product_cart_id]] ;
     
-    
+    cell.viewToClip.layer.cornerRadius = 10;
+    cell.viewToClip.clipsToBounds = true;
     cell.btnCross.tintColor = [UIColor lightGrayColor];
     UIImage * image = [UIImage imageNamed:@"NavigationCross"];
     [cell.btnCross setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];

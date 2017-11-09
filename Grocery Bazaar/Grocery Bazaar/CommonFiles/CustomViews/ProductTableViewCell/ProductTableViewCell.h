@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblHeading;
 @property (weak, nonatomic) IBOutlet UIButton *btn_AddToCart;
 
+@property (weak, nonatomic) IBOutlet UIView *viewToClip;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnPlus;
 @property (weak, nonatomic) IBOutlet UIButton *btnMinus;

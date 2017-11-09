@@ -147,6 +147,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CategoryTableViewCell *cell = [_tblView dequeueReusableCellWithIdentifier:@"CategoryTableViewCell"];
+    cell.viewToClip.layer.cornerRadius = 10;
+    cell.viewToClip.clipsToBounds = true;
     SubCategory *obj = [_arrSubCategories objectAtIndex:indexPath.row];
     cell.lblHeading.text = obj.title;
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.subcat_icon]] ;

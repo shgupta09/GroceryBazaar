@@ -174,7 +174,8 @@
     
     Category* obj = [[Category alloc] init];
     obj = [arrCategories objectAtIndex:indexPath.row];
-    
+    cell.imgView.layer.cornerRadius = 10;
+    cell.imgView.clipsToBounds = true;
     CAShapeLayer* layering = [CAShapeLayer layer];
     [layering setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(10, 10, cell.frame.size.width-20, cell.frame.size.height-20)] CGPath ]];
 

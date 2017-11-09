@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoW-m8-gDt">
-                        <rect key="frame" x="0.0" y="10" width="320" height="89.5"/>
+                        <rect key="frame" x="10" y="10" width="300" height="89.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="19L-Fk-wqW">
                                 <rect key="frame" x="20" y="15" width="60" height="60"/>
@@ -29,26 +29,26 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYU-dr-D3T">
-                                <rect key="frame" x="285" y="0.0" width="25" height="25"/>
+                                <rect key="frame" x="265" y="0.0" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="6I1-qb-yZn"/>
                                     <constraint firstAttribute="width" constant="25" id="8CM-xj-nae"/>
                                 </constraints>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEo-bJ-XSC">
-                                <rect key="frame" x="88" y="15" width="187" height="21"/>
+                                <rect key="frame" x="88" y="15" width="167" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0l-Jd-YRG">
-                                <rect key="frame" x="104" y="54" width="70" height="21"/>
+                                <rect key="frame" x="104" y="54" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.9137254901960784" green="0.078431372549019607" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgZ-wr-8FV">
-                                <rect key="frame" x="285" y="50" width="25" height="25"/>
+                                <rect key="frame" x="265" y="50" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="LC3-mE-dp3"/>
                                     <constraint firstAttribute="height" constant="25" id="xFe-fY-b0S"/>
@@ -61,13 +61,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyI-m5-ccg">
-                                <rect key="frame" x="254" y="54" width="21" height="21"/>
+                                <rect key="frame" x="234" y="54" width="21" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.078431372550000003" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A52-TY-1Qu">
-                                <rect key="frame" x="184" y="54" width="65" height="21"/>
+                                <rect key="frame" x="164" y="54" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -103,8 +103,8 @@
                 <constraints>
                     <constraint firstItem="uoW-m8-gDt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Nnk-HP-qwI"/>
                     <constraint firstAttribute="bottom" secondItem="uoW-m8-gDt" secondAttribute="bottom" id="Z8o-u6-T2p"/>
-                    <constraint firstItem="uoW-m8-gDt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="v4l-g5-ZlL"/>
-                    <constraint firstAttribute="trailing" secondItem="uoW-m8-gDt" secondAttribute="trailing" id="xjk-oe-Q3x"/>
+                    <constraint firstItem="uoW-m8-gDt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="v4l-g5-ZlL"/>
+                    <constraint firstAttribute="trailing" secondItem="uoW-m8-gDt" secondAttribute="trailing" constant="10" id="xjk-oe-Q3x"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -114,6 +114,7 @@
                 <outlet property="lbl_CartQuantity" destination="IyI-m5-ccg" id="6Wm-B1-dLF"/>
                 <outlet property="lbl_Product_Name" destination="CEo-bJ-XSC" id="ww8-uG-pur"/>
                 <outlet property="lbl_Product_Price" destination="J0l-Jd-YRG" id="V7h-71-6Kf"/>
+                <outlet property="viewToClip" destination="uoW-m8-gDt" id="IzI-Aq-1cJ"/>
             </connections>
             <point key="canvasLocation" x="-151" y="73"/>
         </tableViewCell>
