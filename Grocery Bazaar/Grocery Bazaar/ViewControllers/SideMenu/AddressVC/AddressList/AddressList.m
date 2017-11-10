@@ -225,13 +225,25 @@
     cityCell.lbl_title.text = obj.address_line1;
     cityCell.lbl_subTitle.text = obj.landmark;
     cityCell.lbl_state.text = obj.state;
-    
+    cityCell.viewToClip.layer.cornerRadius = 10;
+    cityCell.viewToClip.clipsToBounds = true;
+    cityCell.btnEdit.tintColor = [UIColor lightGrayColor];
+    UIImage *image = [UIImage imageNamed:@"edit"];
+    [cityCell.btnEdit setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [cityCell.btnEdit addTarget:self action:@selector(editBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    cityCell.btnEdit.tag = indexPath.row;
     
     cityCell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     
     return cityCell;
     
+}
+-(void)editBtnAction:(UIButton *)sender{
+    AddressVC *addressVCObj = [[AddressVC alloc]initWithNibName:@"AddressVC" bundle:nil];
+    addressVCObj.isFromList = true;
+    addressVCObj.addressObj = [listArray objectAtIndex:sender.tag];
+    [self.navigationController pushViewController:addressVCObj animated:true];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -249,11 +261,10 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    AddressVC *addressVCObj = [[AddressVC alloc]initWithNibName:@"AddressVC" bundle:nil];
-    addressVCObj.isFromList = true;
-    addressVCObj.addressObj = [listArray objectAtIndex:indexPath.row];
-    [self.navigationController pushViewController:addressVCObj animated:true];
+    if (_isFromCheckout) {
+        
+    }
+   
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

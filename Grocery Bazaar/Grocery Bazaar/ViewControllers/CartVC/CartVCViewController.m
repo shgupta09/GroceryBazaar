@@ -97,7 +97,9 @@
 }
 
 - (IBAction)btnAction_CheckOut:(id)sender {
-    
+    AddressList *addressListObj = [[AddressList alloc]initWithNibName:@"AddressList" bundle:nil];
+    addressListObj.isFromCheckout = true;
+    [self.navigationController pushViewController:addressListObj animated:true];
     
 
 }
@@ -193,7 +195,7 @@
     cell.viewToClip.layer.cornerRadius = 10;
     cell.viewToClip.clipsToBounds = true;
     cell.btnCross.tintColor = [UIColor lightGrayColor];
-    UIImage * image = [UIImage imageNamed:@"NavigationCross"];
+    UIImage * image = [UIImage imageNamed:@"RemoveFromCart"];
     [cell.btnCross setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [cell.btnCross addTarget:self action:@selector(crossBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     cell.btnCross.tag = indexPath.row;

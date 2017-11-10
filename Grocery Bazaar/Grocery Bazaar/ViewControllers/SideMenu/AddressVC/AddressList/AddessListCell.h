@@ -12,5 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbl_state;
 
 @property (weak, nonatomic) IBOutlet UILabel *lbl_title;
+@property (weak, nonatomic) IBOutlet UIView *viewToClip;
+@property (weak, nonatomic) IBOutlet UIButton *btnEdit;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_subTitle;
 @end

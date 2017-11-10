@@ -280,7 +280,7 @@
         cell.btn_AddToCart.tintColor = [CommonFunction colorWithHexString:COLORCODE];
 
         cell.btn_AddToCart.userInteractionEnabled = false;
-        image = [UIImage imageNamed:@"check_active"];
+        image = [UIImage imageNamed:@"Cart"];
         [cell.btn_AddToCart setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         CartItem *tempObj = ((CartItem *)[self getItemFromCart:productObj.product_id]);
         cell.lbl_Quantity.text = tempObj.quantity;
@@ -290,7 +290,7 @@
     }else{
         
         cell.btn_AddToCart.tintColor = [CommonFunction colorWithHexString:COLORCODE];
-        image = [UIImage imageNamed:@"addButton"];
+        image = [UIImage imageNamed:@"AddToCartIcon"];
         [cell.btn_AddToCart setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         [cell.btn_AddToCart addTarget:self action:@selector(addToCart:) forControlEvents:UIControlEventTouchUpInside];
         cell.btn_AddToCart.tag = indexPath.row;

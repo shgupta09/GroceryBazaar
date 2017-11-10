@@ -10,5 +10,6 @@
 
 @interface AddressList : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tbl_List;
+@property( nonatomic) BOOL isFromCheckout;
 
 @end
