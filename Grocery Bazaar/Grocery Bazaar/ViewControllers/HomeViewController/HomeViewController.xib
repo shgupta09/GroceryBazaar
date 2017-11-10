@@ -15,6 +15,7 @@
                 <outlet property="btn_Cart" destination="cxM-Za-Cxc" id="Nro-0Z-KeO"/>
                 <outlet property="btn_Home" destination="6nq-SV-KH4" id="cgl-OL-DXN"/>
                 <outlet property="collectionView" destination="j7e-V5-kzO" id="RW0-Xk-Ywi"/>
+                <outlet property="lbl_count" destination="w1w-68-FeI" id="azM-yi-Igu"/>
                 <outlet property="pageControl" destination="DZK-wX-snd" id="cI3-4U-o5C"/>
                 <outlet property="scrlViewOffers" destination="FXF-hS-kH4" id="qC4-CE-kun"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -103,6 +104,17 @@
                         <action selector="btnAction_CArt:" destination="-1" eventType="touchUpInside" id="sJE-zX-Axc"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1w-68-FeI">
+                    <rect key="frame" x="339" y="24" width="12" height="12"/>
+                    <color key="backgroundColor" red="0.91372549020000005" green="0.078431372550000003" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="6h9-Jv-5sU"/>
+                        <constraint firstAttribute="height" constant="12" id="uoj-Hz-xDC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -115,6 +127,7 @@
                 <constraint firstItem="j7e-V5-kzO" firstAttribute="top" secondItem="f5L-Ol-xel" secondAttribute="bottom" constant="1" id="DQd-fB-Fmf"/>
                 <constraint firstAttribute="trailing" secondItem="j7e-V5-kzO" secondAttribute="trailing" id="Fks-EV-ajv"/>
                 <constraint firstItem="E1E-W4-fHR" firstAttribute="top" secondItem="6nq-SV-KH4" secondAttribute="bottom" constant="8" id="GLB-tk-mdS"/>
+                <constraint firstItem="cxM-Za-Cxc" firstAttribute="top" secondItem="w1w-68-FeI" secondAttribute="bottom" constant="-10" id="QBa-6I-a9e"/>
                 <constraint firstItem="FXF-hS-kH4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RAe-Ok-vTM"/>
                 <constraint firstAttribute="trailing" secondItem="f5L-Ol-xel" secondAttribute="trailing" id="RzU-nH-vMH"/>
                 <constraint firstAttribute="bottom" secondItem="j7e-V5-kzO" secondAttribute="bottom" id="UrT-qm-dUs"/>
@@ -123,6 +136,7 @@
                 <constraint firstItem="6nq-SV-KH4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="26" id="cI0-Xb-lPa"/>
                 <constraint firstItem="6nq-SV-KH4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="dT3-Hm-vEP"/>
                 <constraint firstItem="DZK-wX-snd" firstAttribute="top" secondItem="FXF-hS-kH4" secondAttribute="bottom" id="hhX-37-dW5"/>
+                <constraint firstItem="w1w-68-FeI" firstAttribute="centerX" secondItem="cxM-Za-Cxc" secondAttribute="centerX" constant="5" id="iWS-j9-AEl"/>
                 <constraint firstAttribute="trailing" secondItem="I6J-jj-Q9N" secondAttribute="trailing" constant="20" id="lPq-66-ukQ"/>
                 <constraint firstAttribute="trailing" secondItem="E1E-W4-fHR" secondAttribute="trailing" id="mPw-qK-Ovd"/>
                 <constraint firstItem="f5L-Ol-xel" firstAttribute="top" secondItem="DZK-wX-snd" secondAttribute="bottom" constant="14" id="ooe-KC-nuc"/>

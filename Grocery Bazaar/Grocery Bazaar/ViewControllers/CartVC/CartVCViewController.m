@@ -57,13 +57,13 @@
         [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart (%d items)",cartItemArray.count] isCrossBusston:false isAddRightButton:false];
         __block int priceCheckout = 0;
         [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            priceCheckout += [((CartItem *)obj).product_price intValue];
+            priceCheckout += ([((CartItem *)obj).product_price intValue] * [((CartItem *)obj).quantity integerValue]);
         }];
         _lbl_price_checkout.text = [NSString stringWithFormat:@"₹ %d",priceCheckout];
     }else if(cartItemArray.count == 1){
         __block int priceCheckout = 0;
         [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            priceCheckout += [((CartItem *)obj).product_price intValue];
+            priceCheckout += [((CartItem *)obj).product_price intValue]* [((CartItem *)obj).quantity integerValue];
         }];
         _lbl_price_checkout.text = [NSString stringWithFormat:@"₹ %d",priceCheckout];
         [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart (1 item)"] isCrossBusston:false isAddRightButton:false];
@@ -218,10 +218,10 @@
 -(void)plusBtnAction:(UIButton *)sender{
     
     
-    if ([((CartItem *)[cartItemArray objectAtIndex:sender.tag]).quantity integerValue]<[((CartItem *)[cartItemArray objectAtIndex:sender.tag]).stock integerValue]) {
+    if ([proDuctObjToAddCArt.quantity integerValue]<[((CartItem *)[cartItemArray objectAtIndex:sender.tag]).stock integerValue]) {
         
         
-        proDuctObjToAddCArt.quantity = [NSString stringWithFormat:@"%d", ([((CartItem *)[cartItemArray objectAtIndex:sender.tag]).quantity integerValue]+1)];
+        proDuctObjToAddCArt.quantity = [NSString stringWithFormat:@"%d", ([proDuctObjToAddCArt.quantity integerValue]+1)];
         _lbl_Quantity.text = proDuctObjToAddCArt.quantity;
     }else{
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"Upper limit reached" preferredStyle:UIAlertControllerStyleAlert];
@@ -235,8 +235,8 @@
 
 -(void)minusBtnAction:(UIButton *)sender{
     
-    if ([((CartItem *)[cartItemArray objectAtIndex:sender.tag]).quantity integerValue]>1) {
-        NSString *str =[NSString stringWithFormat:@"%d", ([((CartItem *)[cartItemArray objectAtIndex:sender.tag]).quantity integerValue]-1)];
+    if ([proDuctObjToAddCArt.quantity integerValue]>1) {
+        NSString *str =[NSString stringWithFormat:@"%d", ([proDuctObjToAddCArt.quantity integerValue]-1)];
         proDuctObjToAddCArt.quantity  = str;
         _lbl_Quantity.text = proDuctObjToAddCArt.quantity;
         

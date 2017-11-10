@@ -19,7 +19,7 @@
     __weak IBOutlet UIPageControl *pageControl;
     LoderView *loderObj;
     NSMutableArray* arrCategories;
-
+    NSMutableArray* cartItemArray;
 }
 @end
 
@@ -27,14 +27,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setData];
+    
+    
+}
+
+
+-(void)setData{
+    _lbl_count.layer.cornerRadius = _lbl_count.frame.size.width/2;
+    _lbl_count.clipsToBounds = true;
+    
     _btn_Home.tintColor = [CommonFunction colorWithHexString:COLORCODE];
-     _btn_Cart.tintColor = [CommonFunction colorWithHexString:COLORCODE];
+    _btn_Cart.tintColor = [CommonFunction colorWithHexString:COLORCODE];
     UIImage * image = [UIImage imageNamed:@"Icon---Menu"];
     [_btn_Home setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     image = [UIImage imageNamed:@"Cart"];
     [_btn_Cart setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-   
-     isOpen = false;
+    
+    isOpen = false;
     revealController = [self revealViewController];
     singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                               action:@selector(handleSingleTap:)];
@@ -43,13 +53,16 @@
                                                  name:@"LogoutNotification"
                                                object:nil];
     [collectionView registerNib:[UINib nibWithNibName:@"CategoryCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CategoryCollectionViewCell"];
-
+    
     arrCategories = [[NSMutableArray alloc] init];
     
     [self hitApiForCategories];
     
-    
+    if (![CommonFunction getBoolValueFromDefaultWithKey:isCartApiHIt]) {
+        [self hitApiForCartItems];
+    }
 }
+
 -(void)viewDidLayoutSubviews{
     loderObj.frame = self.view.frame;
 }
@@ -58,6 +71,15 @@
     [super viewWillAppear:true];
     self.navigationController.navigationBar.hidden = true;
      isOpen = false;
+    cartItemArray = [NSMutableArray new];
+    cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
+    if (cartItemArray.count>0) {
+        _lbl_count.text = [NSString stringWithFormat:@"%d",cartItemArray.count];
+        _lbl_count.hidden = false;
+    }else{
+        _lbl_count.hidden = true;
+    }
+    
 }
 
 -(void) viewDidAppear:(BOOL)animated{
@@ -222,6 +244,47 @@
 }
 
 #pragma mark - Api Related Methods
+
+-(void)hitApiForCartItems{
+    if ([ CommonFunction reachability]) {
+        NSMutableDictionary *parameter = [NSMutableDictionary new];
+        
+        [parameter setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];
+        
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_CART_ITEMS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
+                    [CommonFunction stroeBoolValueForKey:isCartApiHIt withBoolValue:true];
+                    NSArray *tempAray = [responseObj valueForKey:@"cart"];
+                    [[CartItem sharedInstance].myDataArray removeAllObjects];
+                    [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        CartItem* productObj = [[CartItem alloc] init  ];
+                        
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            [productObj setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
+                        }];
+                        productObj.stock = @"5";
+                        [[CartItem sharedInstance].myDataArray addObject:productObj];
+                    }];
+                    cartItemArray = [NSMutableArray new];
+                    cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
+                    [self viewWillAppear:true];
+                }
+               
+                
+            }
+            else {
+                
+               
+            }
+        }];
+    } else {
+       
+    }
+}
 -(void)hitApiForCategories{
     if ([ CommonFunction reachability]) {
         [self addLoder];

@@ -27,10 +27,7 @@
         [self hitApiForCartItems];
     }else{
         cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
-
-        
         [self hitApiForProductList];
-
     }
     // Do any additional setup after loading the view from its nib.
 }
@@ -57,7 +54,7 @@
 #pragma mark - Api Related Methods
 -(void)hitApiForProductList{
         if ([ CommonFunction reachability]) {
-            arrProducts = [NSMutableArray new];
+           
     
             NSMutableDictionary *parameter = [NSMutableDictionary new];
     
@@ -71,6 +68,7 @@
                     if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
     
                         NSArray *tempAray = [responseObj valueForKey:@"product"];
+                        arrProducts = [NSMutableArray new];
                         [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                             
                             Product* c = [[Product alloc] init ];
@@ -384,11 +382,11 @@
 -(void)minusBtnAction:(UIButton *)sender{
     
     if ([((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity integerValue]>1) {
-        NSString *str =[NSString stringWithFormat:@"%d", ([((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity integerValue]-1)];
-        ((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity = str;
-        
-        
         Product *proDuctObj = [arrProducts objectAtIndex:sender.tag];
+        
+        
+        proDuctObj.selectedQuantity = [NSString stringWithFormat:@"%d", ([((Product *)[arrProducts objectAtIndex:sender.tag]).selectedQuantity integerValue]-1)];
+        
         [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([((CartItem *)(obj)).product_id isEqualToString:proDuctObj.product_id]) {
                 [cartItemArray removeObject:obj];
