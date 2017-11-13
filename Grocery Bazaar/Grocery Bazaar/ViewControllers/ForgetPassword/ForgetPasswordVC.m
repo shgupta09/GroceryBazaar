@@ -23,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     isEmail = false;
-//    txt_Username.text = @"ravimahajan1409@gmail.com";
     [CommonFunction setNavToController:self title:@"Forgot Password" isCrossBusston:true isAddRightButton:false];
     innerView.layer.cornerRadius = 5;
     [txt_Username becomeFirstResponder];
@@ -91,7 +90,6 @@
     //UIView *loderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
         NSMutableDictionary *parameter = [[NSMutableDictionary alloc]init];
         [parameter setValue:[CommonFunction trimString:txt_Username.text] forKey:loginemail];
-    
         if ([ CommonFunction reachability]) {
             [self addLoder];
             [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_RESET_PASSWORD_URL]  postResponse:[parameter mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
@@ -102,7 +100,6 @@
                         UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                             [CommonFunction resignFirstResponderOfAView:self.view];
                             [self dismissViewControllerAnimated:true completion:nil];
-                            
                         }];
                         [alertController addAction:ok];
                         [self presentViewController:alertController animated:YES completion:nil];
@@ -122,17 +119,13 @@
             [alertController addAction:ok];
             [self presentViewController:alertController animated:YES completion:nil];
         }
-        
-        
-    }
+}
 
 
 #pragma mark - add loder
 -(void)addLoder{
     
     self.view.userInteractionEnabled = NO;
-    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-    
     loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
     loderObj.lbl_title.text = @"Please wait...";
     [self.view addSubview:loderObj];
@@ -140,9 +133,8 @@
 }
 
 -(void)removeloder{
-    //    loderObj = nil;
+    
     [loderObj removeFromSuperview];
-    //                [loaderView removeFromSuperview];
     self.view.userInteractionEnabled = YES;
 }
 

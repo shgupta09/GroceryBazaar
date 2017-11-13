@@ -57,11 +57,14 @@
 		9CC440D91F948E5100117801 /* ForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC440D71F948E5100117801 /* ForgetPasswordVC.xib */; };
 		9CC97C201FA1E94E00DB8C88 /* AddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC97C1E1FA1E94E00DB8C88 /* AddressVC.m */; };
 		9CC97C211FA1E94E00DB8C88 /* AddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC97C1F1FA1E94E00DB8C88 /* AddressVC.xib */; };
+		D855A9721FB6EFA700E20309 /* ConformationVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D855A9701FB6EFA700E20309 /* ConformationVCViewController.m */; };
+		D855A9731FB6EFA700E20309 /* ConformationVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D855A9711FB6EFA700E20309 /* ConformationVCViewController.xib */; };
 		D8C77BDF1FA8EBF400066D10 /* AddressList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C77BDD1FA8EBF400066D10 /* AddressList.m */; };
 		D8C77BE01FA8EBF400066D10 /* AddressList.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C77BDE1FA8EBF400066D10 /* AddressList.xib */; };
 		D8C77BE41FA8EC2100066D10 /* AddessListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C77BE21FA8EC2100066D10 /* AddessListCell.m */; };
 		D8C77BE51FA8EC2100066D10 /* AddessListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C77BE31FA8EC2100066D10 /* AddessListCell.xib */; };
 		D8C77BE81FA8EEB900066D10 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C77BE71FA8EEB900066D10 /* Address.m */; };
+		D8F1738A1FB5F9B7009B0EB7 /* CartApiHit.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F173891FB5F9B7009B0EB7 /* CartApiHit.m */; };
 		D8F30A1D1FB2404C0083ADAF /* CartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F30A1C1FB2404C0083ADAF /* CartItem.m */; };
 		D8F30A271FB24AF40083ADAF /* CartVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F30A251FB24AF40083ADAF /* CartVCViewController.m */; };
 		D8F30A281FB24AF40083ADAF /* CartVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F30A261FB24AF40083ADAF /* CartVCViewController.xib */; };
@@ -153,6 +156,9 @@
 		9CC97C1D1FA1E94E00DB8C88 /* AddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressVC.h; sourceTree = "<group>"; };
 		9CC97C1E1FA1E94E00DB8C88 /* AddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressVC.m; sourceTree = "<group>"; };
 		9CC97C1F1FA1E94E00DB8C88 /* AddressVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressVC.xib; sourceTree = "<group>"; };
+		D855A96F1FB6EFA700E20309 /* ConformationVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConformationVCViewController.h; sourceTree = "<group>"; };
+		D855A9701FB6EFA700E20309 /* ConformationVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConformationVCViewController.m; sourceTree = "<group>"; };
+		D855A9711FB6EFA700E20309 /* ConformationVCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConformationVCViewController.xib; sourceTree = "<group>"; };
 		D8C77BDC1FA8EBF400066D10 /* AddressList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressList.h; sourceTree = "<group>"; };
 		D8C77BDD1FA8EBF400066D10 /* AddressList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressList.m; sourceTree = "<group>"; };
 		D8C77BDE1FA8EBF400066D10 /* AddressList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressList.xib; sourceTree = "<group>"; };
@@ -161,6 +167,8 @@
 		D8C77BE31FA8EC2100066D10 /* AddessListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddessListCell.xib; sourceTree = "<group>"; };
 		D8C77BE61FA8EEB900066D10 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		D8C77BE71FA8EEB900066D10 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		D8F173881FB5F9B7009B0EB7 /* CartApiHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartApiHit.h; sourceTree = SOURCE_ROOT; };
+		D8F173891FB5F9B7009B0EB7 /* CartApiHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartApiHit.m; sourceTree = SOURCE_ROOT; };
 		D8F30A1B1FB2404C0083ADAF /* CartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartItem.h; sourceTree = "<group>"; };
 		D8F30A1C1FB2404C0083ADAF /* CartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartItem.m; sourceTree = "<group>"; };
 		D8F30A241FB24AF40083ADAF /* CartVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartVCViewController.h; sourceTree = "<group>"; };
@@ -196,6 +204,8 @@
 		5F0DB8B81FA1EB0900F8550F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				D8F173881FB5F9B7009B0EB7 /* CartApiHit.h */,
+				D8F173891FB5F9B7009B0EB7 /* CartApiHit.m */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -420,6 +430,7 @@
 		9C1CFC2C1F8F3344004675FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D855A96E1FB6EF7F00E20309 /* ConfirmationVC */,
 				D8F30A231FB24AC90083ADAF /* CartVC */,
 				5F91589F1FA9D6FE002DA4C0 /* ProductListViewController */,
 				5F9158901FA9AA40002DA4C0 /* SubCategoriesViewController */,
@@ -537,6 +548,16 @@
 			path = AddressVC;
 			sourceTree = "<group>";
 		};
+		D855A96E1FB6EF7F00E20309 /* ConfirmationVC */ = {
+			isa = PBXGroup;
+			children = (
+				D855A96F1FB6EFA700E20309 /* ConformationVCViewController.h */,
+				D855A9701FB6EFA700E20309 /* ConformationVCViewController.m */,
+				D855A9711FB6EFA700E20309 /* ConformationVCViewController.xib */,
+			);
+			path = ConfirmationVC;
+			sourceTree = "<group>";
+		};
 		D8C77BDB1FA8EBD000066D10 /* AddressList */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,7 +626,7 @@
 				TargetAttributes = {
 					9C1CFC001F8F32E6004675FE = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = L6C9ZLGJJD;
+						DevelopmentTeam = H7RFM2VSMC;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -649,6 +670,7 @@
 				9C1CFC711F8F3344004675FE /* LoginViewController.xib in Resources */,
 				9C1CFC841F8F3344004675FE /* SplashScreenViewController.xib in Resources */,
 				5F91589B1FA9AAD6002DA4C0 /* CategoryTableViewCell.xib in Resources */,
+				D855A9731FB6EFA700E20309 /* ConformationVCViewController.xib in Resources */,
 				9C1CFC6F1F8F3344004675FE /* HomeViewController.xib in Resources */,
 				9C0E195C1FB1BB6400BB65CE /* ChangePasswordVC.xib in Resources */,
 				D8F30A2E1FB24CCF0083ADAF /* CartCellTableViewCell.xib in Resources */,
@@ -735,6 +757,7 @@
 				9C0E19611FB1CB9C00BB65CE /* OrderListVC.m in Sources */,
 				9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */,
 				9CC97C201FA1E94E00DB8C88 /* AddressVC.m in Sources */,
+				D855A9721FB6EFA700E20309 /* ConformationVCViewController.m in Sources */,
 				D8C77BE81FA8EEB900066D10 /* Address.m in Sources */,
 				9C1CFC6E1F8F3344004675FE /* HomeViewController.m in Sources */,
 				9C1CFC701F8F3344004675FE /* LoginViewController.m in Sources */,
@@ -752,6 +775,7 @@
 				5F9158A31FA9D717002DA4C0 /* ProductListViewController.m in Sources */,
 				9C1CFC7E1F8F3344004675FE /* RearCell.m in Sources */,
 				D8F30A1D1FB2404C0083ADAF /* CartItem.m in Sources */,
+				D8F1738A1FB5F9B7009B0EB7 /* CartApiHit.m in Sources */,
 				9C0E195B1FB1BB6400BB65CE /* ChangePasswordVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -868,7 +892,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = L6C9ZLGJJD;
+				DEVELOPMENT_TEAM = H7RFM2VSMC;
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -886,7 +910,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = L6C9ZLGJJD;
+				DEVELOPMENT_TEAM = H7RFM2VSMC;
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

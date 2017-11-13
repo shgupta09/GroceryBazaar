@@ -24,7 +24,9 @@
     
     [self setData];
     if (![CommonFunction getBoolValueFromDefaultWithKey:isCartApiHIt]) {
-        [self hitApiForCartItems];
+        cartItemArray = [NSMutableArray new];
+        cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
+        [self hitApiForProductList];
     }else{
         cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
         [self hitApiForProductList];
@@ -126,52 +128,7 @@
         }
 }
 
--(void)hitApiForCartItems{
-    if ([ CommonFunction reachability]) {
-        NSMutableDictionary *parameter = [NSMutableDictionary new];
-        
-        [parameter setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];
-        
-        
-        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_CART_ITEMS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
-            if (error == nil) {
-                if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
-                    [CommonFunction stroeBoolValueForKey:isCartApiHIt withBoolValue:true];
-                    NSArray *tempAray = [responseObj valueForKey:@"cart"];
-                   [[CartItem sharedInstance].myDataArray removeAllObjects];
-                    [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                        
-                        CartItem* productObj = [[CartItem alloc] init  ];
-                        
-                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
-                            [productObj setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
-                        }];
-                        productObj.stock = @"5";
-                        [[CartItem sharedInstance].myDataArray addObject:productObj];
-                    }];
-                    cartItemArray = [NSMutableArray new];
-                    cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
-                    [self hitApiForProductList];
-                }
-                [self removeloder];
-                
-            }
-            else {
-                [self removeloder];
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[error description] preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-                [alertController addAction:ok];
-                [self presentViewController:alertController animated:YES completion:nil];
-            }
-        }];
-    } else {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network Error" message:@"No Network Access" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-        [alertController addAction:ok];
-        [self presentViewController:alertController animated:YES completion:nil];
-    }
-}
+
 
 -(void)hitApiForAddToCart:(Product *)product{
     [self addLoder];
@@ -180,26 +137,19 @@
         
         [parameter setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];
         [parameter setValue:product.product_id forKey:@"product_id"];
-        
         [parameter setObject:product.selectedQuantity forKey:@"quantity"];
-
-
-        
-        
-        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_ADD_TO_CART]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
-                    
                     [CommonFunction stroeBoolValueForKey:isCartApiHIt withBoolValue:false];
-//                    [[CartItem sharedInstance].myDataArray addObject:product];
-//                    cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
-                    [self hitApiForCartItems];
-//                    [_tblView reloadData];
-                    
+                    CartApiHit *cartObj = [CartApiHit new];
+                    [cartObj hitApiForCartItemscompletetion:^() {
+                        cartItemArray = [NSMutableArray new];
+                        cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
+                        [_tblView reloadData];
+                    }];
                 }
                 [self removeloder];
-                
             }
             else {
                 [self removeloder];

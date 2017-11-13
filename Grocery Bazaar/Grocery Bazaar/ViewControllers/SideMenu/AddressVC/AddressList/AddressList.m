@@ -262,7 +262,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (_isFromCheckout) {
-        
+        ConformationVCViewController *confirmObj = [[ConformationVCViewController alloc]initWithNibName:@"ConformationVCViewController" bundle:nil];
+        [self.navigationController pushViewController:confirmObj animated:true];
     }
    
 }

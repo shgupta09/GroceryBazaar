@@ -77,18 +77,23 @@
     _VIEWTOCLIP.layer.cornerRadius = 5;
     _VIEWTOCLIP.clipsToBounds = true;
     if (![CommonFunction getBoolValueFromDefaultWithKey:isCartApiHIt]) {
-        [self hitApiForCartItems];
+        CartApiHit *cartObj = [CartApiHit new];
+        [cartObj hitApiForCartItemscompletetion:^() {
+            [self setData];
+            [self resignResponder];
+            [_tblView reloadData];
+        }];
     }
 }
 
 
 #pragma mark -btnAction
 -(void)backTapped{
-    
     [self.navigationController popViewControllerAnimated:true];
-    
 }
+
 #pragma mark -other methods
+
 -(void)resignResponder{
     [CommonFunction resignFirstResponderOfAView:self.view];
     if ([_popUpView isDescendantOfView:self.view]) {
@@ -100,13 +105,9 @@
     AddressList *addressListObj = [[AddressList alloc]initWithNibName:@"AddressList" bundle:nil];
     addressListObj.isFromCheckout = true;
     [self.navigationController pushViewController:addressListObj animated:true];
-    
-
 }
 
 -(void)editBtnAction:(UIButton *)sender{
-  
-    
     proDuctObjToAddCArt = [CartItem new];
     proDuctObjToAddCArt.product_cart_id =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).product_cart_id;
     proDuctObjToAddCArt.product_id =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]). product_id;
@@ -115,11 +116,9 @@
     proDuctObjToAddCArt.product_price =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).product_price;
     proDuctObjToAddCArt.created_at =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).created_at;
     proDuctObjToAddCArt.stock =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).stock;
-
     _lbl_productName.text = proDuctObjToAddCArt.product_name;
     _lbl_price.text = proDuctObjToAddCArt.product_price;
     _lbl_Quantity.text = proDuctObjToAddCArt.quantity;
-    
     _btnPlus.layer.cornerRadius = _btnPlus.frame.size.width/2;
     _btnPlus.clipsToBounds = true;
     _btnPlus.tintColor = [CommonFunction colorWithHexString:COLORCODE];
@@ -127,7 +126,6 @@
     [_btnPlus setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [_btnPlus addTarget:self action:@selector(plusBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     _btnPlus.tag = sender.tag;
-    
     _btnMinus.tintColor = [CommonFunction colorWithHexString:COLORCODE];
     _btnMinus.clipsToBounds = true;
     _btnMinus.layer.cornerRadius = _btnMinus.frame.size.width/2;
@@ -267,40 +265,7 @@
 }
 
 #pragma mark- Api Related
--(void)hitApiForCartItems{
-    if ([ CommonFunction reachability]) {
-        NSMutableDictionary *parameter = [NSMutableDictionary new];
-        
-        [parameter setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];
-        
-        
-        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_CART_ITEMS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
-            if (error == nil) {
-                if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
-                    [CommonFunction stroeBoolValueForKey:isCartApiHIt withBoolValue:true];
-                    NSArray *tempAray = [responseObj valueForKey:@"cart"];
-                    [[CartItem sharedInstance].myDataArray removeAllObjects];
-                    [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                        
-                        CartItem* productObj = [[CartItem alloc] init  ];
-                        
-                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
-                            [productObj setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
-                        }];
-                        productObj.stock = @"5";
-                        [[CartItem sharedInstance].myDataArray addObject:productObj];
-                    }];
-                    [self setData];
-                    [self resignResponder];
-                    [_tblView reloadData];
-                }
-                
-            }
-            
-        }];
-    }
-}
+
 
 -(void)hitApiForDeleteFromCart:(CartItem *)cartItem{
     [self addLoder];
@@ -355,9 +320,12 @@
                 if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
                     [[CartItem sharedInstance].myDataArray addObject:product];
                     cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
-                    [self hitApiForCartItems];
-                    
-                    
+                    CartApiHit *cartObj = [CartApiHit new];
+                    [cartObj hitApiForCartItemscompletetion:^() {
+                        [self setData];
+                        [self resignResponder];
+                        [_tblView reloadData];
+                    }];
                 }
                 [self removeloder];
                 
