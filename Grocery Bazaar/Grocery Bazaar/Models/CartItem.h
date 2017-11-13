@@ -13,6 +13,7 @@
 @property (strong,nonatomic) NSString* product_id;
 @property (strong,nonatomic) NSString* product_name;
 @property (strong,nonatomic) NSString* product_price;
+@property (strong,nonatomic) NSString* product_image;
 @property (strong,nonatomic) NSString* quantity;
 @property (strong,nonatomic) NSString* created_at;
 @property (strong,nonatomic) NSString* stock;

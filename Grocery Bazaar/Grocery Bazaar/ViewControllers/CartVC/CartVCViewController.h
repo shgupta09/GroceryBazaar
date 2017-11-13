@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property (strong, nonatomic) IBOutlet UIView *popUpView;
+@property (weak, nonatomic) IBOutlet UIView *viewToRemovePopUP;
 
 @property (weak, nonatomic) IBOutlet UILabel *lbl_productName;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_price;
@@ -24,5 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn_CheckOut;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_Quantity;
 @property (weak, nonatomic) IBOutlet UIView *viewToRound;
+@property (weak, nonatomic) IBOutlet UIButton *btn_done;
 @property (weak, nonatomic) IBOutlet UIView *viewToRound2;
 @end

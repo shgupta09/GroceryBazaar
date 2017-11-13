@@ -47,7 +47,10 @@
     _tblView.multipleTouchEnabled = NO;
     cartItemArray = [NSMutableArray new];
     cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
-     [CommonFunction setResignTapGestureToView:_popUpView andsender:self];
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(removePopUP)];
+    
+    [_viewToRemovePopUP addGestureRecognizer:singleTap];
     _tblView.hidden = false;
     _checkOutView.hidden = false;
     _btn_CheckOut.tintColor = [UIColor whiteColor];
@@ -96,6 +99,9 @@
 
 -(void)resignResponder{
     [CommonFunction resignFirstResponderOfAView:self.view];
+    
+}
+-(void)removePopUP{
     if ([_popUpView isDescendantOfView:self.view]) {
         [_popUpView removeFromSuperview];
     }
@@ -137,6 +143,8 @@
     _viewToRound.layer.cornerRadius = _btnPlus.frame.size.width/2;
     _viewToRound2.clipsToBounds = true;
     _viewToRound2.layer.cornerRadius = _btnPlus.frame.size.width/2;
+    _btn_done.tag = ((UIButton *)sender).tag;
+    
     [[self popUpView] setAutoresizesSubviews:true];
     [[self popUpView] setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) ;
@@ -188,8 +196,9 @@
     cell.lbl_Product_Name.text = productObj.product_name;
     cell.lbl_Product_Price.text = productObj.product_price;
     cell.lbl_CartQuantity.text = productObj.quantity;
-//    [cell.imgView_Product sd_setImageWithURL:[NSURL URLWithString:productObj.product_cart_id]] ;
-    
+    [cell.imgView_Product sd_setImageWithURL:[NSURL URLWithString:productObj.product_image]] ;
+    cell.imgView_Product.layer.cornerRadius = 10;
+    cell.imgView_Product.clipsToBounds = true;
     cell.viewToClip.layer.cornerRadius = 10;
     cell.viewToClip.clipsToBounds = true;
     cell.btnCross.tintColor = [UIColor lightGrayColor];
