@@ -321,5 +321,9 @@
     return validationDict.mutableCopy;
 }
 
+-(void)resignResponder{
+    [CommonFunction resignFirstResponderOfAView:self.view];
+    
+}
 
 @end
