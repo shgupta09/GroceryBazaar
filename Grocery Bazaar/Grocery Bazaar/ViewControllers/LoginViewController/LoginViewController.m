@@ -129,27 +129,19 @@
                         mainRevealController.view.backgroundColor = [UIColor blackColor];
                         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mainRevealController];
                         ((AppDelegate *)[[UIApplication sharedApplication] delegate]).window.rootViewController = nav;
-                        
                         [self resignResponder];
-                        
                     } afterDelay:.2];
                     
                     [self removeloder];
                 }
-                else
-                {
+                else{
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
                     [alertController addAction:ok];
-                    //                    [CommonFunction storeValueInDefault:@"true" andKey:@"isLoggedIn"];
                     [self presentViewController:alertController animated:YES completion:nil];
                     [self removeloder];
                 }
-                
-                
-                
             }
-            
             else {
                 [self removeloder];
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[error description] preferredStyle:UIAlertControllerStyleAlert];
@@ -157,8 +149,6 @@
                 [alertController addAction:ok];
                 [self presentViewController:alertController animated:YES completion:nil];
             }
-            
-            
         }];
     } else {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network Error" message:@"No Network Access" preferredStyle:UIAlertControllerStyleAlert];
@@ -166,8 +156,6 @@
         [alertController addAction:ok];
         [self presentViewController:alertController animated:YES completion:nil];
     }
-    
-    
 }
 
 - (void)performBlock:(void(^)())block afterDelay:(NSTimeInterval)delay {
@@ -180,16 +168,13 @@
 
 -(void)addLoder{
     self.view.userInteractionEnabled = NO;
-    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
     loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
     loderObj.lbl_title.text = @"Logging In...";
     [self.view addSubview:loderObj];
 }
 
 -(void)removeloder{
-    //loderObj = nil;
     [loderObj removeFromSuperview];
-    //[loaderView removeFromSuperview];
     self.view.userInteractionEnabled = YES;
 }
 -(NSDictionary *)validateData{

@@ -83,7 +83,7 @@
         CartApiHit *cartObj = [CartApiHit new];
         [cartObj hitApiForCartItemscompletetion:^() {
             [self setData];
-            [self resignResponder];
+            [self removePopUP];
             [_tblView reloadData];
         }];
     }
@@ -97,10 +97,7 @@
 
 #pragma mark -other methods
 
--(void)resignResponder{
-    [CommonFunction resignFirstResponderOfAView:self.view];
-    
-}
+
 -(void)removePopUP{
     if ([_popUpView isDescendantOfView:self.view]) {
         [_popUpView removeFromSuperview];
@@ -261,7 +258,7 @@
         [self hitApiForAddToCart:proDuctObjToAddCArt];
 
     }else{
-        [self resignResponder];
+        [self removePopUP];
     }
 }
 
@@ -332,7 +329,7 @@
                     CartApiHit *cartObj = [CartApiHit new];
                     [cartObj hitApiForCartItemscompletetion:^() {
                         [self setData];
-                        [self resignResponder];
+                        [self removePopUP];
                         [_tblView reloadData];
                     }];
                 }
