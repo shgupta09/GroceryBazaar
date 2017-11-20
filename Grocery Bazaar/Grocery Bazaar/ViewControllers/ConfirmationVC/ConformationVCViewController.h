@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ConformationVCViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UILabel *lbl_TotalPrice;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (nonatomic,strong) Address* selectedAdderss;
 @end

@@ -246,6 +246,7 @@
     [self.navigationController pushViewController:addressVCObj animated:true];
 }
 
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
@@ -263,6 +264,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (_isFromCheckout) {
         ConformationVCViewController *confirmObj = [[ConformationVCViewController alloc]initWithNibName:@"ConformationVCViewController" bundle:nil];
+        confirmObj.selectedAdderss = [listArray objectAtIndex:indexPath.row];
         [self.navigationController pushViewController:confirmObj animated:true];
     }
    

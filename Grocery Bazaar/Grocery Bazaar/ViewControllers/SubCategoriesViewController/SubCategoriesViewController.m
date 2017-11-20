@@ -46,57 +46,7 @@
 }
 #pragma mark - Api Related Methods
 -(void)hitApiForAddressList{
-//    if ([ CommonFunction reachability]) {
-//        listArray = [NSMutableArray new];
-//        
-//        NSMutableDictionary *parameter = [NSMutableDictionary new];
-//        
-//        [parameter setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];
-//        
-//        [self addLoder];
-//        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-//        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_ADDRESS_LIST]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
-//            if (error == nil) {
-//                if ([[responseObj valueForKey:API_Status] integerValue] == 1){
-//                    
-//                    NSArray *tempAray = [responseObj valueForKey:@"addresses"];
-//                    [tempAray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//                        Address *addressObj = [Address new];
-//                        addressObj.address_id= [obj valueForKey:@"address_id"];
-//                        addressObj.address_line1= [obj valueForKey:@"address_line1"];
-//                        addressObj.address_line2= [obj valueForKey:@"address_line2"];
-//                        addressObj.city= [obj valueForKey:@"city"];
-//                        addressObj.country= [obj valueForKey:@"country"];
-//                        addressObj.pincode= [obj valueForKey:@"pincode"];
-//                        addressObj.state= [obj valueForKey:@"state"];
-//                        
-//                        addressObj.landmark= [obj valueForKey:@"landmark"];
-//                        [listArray addObject:addressObj];
-//                    }];
-//                    [_tbl_List reloadData];
-//                    
-//                }
-//                else{
-//                    _tbl_List.hidden = true;
-//                    [CommonFunction addNoDataLabel:self.view];
-//                }
-//                [self removeloder];
-//                
-//            }
-//            else {
-//                [self removeloder];
-//                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[error description] preferredStyle:UIAlertControllerStyleAlert];
-//                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-//                [alertController addAction:ok];
-//                [self presentViewController:alertController animated:YES completion:nil];
-//            }
-//        }];
-//    } else {
-//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network Error" message:@"No Network Access" preferredStyle:UIAlertControllerStyleAlert];
-//        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-//        [alertController addAction:ok];
-//        [self presentViewController:alertController animated:YES completion:nil];
-//    }
+
 }
 
 #pragma mark - add loder
@@ -110,9 +60,7 @@
 }
 
 -(void)removeloder{
-    //loderObj = nil;
     [loderObj removeFromSuperview];
-    //[loaderView removeFromSuperview];
     self.view.userInteractionEnabled = YES;
 }
 
@@ -130,35 +78,27 @@
 
 
 #pragma mark- Table Delegate
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (_arrSubCategories.count>0) {
         _tblView.hidden = false;
     }else{
         _tblView.hidden = true;
-//        [CommonFunction addNoDataLabel:self.view];
-       
     }
     return _arrSubCategories.count;
 }
 
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CategoryTableViewCell *cell = [_tblView dequeueReusableCellWithIdentifier:@"CategoryTableViewCell"];
     cell.viewToClip.layer.cornerRadius = 10;
     cell.viewToClip.clipsToBounds = true;
     SubCategory *obj = [_arrSubCategories objectAtIndex:indexPath.row];
     cell.lblHeading.text = obj.title;
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.subcat_icon]] ;
-    
-    
+    cell.imgView.layer.cornerRadius = 10;
+    cell.imgView.clipsToBounds = true;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    
     return cell;
-    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

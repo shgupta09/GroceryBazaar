@@ -53,10 +53,18 @@
 		9C1CFC8B1F8F3816004675FE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC8A1F8F3816004675FE /* Reachability.m */; };
 		9C1CFC951F8F483C004675FE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CFC911F8F483C004675FE /* RegisterViewController.m */; };
 		9C1CFC961F8F483C004675FE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1CFC921F8F483C004675FE /* RegisterViewController.xib */; };
+		9C31CEB51FC2DC9500A1DB72 /* CongoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C31CEB31FC2DC9500A1DB72 /* CongoVC.m */; };
+		9C31CEB61FC2DC9500A1DB72 /* CongoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C31CEB41FC2DC9500A1DB72 /* CongoVC.xib */; };
 		9CC440D81F948E5100117801 /* ForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC440D61F948E5100117801 /* ForgetPasswordVC.m */; };
 		9CC440D91F948E5100117801 /* ForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC440D71F948E5100117801 /* ForgetPasswordVC.xib */; };
 		9CC97C201FA1E94E00DB8C88 /* AddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC97C1E1FA1E94E00DB8C88 /* AddressVC.m */; };
 		9CC97C211FA1E94E00DB8C88 /* AddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC97C1F1FA1E94E00DB8C88 /* AddressVC.xib */; };
+		9CD311E81FC2CBF800DF3EC0 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD311E61FC2CBF800DF3EC0 /* ProductCell.m */; };
+		9CD311E91FC2CBF800DF3EC0 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD311E71FC2CBF800DF3EC0 /* ProductCell.xib */; };
+		9CD311ED1FC2CC7A00DF3EC0 /* AddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD311EB1FC2CC7A00DF3EC0 /* AddressCell.m */; };
+		9CD311EE1FC2CC7B00DF3EC0 /* AddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD311EC1FC2CC7A00DF3EC0 /* AddressCell.xib */; };
+		9CD311F21FC2CCA700DF3EC0 /* PaymentModeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD311F01FC2CCA700DF3EC0 /* PaymentModeCell.m */; };
+		9CD311F31FC2CCA700DF3EC0 /* PaymentModeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD311F11FC2CCA700DF3EC0 /* PaymentModeCell.xib */; };
 		D855A9721FB6EFA700E20309 /* ConformationVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D855A9701FB6EFA700E20309 /* ConformationVCViewController.m */; };
 		D855A9731FB6EFA700E20309 /* ConformationVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D855A9711FB6EFA700E20309 /* ConformationVCViewController.xib */; };
 		D8C77BDF1FA8EBF400066D10 /* AddressList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C77BDD1FA8EBF400066D10 /* AddressList.m */; };
@@ -150,12 +158,24 @@
 		9C1CFC901F8F483C004675FE /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		9C1CFC911F8F483C004675FE /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		9C1CFC921F8F483C004675FE /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		9C31CEB21FC2DC9500A1DB72 /* CongoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CongoVC.h; sourceTree = "<group>"; };
+		9C31CEB31FC2DC9500A1DB72 /* CongoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CongoVC.m; sourceTree = "<group>"; };
+		9C31CEB41FC2DC9500A1DB72 /* CongoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CongoVC.xib; sourceTree = "<group>"; };
 		9CC440D51F948E5100117801 /* ForgetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordVC.h; sourceTree = "<group>"; };
 		9CC440D61F948E5100117801 /* ForgetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordVC.m; sourceTree = "<group>"; };
 		9CC440D71F948E5100117801 /* ForgetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPasswordVC.xib; sourceTree = "<group>"; };
 		9CC97C1D1FA1E94E00DB8C88 /* AddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressVC.h; sourceTree = "<group>"; };
 		9CC97C1E1FA1E94E00DB8C88 /* AddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressVC.m; sourceTree = "<group>"; };
 		9CC97C1F1FA1E94E00DB8C88 /* AddressVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressVC.xib; sourceTree = "<group>"; };
+		9CD311E51FC2CBF800DF3EC0 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		9CD311E61FC2CBF800DF3EC0 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		9CD311E71FC2CBF800DF3EC0 /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		9CD311EA1FC2CC7A00DF3EC0 /* AddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressCell.h; sourceTree = "<group>"; };
+		9CD311EB1FC2CC7A00DF3EC0 /* AddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressCell.m; sourceTree = "<group>"; };
+		9CD311EC1FC2CC7A00DF3EC0 /* AddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressCell.xib; sourceTree = "<group>"; };
+		9CD311EF1FC2CCA700DF3EC0 /* PaymentModeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentModeCell.h; sourceTree = "<group>"; };
+		9CD311F01FC2CCA700DF3EC0 /* PaymentModeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentModeCell.m; sourceTree = "<group>"; };
+		9CD311F11FC2CCA700DF3EC0 /* PaymentModeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentModeCell.xib; sourceTree = "<group>"; };
 		D855A96F1FB6EFA700E20309 /* ConformationVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConformationVCViewController.h; sourceTree = "<group>"; };
 		D855A9701FB6EFA700E20309 /* ConformationVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConformationVCViewController.m; sourceTree = "<group>"; };
 		D855A9711FB6EFA700E20309 /* ConformationVCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConformationVCViewController.xib; sourceTree = "<group>"; };
@@ -430,6 +450,7 @@
 		9C1CFC2C1F8F3344004675FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9C31CEB11FC2DC7F00A1DB72 /* CongoVC */,
 				D855A96E1FB6EF7F00E20309 /* ConfirmationVC */,
 				D8F30A231FB24AC90083ADAF /* CartVC */,
 				5F91589F1FA9D6FE002DA4C0 /* ProductListViewController */,
@@ -526,6 +547,16 @@
 			path = Patient;
 			sourceTree = "<group>";
 		};
+		9C31CEB11FC2DC7F00A1DB72 /* CongoVC */ = {
+			isa = PBXGroup;
+			children = (
+				9C31CEB21FC2DC9500A1DB72 /* CongoVC.h */,
+				9C31CEB31FC2DC9500A1DB72 /* CongoVC.m */,
+				9C31CEB41FC2DC9500A1DB72 /* CongoVC.xib */,
+			);
+			path = CongoVC;
+			sourceTree = "<group>";
+		};
 		9CC440D41F948E5100117801 /* ForgetPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -548,9 +579,26 @@
 			path = AddressVC;
 			sourceTree = "<group>";
 		};
+		9CD311E41FC2CB7A00DF3EC0 /* ConformationCell */ = {
+			isa = PBXGroup;
+			children = (
+				9CD311E51FC2CBF800DF3EC0 /* ProductCell.h */,
+				9CD311E61FC2CBF800DF3EC0 /* ProductCell.m */,
+				9CD311E71FC2CBF800DF3EC0 /* ProductCell.xib */,
+				9CD311EA1FC2CC7A00DF3EC0 /* AddressCell.h */,
+				9CD311EB1FC2CC7A00DF3EC0 /* AddressCell.m */,
+				9CD311EC1FC2CC7A00DF3EC0 /* AddressCell.xib */,
+				9CD311EF1FC2CCA700DF3EC0 /* PaymentModeCell.h */,
+				9CD311F01FC2CCA700DF3EC0 /* PaymentModeCell.m */,
+				9CD311F11FC2CCA700DF3EC0 /* PaymentModeCell.xib */,
+			);
+			path = ConformationCell;
+			sourceTree = "<group>";
+		};
 		D855A96E1FB6EF7F00E20309 /* ConfirmationVC */ = {
 			isa = PBXGroup;
 			children = (
+				9CD311E41FC2CB7A00DF3EC0 /* ConformationCell */,
 				D855A96F1FB6EFA700E20309 /* ConformationVCViewController.h */,
 				D855A9701FB6EFA700E20309 /* ConformationVCViewController.m */,
 				D855A9711FB6EFA700E20309 /* ConformationVCViewController.xib */,
@@ -656,11 +704,14 @@
 			files = (
 				9CC97C211FA1E94E00DB8C88 /* AddressVC.xib in Resources */,
 				9C1CFC171F8F32E7004675FE /* LaunchScreen.storyboard in Resources */,
+				9CD311F31FC2CCA700DF3EC0 /* PaymentModeCell.xib in Resources */,
 				9C0E19561FB071EE00BB65CE /* ProfileVC.xib in Resources */,
 				9C1CFC961F8F483C004675FE /* RegisterViewController.xib in Resources */,
 				D8C77BE01FA8EBF400066D10 /* AddressList.xib in Resources */,
 				9C1CFC141F8F32E7004675FE /* Assets.xcassets in Resources */,
+				9CD311EE1FC2CC7B00DF3EC0 /* AddressCell.xib in Resources */,
 				D8C77BE51FA8EC2100066D10 /* AddessListCell.xib in Resources */,
+				9CD311E91FC2CBF800DF3EC0 /* ProductCell.xib in Resources */,
 				9C1CFC681F8F3344004675FE /* LoderView.xib in Resources */,
 				9C0E19621FB1CB9C00BB65CE /* OrderListVC.xib in Resources */,
 				D8F30A281FB24AF40083ADAF /* CartVCViewController.xib in Resources */,
@@ -670,6 +721,7 @@
 				9C1CFC711F8F3344004675FE /* LoginViewController.xib in Resources */,
 				9C1CFC841F8F3344004675FE /* SplashScreenViewController.xib in Resources */,
 				5F91589B1FA9AAD6002DA4C0 /* CategoryTableViewCell.xib in Resources */,
+				9C31CEB61FC2DC9500A1DB72 /* CongoVC.xib in Resources */,
 				D855A9731FB6EFA700E20309 /* ConformationVCViewController.xib in Resources */,
 				9C1CFC6F1F8F3344004675FE /* HomeViewController.xib in Resources */,
 				9C0E195C1FB1BB6400BB65CE /* ChangePasswordVC.xib in Resources */,
@@ -744,6 +796,7 @@
 				9C1CFC091F8F32E7004675FE /* AppDelegate.m in Sources */,
 				9C1CFC801F8F3344004675FE /* RearViewController.m in Sources */,
 				9C1CFC651F8F3344004675FE /* CustomButton.m in Sources */,
+				9CD311E81FC2CBF800DF3EC0 /* ProductCell.m in Sources */,
 				9C1CFC691F8F3344004675FE /* WebServicesCall.m in Sources */,
 				9C1CFC8B1F8F3816004675FE /* Reachability.m in Sources */,
 				5FD799C31FA1FF0400746C93 /* Offer.m in Sources */,
@@ -760,6 +813,7 @@
 				D855A9721FB6EFA700E20309 /* ConformationVCViewController.m in Sources */,
 				D8C77BE81FA8EEB900066D10 /* Address.m in Sources */,
 				9C1CFC6E1F8F3344004675FE /* HomeViewController.m in Sources */,
+				9CD311ED1FC2CC7A00DF3EC0 /* AddressCell.m in Sources */,
 				9C1CFC701F8F3344004675FE /* LoginViewController.m in Sources */,
 				5F91589A1FA9AAD6002DA4C0 /* CategoryTableViewCell.m in Sources */,
 				5F9158AD1FA9DA04002DA4C0 /* Product.m in Sources */,
@@ -768,6 +822,7 @@
 				D8C77BDF1FA8EBF400066D10 /* AddressList.m in Sources */,
 				9C0E19551FB071EE00BB65CE /* ProfileVC.m in Sources */,
 				9C1CFC661F8F3344004675FE /* CustomTextField.m in Sources */,
+				9C31CEB51FC2DC9500A1DB72 /* CongoVC.m in Sources */,
 				D8F30A271FB24AF40083ADAF /* CartVCViewController.m in Sources */,
 				9C1CFC061F8F32E7004675FE /* main.m in Sources */,
 				5F91589E1FA9AC1E002DA4C0 /* SubCategory.m in Sources */,
@@ -776,6 +831,7 @@
 				9C1CFC7E1F8F3344004675FE /* RearCell.m in Sources */,
 				D8F30A1D1FB2404C0083ADAF /* CartItem.m in Sources */,
 				D8F1738A1FB5F9B7009B0EB7 /* CartApiHit.m in Sources */,
+				9CD311F21FC2CCA700DF3EC0 /* PaymentModeCell.m in Sources */,
 				9C0E195B1FB1BB6400BB65CE /* ChangePasswordVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
