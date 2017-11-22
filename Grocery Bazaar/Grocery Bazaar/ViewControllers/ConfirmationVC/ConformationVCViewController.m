@@ -152,7 +152,11 @@
         [parameter setValue:_selectedAdderss.address_id forKey:@"address_id"];
         NSMutableArray *productIdArray = [NSMutableArray new];
         [cartArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [productIdArray addObject:((CartItem *)obj).product_id];
+            NSMutableDictionary *productObj = [NSMutableDictionary new];
+            [productObj setValue:((CartItem *)obj).product_id forKey:@"product_id"];
+            [productObj setValue:((CartItem *)obj).quantity  forKey:@"product_quantity"];
+            [productObj setValue:@"" forKey:@"offer_code"];
+            [productIdArray addObject:productObj];
         }];
         [parameter setValue:productIdArray forKey:@"product"];
         [parameter setValue:[NSString stringWithFormat:@"%d",priceCheckout] forKey:@"total_amount"];

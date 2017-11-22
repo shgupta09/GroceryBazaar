@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface OrderListVC : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITableView *tblView;
 @end
