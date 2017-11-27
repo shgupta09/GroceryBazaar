@@ -18,6 +18,16 @@
 		5F9158A91FA9D821002DA4C0 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9158A71FA9D821002DA4C0 /* ProductTableViewCell.m */; };
 		5F9158AA1FA9D821002DA4C0 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9158A81FA9D821002DA4C0 /* ProductTableViewCell.xib */; };
 		5F9158AD1FA9DA04002DA4C0 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9158AC1FA9DA03002DA4C0 /* Product.m */; };
+		5FC496C01FC551D2004E537A /* MyOrdersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC496BE1FC551D2004E537A /* MyOrdersListViewController.m */; };
+		5FC496C11FC551D2004E537A /* MyOrdersListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC496BF1FC551D2004E537A /* MyOrdersListViewController.xib */; };
+		5FC496C61FC559BC004E537A /* MyOrdersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC496C41FC559BC004E537A /* MyOrdersTableViewCell.m */; };
+		5FC496C71FC559BC004E537A /* MyOrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC496C51FC559BC004E537A /* MyOrdersTableViewCell.xib */; };
+		5FC496CA1FC55D79004E537A /* MyOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC496C91FC55D79004E537A /* MyOrder.m */; };
+		5FC496CD1FC55DB9004E537A /* MyOrderProducts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC496CC1FC55DB9004E537A /* MyOrderProducts.m */; };
+		5FC496D21FC57678004E537A /* MyOrderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC496D01FC57678004E537A /* MyOrderDetailsViewController.m */; };
+		5FC496D31FC57678004E537A /* MyOrderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC496D11FC57678004E537A /* MyOrderDetailsViewController.xib */; };
+		5FC496D81FC57AD3004E537A /* ShippingDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC496D61FC57AD3004E537A /* ShippingDetailTableViewCell.m */; };
+		5FC496D91FC57AD3004E537A /* ShippingDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC496D71FC57AD3004E537A /* ShippingDetailTableViewCell.xib */; };
 		5FD799C01FA1FE7200746C93 /* OfferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD799BF1FA1FE7200746C93 /* OfferView.m */; };
 		5FD799C31FA1FF0400746C93 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD799C21FA1FF0400746C93 /* Offer.m */; };
 		5FD799C81FA20DA500746C93 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD799C61FA20DA500746C93 /* CategoryCollectionViewCell.m */; };
@@ -100,6 +110,22 @@
 		5F9158A81FA9D821002DA4C0 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		5F9158AB1FA9DA03002DA4C0 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		5F9158AC1FA9DA03002DA4C0 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		5FC496BD1FC551D2004E537A /* MyOrdersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrdersListViewController.h; sourceTree = "<group>"; };
+		5FC496BE1FC551D2004E537A /* MyOrdersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrdersListViewController.m; sourceTree = "<group>"; };
+		5FC496BF1FC551D2004E537A /* MyOrdersListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrdersListViewController.xib; sourceTree = "<group>"; };
+		5FC496C31FC559BC004E537A /* MyOrdersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrdersTableViewCell.h; sourceTree = "<group>"; };
+		5FC496C41FC559BC004E537A /* MyOrdersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrdersTableViewCell.m; sourceTree = "<group>"; };
+		5FC496C51FC559BC004E537A /* MyOrdersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrdersTableViewCell.xib; sourceTree = "<group>"; };
+		5FC496C81FC55D79004E537A /* MyOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrder.h; sourceTree = "<group>"; };
+		5FC496C91FC55D79004E537A /* MyOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrder.m; sourceTree = "<group>"; };
+		5FC496CB1FC55DB9004E537A /* MyOrderProducts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderProducts.h; sourceTree = "<group>"; };
+		5FC496CC1FC55DB9004E537A /* MyOrderProducts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderProducts.m; sourceTree = "<group>"; };
+		5FC496CF1FC57678004E537A /* MyOrderDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderDetailsViewController.h; sourceTree = "<group>"; };
+		5FC496D01FC57678004E537A /* MyOrderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderDetailsViewController.m; sourceTree = "<group>"; };
+		5FC496D11FC57678004E537A /* MyOrderDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderDetailsViewController.xib; sourceTree = "<group>"; };
+		5FC496D51FC57AD3004E537A /* ShippingDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShippingDetailTableViewCell.h; sourceTree = "<group>"; };
+		5FC496D61FC57AD3004E537A /* ShippingDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShippingDetailTableViewCell.m; sourceTree = "<group>"; };
+		5FC496D71FC57AD3004E537A /* ShippingDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShippingDetailTableViewCell.xib; sourceTree = "<group>"; };
 		5FD799BE1FA1FE7200746C93 /* OfferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferView.h; sourceTree = "<group>"; };
 		5FD799BF1FA1FE7200746C93 /* OfferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferView.m; sourceTree = "<group>"; };
 		5FD799C11FA1FF0400746C93 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
@@ -245,6 +271,10 @@
 				5F9158AC1FA9DA03002DA4C0 /* Product.m */,
 				D8F30A1B1FB2404C0083ADAF /* CartItem.h */,
 				D8F30A1C1FB2404C0083ADAF /* CartItem.m */,
+				5FC496C81FC55D79004E537A /* MyOrder.h */,
+				5FC496C91FC55D79004E537A /* MyOrder.m */,
+				5FC496CB1FC55DB9004E537A /* MyOrderProducts.h */,
+				5FC496CC1FC55DB9004E537A /* MyOrderProducts.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,6 +340,48 @@
 				5F9158A81FA9D821002DA4C0 /* ProductTableViewCell.xib */,
 			);
 			path = ProductTableViewCell;
+			sourceTree = "<group>";
+		};
+		5FC496BC1FC551A9004E537A /* MyOrdersListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5FC496C21FC559A1004E537A /* MyOrdersCell */,
+				5FC496BD1FC551D2004E537A /* MyOrdersListViewController.h */,
+				5FC496BE1FC551D2004E537A /* MyOrdersListViewController.m */,
+				5FC496BF1FC551D2004E537A /* MyOrdersListViewController.xib */,
+			);
+			path = MyOrdersListViewController;
+			sourceTree = "<group>";
+		};
+		5FC496C21FC559A1004E537A /* MyOrdersCell */ = {
+			isa = PBXGroup;
+			children = (
+				5FC496C31FC559BC004E537A /* MyOrdersTableViewCell.h */,
+				5FC496C41FC559BC004E537A /* MyOrdersTableViewCell.m */,
+				5FC496C51FC559BC004E537A /* MyOrdersTableViewCell.xib */,
+			);
+			path = MyOrdersCell;
+			sourceTree = "<group>";
+		};
+		5FC496CE1FC57665004E537A /* MyOrderDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5FC496D41FC57AC1004E537A /* ShippingDetailTableViewCell */,
+				5FC496CF1FC57678004E537A /* MyOrderDetailsViewController.h */,
+				5FC496D01FC57678004E537A /* MyOrderDetailsViewController.m */,
+				5FC496D11FC57678004E537A /* MyOrderDetailsViewController.xib */,
+			);
+			path = MyOrderDetailsViewController;
+			sourceTree = "<group>";
+		};
+		5FC496D41FC57AC1004E537A /* ShippingDetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5FC496D51FC57AD3004E537A /* ShippingDetailTableViewCell.h */,
+				5FC496D61FC57AD3004E537A /* ShippingDetailTableViewCell.m */,
+				5FC496D71FC57AD3004E537A /* ShippingDetailTableViewCell.xib */,
+			);
+			path = ShippingDetailTableViewCell;
 			sourceTree = "<group>";
 		};
 		5FD799BC1FA1FDF000746C93 /* CustomViews */ = {
@@ -496,6 +568,8 @@
 		9C1CFC521F8F3344004675FE /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				5FC496CE1FC57665004E537A /* MyOrderDetailsViewController */,
+				5FC496BC1FC551A9004E537A /* MyOrdersListViewController */,
 				9C0E195D1FB1CAF100BB65CE /* My Order */,
 				9C0E19571FB1BB5200BB65CE /* CahngePassword */,
 				9C0E19511FB071E100BB65CE /* Profile */,
@@ -674,7 +748,7 @@
 				TargetAttributes = {
 					9C1CFC001F8F32E6004675FE = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = H7RFM2VSMC;
+						DevelopmentTeam = MK5HXMKD83;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -708,7 +782,9 @@
 				9C0E19561FB071EE00BB65CE /* ProfileVC.xib in Resources */,
 				9C1CFC961F8F483C004675FE /* RegisterViewController.xib in Resources */,
 				D8C77BE01FA8EBF400066D10 /* AddressList.xib in Resources */,
+				5FC496C11FC551D2004E537A /* MyOrdersListViewController.xib in Resources */,
 				9C1CFC141F8F32E7004675FE /* Assets.xcassets in Resources */,
+				5FC496D91FC57AD3004E537A /* ShippingDetailTableViewCell.xib in Resources */,
 				9CD311EE1FC2CC7B00DF3EC0 /* AddressCell.xib in Resources */,
 				D8C77BE51FA8EC2100066D10 /* AddessListCell.xib in Resources */,
 				9CD311E91FC2CBF800DF3EC0 /* ProductCell.xib in Resources */,
@@ -717,6 +793,7 @@
 				D8F30A281FB24AF40083ADAF /* CartVCViewController.xib in Resources */,
 				5F9158AA1FA9D821002DA4C0 /* ProductTableViewCell.xib in Resources */,
 				9CC440D91F948E5100117801 /* ForgetPasswordVC.xib in Resources */,
+				5FC496C71FC559BC004E537A /* MyOrdersTableViewCell.xib in Resources */,
 				9C1CFC811F8F3344004675FE /* RearViewController.xib in Resources */,
 				9C1CFC711F8F3344004675FE /* LoginViewController.xib in Resources */,
 				9C1CFC841F8F3344004675FE /* SplashScreenViewController.xib in Resources */,
@@ -724,6 +801,7 @@
 				9C31CEB61FC2DC9500A1DB72 /* CongoVC.xib in Resources */,
 				D855A9731FB6EFA700E20309 /* ConformationVCViewController.xib in Resources */,
 				9C1CFC6F1F8F3344004675FE /* HomeViewController.xib in Resources */,
+				5FC496D31FC57678004E537A /* MyOrderDetailsViewController.xib in Resources */,
 				9C0E195C1FB1BB6400BB65CE /* ChangePasswordVC.xib in Resources */,
 				D8F30A2E1FB24CCF0083ADAF /* CartCellTableViewCell.xib in Resources */,
 				5FD799C91FA20DA500746C93 /* CategoryCollectionViewCell.xib in Resources */,
@@ -799,6 +877,7 @@
 				9CD311E81FC2CBF800DF3EC0 /* ProductCell.m in Sources */,
 				9C1CFC691F8F3344004675FE /* WebServicesCall.m in Sources */,
 				9C1CFC8B1F8F3816004675FE /* Reachability.m in Sources */,
+				5FC496D21FC57678004E537A /* MyOrderDetailsViewController.m in Sources */,
 				5FD799C31FA1FF0400746C93 /* Offer.m in Sources */,
 				9C1CFC671F8F3344004675FE /* LoderView.m in Sources */,
 				9C1CFC831F8F3344004675FE /* SplashScreenViewController.m in Sources */,
@@ -806,12 +885,15 @@
 				9C1CFC951F8F483C004675FE /* RegisterViewController.m in Sources */,
 				5FD799C01FA1FE7200746C93 /* OfferView.m in Sources */,
 				5F9158941FA9AA90002DA4C0 /* SubCategoriesViewController.m in Sources */,
+				5FC496D81FC57AD3004E537A /* ShippingDetailTableViewCell.m in Sources */,
 				5FD799C81FA20DA500746C93 /* CategoryCollectionViewCell.m in Sources */,
 				9C0E19611FB1CB9C00BB65CE /* OrderListVC.m in Sources */,
 				9C1CFC121F8F32E7004675FE /* Grocery_Bazaar.xcdatamodeld in Sources */,
+				5FC496CA1FC55D79004E537A /* MyOrder.m in Sources */,
 				9CC97C201FA1E94E00DB8C88 /* AddressVC.m in Sources */,
 				D855A9721FB6EFA700E20309 /* ConformationVCViewController.m in Sources */,
 				D8C77BE81FA8EEB900066D10 /* Address.m in Sources */,
+				5FC496CD1FC55DB9004E537A /* MyOrderProducts.m in Sources */,
 				9C1CFC6E1F8F3344004675FE /* HomeViewController.m in Sources */,
 				9CD311ED1FC2CC7A00DF3EC0 /* AddressCell.m in Sources */,
 				9C1CFC701F8F3344004675FE /* LoginViewController.m in Sources */,
@@ -829,9 +911,11 @@
 				D8F30A2D1FB24CCF0083ADAF /* CartCellTableViewCell.m in Sources */,
 				5F9158A31FA9D717002DA4C0 /* ProductListViewController.m in Sources */,
 				9C1CFC7E1F8F3344004675FE /* RearCell.m in Sources */,
+				5FC496C01FC551D2004E537A /* MyOrdersListViewController.m in Sources */,
 				D8F30A1D1FB2404C0083ADAF /* CartItem.m in Sources */,
 				D8F1738A1FB5F9B7009B0EB7 /* CartApiHit.m in Sources */,
 				9CD311F21FC2CCA700DF3EC0 /* PaymentModeCell.m in Sources */,
+				5FC496C61FC559BC004E537A /* MyOrdersTableViewCell.m in Sources */,
 				9C0E195B1FB1BB6400BB65CE /* ChangePasswordVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -948,7 +1032,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = H7RFM2VSMC;
+				DEVELOPMENT_TEAM = MK5HXMKD83;
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -966,7 +1050,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = H7RFM2VSMC;
+				DEVELOPMENT_TEAM = MK5HXMKD83;
 				GCC_PREFIX_HEADER = "Grocery Bazaar/PrefixHeader.pch";
 				INFOPLIST_FILE = "Grocery Bazaar/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

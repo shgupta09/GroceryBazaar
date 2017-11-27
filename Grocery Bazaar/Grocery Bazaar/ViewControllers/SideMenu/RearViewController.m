@@ -7,6 +7,7 @@
 //
 
 #import "RearViewController.h"
+#import "MyOrdersListViewController.h"
 #import "RearCell.h"
 @interface RearViewController ()
 {
@@ -21,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      revealController = [self revealViewController];
-    titleArray  = [[NSArray alloc]initWithObjects:@"Address",@"My Account",@"Change Password",@"Logout", nil];
+    titleArray  = [[NSArray alloc]initWithObjects:@"Address",@"My Orders",@"My Account",@"Change Password",@"Logout", nil];
      [_tbl_View registerNib:[UINib nibWithNibName:@"RearCell" bundle:nil]forCellReuseIdentifier:@"RearCell"];
   
     _round_View.layer.cornerRadius = _round_View.frame.size.height/2;
@@ -77,17 +78,22 @@
                 [self.navigationController pushViewController:addressVCObj animated:true];
             }
                 break;
-            case 1 :{
+            case 1:{
+                MyOrdersListViewController *VCObj = [[MyOrdersListViewController alloc]initWithNibName:@"MyOrdersListViewController" bundle:nil];
+                [self.navigationController pushViewController:VCObj animated:true];
+            }
+                break;
+            case 2 :{
                 ProfileVC *addressVCObj = [[ProfileVC alloc]initWithNibName:@"ProfileVC" bundle:nil];
                 [self.navigationController pushViewController:addressVCObj animated:true];
             }
                 break;
-            case 2 :{
+            case 3 :{
                 ChangePasswordVC *changeVCObj = [[ChangePasswordVC alloc]initWithNibName:@"ChangePasswordVC" bundle:nil];
                 [self.navigationController pushViewController:changeVCObj animated:true];
             }
                 break;
-            case 3 :{
+            case 4 :{
                 UIAlertController * alert=   [UIAlertController
                                               alertControllerWithTitle:@"Logout"
                                               message:@"Are you sure you want to Logout?"

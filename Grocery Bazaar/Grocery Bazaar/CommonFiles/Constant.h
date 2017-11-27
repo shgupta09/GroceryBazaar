@@ -134,6 +134,7 @@ static NSString* const API_FOR_CART_ITEMS = @"product/cart";
 static NSString* const API_FOR_ADD_TO_CART = @"product/addcart";
 static NSString* const API_FOR_DELETE_FROM_CART = @"product/deletecart";
 static NSString* const API_FOR_PLACE_ORDER = @"order/orderitem";
+static NSString* const API_FOR_MY_ORDERS = @"order/userorders";
 
 
 static NSString* const API_FOR_CHANGE_PASSWORD = @"users/updateuser";

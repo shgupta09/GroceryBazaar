@@ -7,9 +7,7 @@
 //
 
 #import "OrderListVC.h"
-#import "ProductCell.h"
-#import "AddressCell.h"
-#import "PaymentModeCell.h"
+
 
 @interface OrderListVC (){
   NSMutableArray *cartArray;
