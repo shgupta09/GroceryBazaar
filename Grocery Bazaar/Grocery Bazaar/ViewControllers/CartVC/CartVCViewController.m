@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setData];
+    [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
 
     // Do any additional setup after loading the view from its nib.
 }
@@ -194,8 +195,7 @@
     cell.lbl_Product_Price.text = productObj.product_price;
     cell.lbl_CartQuantity.text = productObj.quantity;
     [cell.imgView_Product sd_setImageWithURL:[NSURL URLWithString:productObj.product_image]] ;
-    cell.imgView_Product.layer.cornerRadius = 10;
-    cell.imgView_Product.clipsToBounds = true;
+
     cell.viewToClip.layer.cornerRadius = 10;
     cell.viewToClip.clipsToBounds = true;
     cell.btnCross.tintColor = [UIColor lightGrayColor];

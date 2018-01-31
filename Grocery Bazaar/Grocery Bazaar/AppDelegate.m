@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+
        if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]) {
            [CommonFunction stroeBoolValueForKey:isCartApiHIt withBoolValue:false];
            CartApiHit *cartObj = [CartApiHit new];

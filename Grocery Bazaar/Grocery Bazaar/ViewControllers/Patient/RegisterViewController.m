@@ -47,7 +47,8 @@
 //    _txtName.text = @"Rahul";
 //    _txtEmail.text = @"adsfadsf@yopmail.com";
     
-    
+    [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
+
     [self setData];
 
 }

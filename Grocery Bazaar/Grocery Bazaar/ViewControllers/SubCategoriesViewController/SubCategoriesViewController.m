@@ -21,7 +21,7 @@
     [super viewDidLoad];
     [self setData];
 //     [CommonFunction addNoDataLabel:self.view];
-    // Do any additional setup after loading the view from its nib.
+    [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
 }
 
 -(void)viewDidLayoutSubviews{

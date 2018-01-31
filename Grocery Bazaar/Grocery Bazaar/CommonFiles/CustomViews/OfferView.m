@@ -19,7 +19,7 @@
         // Initialization code
 
         _offerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, frame.size.width-20, frame.size.height-20)];
-        _offerImageView.backgroundColor = [UIColor blueColor];
+        _offerImageView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
         [self addSubview:_offerImageView];
         
         UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(OfferTapped)];

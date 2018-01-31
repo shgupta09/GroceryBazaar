@@ -27,7 +27,7 @@
     innerView.layer.cornerRadius = 5;
     [txt_Username becomeFirstResponder];
     //txt_Username.text = @"shgupta09@gmail.com";
-    // Do any additional setup after loading the view from its nib.
+    [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
 }
 
 - (void)didReceiveMemoryWarning {

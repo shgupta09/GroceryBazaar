@@ -21,7 +21,8 @@
     [super viewDidLoad];
     
    
-    
+    [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
+
     [self setData];
     if (![CommonFunction getBoolValueFromDefaultWithKey:isCartApiHIt]) {
         cartItemArray = [NSMutableArray new];

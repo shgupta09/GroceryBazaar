@@ -338,6 +338,18 @@
     return dateFromString;
 }
 
++(void) setViewBackground:(UIView*) view withImage:(UIImage*) background {
+//    
+    view.backgroundColor = [UIColor whiteColor];
+    UIGraphicsBeginImageContext(view.frame.size);
+    [background drawInRect:view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+}
+
 +(NSString *)getThePrice:(NSString *)price{
     NSLog(@"%@",price);
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
@@ -355,15 +367,7 @@
 
 
 
-+(void) setViewBackground:(UIView*) view withImage:(UIImage*) background {
-    UIGraphicsBeginImageContext(view.frame.size);
-    [background drawInRect:view.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    view.backgroundColor = [UIColor colorWithPatternImage:image];
-    
-}
+
 
 +(void)addNoDataLabel:(UIView*)view{
 

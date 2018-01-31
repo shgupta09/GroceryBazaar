@@ -29,12 +29,10 @@
     _txtPassword.text = @"Admin@123";
     _txtUsername.text = @"shgupta09@gmail.com";
 
+    [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
+
     // Do any additional setup after loading the view from its nib.
 
-}
-
--(void) viewDidLayoutSubviews {
-        [CommonFunction setViewBackground:self.scrlView withImage:[UIImage imageNamed:@"BackgroundGeneral"]];
 }
 
 - (void)didReceiveMemoryWarning {

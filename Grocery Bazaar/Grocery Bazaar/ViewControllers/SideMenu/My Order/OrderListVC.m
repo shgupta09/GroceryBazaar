@@ -22,7 +22,7 @@ __block int priceCheckout ;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setData];
-    // Do any additional setup after loading the view from its nib.
+    [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -44,4 +44,5 @@
 +(NSString *)getThePrice:(NSString *)price;
 +(void)addNoDataLabel:(UIView*)view;
 
+
 @end

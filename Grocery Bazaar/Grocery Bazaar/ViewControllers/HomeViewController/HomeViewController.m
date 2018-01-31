@@ -28,7 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setData];
-    
+    [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
+
     
 }
 

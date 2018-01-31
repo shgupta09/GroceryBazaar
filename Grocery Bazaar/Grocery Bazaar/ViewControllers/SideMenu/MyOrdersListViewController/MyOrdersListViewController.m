@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setData];
+    [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
 
     // Do any additional setup after loading the view from its nib.
 }
@@ -161,11 +162,10 @@
 //    cell.lblStatus.text = obj.order_id;
     cell.lblOrderId.text = [NSString stringWithFormat:@"Order Id: %@",obj.order_id];
     cell.lblOrderNo.text = [NSString stringWithFormat:@"Order No: %@",obj.order_number];
-    cell.lblPlaceDate.text = [NSString stringWithFormat:@"Placed on %@",[CommonFunction convertStringToDate:obj.order_date] ];
+    cell.lblPlaceDate.text = [NSString stringWithFormat:@"Placed on %@",obj.order_date ];
 //    cell.viewToClip.layer.cornerRadius = 10;
 //    cityCell.viewToClip.clipsToBounds = true;
     UIImage *image = [UIImage imageNamed:@"edit"];
-    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     
