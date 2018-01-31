@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,41 +20,42 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4l-DI-k0I">
-                        <rect key="frame" x="10" y="10" width="300" height="88"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvn-h6-73C">
-                                <rect key="frame" x="10" y="10" width="69" height="69"/>
+                                <rect key="frame" x="10" y="9" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rvn-h6-73C" secondAttribute="height" multiplier="1:1" id="4Jc-Lb-DW6"/>
-                                    <constraint firstAttribute="height" constant="69" id="NoJ-59-Y30"/>
+                                    <constraint firstAttribute="height" constant="70" id="NoJ-59-Y30"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-z7-lHF">
-                                <rect key="frame" x="89" y="33" width="201" height="23"/>
+                                <rect key="frame" x="90" y="32.5" width="200" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Sk7-z7-lHF" firstAttribute="leading" secondItem="rvn-h6-73C" secondAttribute="trailing" constant="10" id="FWj-dT-MmO"/>
                             <constraint firstItem="rvn-h6-73C" firstAttribute="leading" secondItem="I4l-DI-k0I" secondAttribute="leading" constant="10" id="GuT-6L-Jbz"/>
                             <constraint firstItem="Sk7-z7-lHF" firstAttribute="centerY" secondItem="rvn-h6-73C" secondAttribute="centerY" id="JuA-qa-fAh"/>
-                            <constraint firstAttribute="trailing" secondItem="Sk7-z7-lHF" secondAttribute="trailing" constant="10" id="cZU-zg-flA"/>
-                            <constraint firstAttribute="height" constant="88" id="csY-3A-RpC"/>
-                            <constraint firstItem="rvn-h6-73C" firstAttribute="centerY" secondItem="I4l-DI-k0I" secondAttribute="centerY" id="nY7-7o-Thr"/>
+                            <constraint firstAttribute="trailing" secondItem="Sk7-z7-lHF" secondAttribute="trailing" constant="30" id="cZU-zg-flA"/>
+                            <constraint firstAttribute="height" constant="98" id="csY-3A-RpC"/>
+                            <constraint firstItem="rvn-h6-73C" firstAttribute="centerY" secondItem="I4l-DI-k0I" secondAttribute="centerY" constant="-5" id="nY7-7o-Thr"/>
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="I4l-DI-k0I" secondAttribute="bottom" id="2SV-TL-KZl"/>
-                    <constraint firstItem="I4l-DI-k0I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="6yE-35-ZBi"/>
-                    <constraint firstItem="I4l-DI-k0I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="H8E-vj-eUy"/>
-                    <constraint firstAttribute="trailing" secondItem="I4l-DI-k0I" secondAttribute="trailing" constant="10" id="yoO-KJ-RNe"/>
+                    <constraint firstItem="I4l-DI-k0I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6yE-35-ZBi"/>
+                    <constraint firstItem="I4l-DI-k0I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="H8E-vj-eUy"/>
+                    <constraint firstAttribute="trailing" secondItem="I4l-DI-k0I" secondAttribute="trailing" id="yoO-KJ-RNe"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.96862745100000003" green="0.64313725489999995" blue="0.1176470588" alpha="0.10546875" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="imgView" destination="rvn-h6-73C" id="QhV-cx-0kN"/>
                 <outlet property="lblHeading" destination="Sk7-z7-lHF" id="ZjK-aC-eCw"/>

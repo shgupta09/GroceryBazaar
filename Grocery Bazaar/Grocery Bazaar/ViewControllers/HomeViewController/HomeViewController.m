@@ -29,6 +29,7 @@
     [super viewDidLoad];
     [self setData];
     [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
+    [CommonFunction setViewBackground:collectionView withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
 
     
 }
