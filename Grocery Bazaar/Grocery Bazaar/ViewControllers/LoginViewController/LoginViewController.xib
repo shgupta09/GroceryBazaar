@@ -188,7 +188,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.81568627449999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="EZA-Yo-HFW" secondAttribute="trailing" id="798-RE-WhG"/>
                 <constraint firstItem="EZA-Yo-HFW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aYQ-2x-aiz"/>

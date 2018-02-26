@@ -26,8 +26,8 @@
     _btn_Register.layer.borderWidth = 2;
     _btn_Register.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
 
-    _txtPassword.text = @"Admin@123";
-    _txtUsername.text = @"shgupta09@gmail.com";
+//    _txtPassword.text = @"Gupta@123";
+//    _txtUsername.text = @"shgupta09@gmail.com";
 
     [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
 
@@ -133,7 +133,7 @@
                     [self removeloder];
                 }
                 else{
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[responseObj valueForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
                     [alertController addAction:ok];
                     [self presentViewController:alertController animated:YES completion:nil];

@@ -27,7 +27,7 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rpy-Ky-1kD">
                     <rect key="frame" x="0.0" y="0.0" width="325" height="667"/>
-                    <color key="backgroundColor" red="0.87332214770000005" green="0.82904698992500003" blue="1" alpha="0.55417915240000004" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.91571691180000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <view key="tableHeaderView" contentMode="scaleToFill" id="vEI-f4-0rP">
                         <rect key="frame" x="0.0" y="0.0" width="325" height="144"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -72,7 +72,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.87332214770000005" green="0.82904698990000003" blue="1" alpha="0.55417915240000004" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.91571691180000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gDU-Al-qM2" firstAttribute="top" secondItem="blF-nf-EVD" secondAttribute="bottom" constant="5" id="0KL-pf-ibM"/>
                             <constraint firstItem="3oh-wE-AeQ" firstAttribute="centerX" secondItem="3RQ-4M-e13" secondAttribute="centerX" id="1qP-Y5-Cqk"/>
