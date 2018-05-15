@@ -22,7 +22,7 @@
 -(void)setData{
     _viewToClip.layer.cornerRadius = 5;
     _viewToClip.clipsToBounds = true;
-    [CommonFunction setNavToController:self title:@"" isCrossBusston:true isAddRightButton:false];
+    [CommonFunction setNavToController:self title:@"" isCrossBusston:true isAddRightButton:false rightImageName:@""];
 }
 #pragma mark -btn Actions
 -(void)backTapped{

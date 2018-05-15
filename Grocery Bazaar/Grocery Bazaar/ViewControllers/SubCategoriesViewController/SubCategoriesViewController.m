@@ -24,6 +24,11 @@
     [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
 }
 
+-(void)cartBtnAction{
+    CartVCViewController* vc = [[CartVCViewController alloc ] initWithNibName:@"CartVCViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:true];
+}
+
 -(void)viewDidLayoutSubviews{
     loderObj.frame = self.view.frame;
     if (_arrSubCategories.count==0) {
@@ -42,7 +47,7 @@
     _tblView.estimatedRowHeight = 100;
     _tblView.multipleTouchEnabled = NO;
     [_tblView reloadData];
-    [CommonFunction setNavToController:self title:_catObj.name isCrossBusston:false isAddRightButton:false];
+    [CommonFunction setNavToController:self title:_catObj.name isCrossBusston:false isAddRightButton:true rightImageName:@"Cart"];
 }
 #pragma mark - Api Related Methods
 -(void)hitApiForAddressList{
@@ -96,6 +101,8 @@
     cell.lblHeading.text = obj.title;
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.subcat_icon]] ;
     cell.imgView.layer.cornerRadius = 10;
+    cell.imgView.layer.borderWidth = 1.0;
+    cell.imgView.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
     cell.imgView.clipsToBounds = true;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

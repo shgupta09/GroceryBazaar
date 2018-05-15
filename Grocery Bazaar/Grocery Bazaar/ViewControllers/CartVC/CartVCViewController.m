@@ -58,7 +58,7 @@
     UIImage *image = [UIImage imageNamed:@"CheckOut"];
     [_btn_CheckOut setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     if (cartItemArray.count>1) {
-        [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart (%d items)",cartItemArray.count] isCrossBusston:false isAddRightButton:false];
+        [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart (%d items)",cartItemArray.count] isCrossBusston:false isAddRightButton:false rightImageName:@""];
         __block int priceCheckout = 0;
         [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             priceCheckout += ([((CartItem *)obj).price intValue] * [((CartItem *)obj).quantity integerValue]);
@@ -70,11 +70,11 @@
             priceCheckout += [((CartItem *)obj).price intValue]* [((CartItem *)obj).quantity integerValue];
         }];
         _lbl_price_checkout.text = [NSString stringWithFormat:@"₹ %d",priceCheckout];
-        [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart (1 item)"] isCrossBusston:false isAddRightButton:false];
+        [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart (1 item)"] isCrossBusston:false isAddRightButton:false rightImageName:@""];
 
     }else{
         _checkOutView.hidden = true;
-        [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart"] isCrossBusston:false isAddRightButton:false];
+        [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart"] isCrossBusston:false isAddRightButton:false rightImageName:@""];
         _tblView.hidden = true;
         [self viewDidLayoutSubviews];
     }

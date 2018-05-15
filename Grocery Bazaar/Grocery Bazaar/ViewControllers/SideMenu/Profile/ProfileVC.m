@@ -53,7 +53,7 @@
         _txt_Mobile.text = [CommonFunction getValueFromDefaultWithKey:loginPrimarymobile];
         [self textFieldEdit:false];
         [_btnadd setTitle:@"Edit" forState:UIControlStateNormal];
-        [CommonFunction setNavToController:self title:@"My Account" isCrossBusston:false isAddRightButton:false];
+        [CommonFunction setNavToController:self title:@"My Account" isCrossBusston:false isAddRightButton:false rightImageName:@""];
    
     
 }

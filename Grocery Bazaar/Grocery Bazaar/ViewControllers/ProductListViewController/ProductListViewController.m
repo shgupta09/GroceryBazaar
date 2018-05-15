@@ -52,7 +52,13 @@
     _tblView.multipleTouchEnabled = NO;
     arrProducts = [[NSMutableArray alloc] init];
     
-    [CommonFunction setNavToController:self title:@"Products" isCrossBusston:false isAddRightButton:false];
+    [CommonFunction setNavToController:self title:@"Products" isCrossBusston:false isAddRightButton:true rightImageName:@"Cart"];
+}
+
+-(void)cartBtnAction{
+    CartVCViewController* vc = [[CartVCViewController alloc ] initWithNibName:@"CartVCViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:vc animated:true];
 }
 #pragma mark - Api Related Methods
 -(void)hitApiForProductList{

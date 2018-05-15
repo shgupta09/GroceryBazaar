@@ -42,10 +42,10 @@
         [self textFieldEdit:false];
         [_btnadd setTitle:@"Edit" forState:UIControlStateNormal];
         [CommonFunction setResignTapGestureToView:self.view andsender:self];
-        [CommonFunction setNavToController:self title:@"Update Address" isCrossBusston:false isAddRightButton:false];
+        [CommonFunction setNavToController:self title:@"Update Address" isCrossBusston:false isAddRightButton:false rightImageName:@""];
     }
     else{
-        [CommonFunction setNavToController:self title:@"Address" isCrossBusston:false isAddRightButton:false];
+        [CommonFunction setNavToController:self title:@"Address" isCrossBusston:false isAddRightButton:false rightImageName:@""];
         [_btnadd setTitle:@"Add" forState:UIControlStateNormal];
     }
 }

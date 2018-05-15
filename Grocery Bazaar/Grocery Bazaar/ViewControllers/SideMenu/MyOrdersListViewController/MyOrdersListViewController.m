@@ -28,6 +28,10 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -45,7 +49,7 @@
     _tblView.rowHeight = UITableViewAutomaticDimension;
     _tblView.estimatedRowHeight = 100;
     
-    [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"My Orders"] isCrossBusston:false isAddRightButton:false];
+    [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"My Orders"] isCrossBusston:false isAddRightButton:false rightImageName:@""];
     arrMyOrders = [NSMutableArray new];
     [self hitApiForMyOrders];
     
@@ -163,6 +167,8 @@
     cell.lblOrderId.text = [NSString stringWithFormat:@"Order Id: %@",obj.order_id];
     cell.lblOrderNo.text = [NSString stringWithFormat:@"Order No: %@",obj.order_number];
     cell.lblPlaceDate.text = [NSString stringWithFormat:@"Placed on %@",obj.order_date ];
+    cell.imgView.layer.borderWidth = 1.0;
+    cell.imgView.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
 //    cell.viewToClip.layer.cornerRadius = 10;
 //    cityCell.viewToClip.clipsToBounds = true;
     UIImage *image = [UIImage imageNamed:@"edit"];

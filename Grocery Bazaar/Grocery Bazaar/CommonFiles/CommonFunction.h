@@ -13,7 +13,8 @@
 +(BOOL)validateAddress:(NSString *)name;
 +(BOOL)isValidPassword:(NSString*)password;
 +(UIView *)setStatusBarColor;
-+(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross isAddRightButton:(BOOL)isAddButton;
+
++(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross isAddRightButton:(BOOL)isAddButton rightImageName:(NSString *)rigthImage;
 +(void)storeValueInDefault:(NSString *)valueString andKey:(NSString *)keyString;
 +(NSString *)getValueFromDefaultWithKey:(NSString *)keyString;
 +(void)stroeBoolValueForKey:(NSString *)keyString withBoolValue:(BOOL)boolValue;

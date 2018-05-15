@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     isEmail = false;
-    [CommonFunction setNavToController:self title:@"Forgot Password" isCrossBusston:true isAddRightButton:false];
+    [CommonFunction setNavToController:self title:@"Forgot Password" isCrossBusston:true isAddRightButton:false rightImageName:@""];
     innerView.layer.cornerRadius = 5;
     [txt_Username becomeFirstResponder];
     //txt_Username.text = @"shgupta09@gmail.com";

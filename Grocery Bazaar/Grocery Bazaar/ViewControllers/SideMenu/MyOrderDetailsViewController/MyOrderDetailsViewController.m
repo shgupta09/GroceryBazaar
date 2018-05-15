@@ -33,7 +33,7 @@
     _tblView.rowHeight = UITableViewAutomaticDimension;
     _tblView.estimatedRowHeight = 100;
     
-    [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Confirm Order"] isCrossBusston:false isAddRightButton:false];
+    [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Confirm Order"] isCrossBusston:false isAddRightButton:false rightImageName:@""];
     
 }
 #pragma mark -btnAction
@@ -60,6 +60,8 @@
         productCell.lblName.text = obj.product_name;
         productCell.lbl_Price.text = obj.price;
         productCell.lbl_Quantity.text = obj.product_quantity;
+        productCell.imgView.layer.borderWidth = 1.0;
+        productCell.imgView.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
 //        [productCell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.]];
         productCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return productCell;

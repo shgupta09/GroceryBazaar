@@ -56,7 +56,7 @@
     _tbl_List.rowHeight = UITableViewAutomaticDimension;
     _tbl_List.estimatedRowHeight = 100;
     _tbl_List.multipleTouchEnabled = NO;
-    [CommonFunction setNavToController:self title:@"Address" isCrossBusston:false isAddRightButton:true];
+    [CommonFunction setNavToController:self title:@"Address" isCrossBusston:false isAddRightButton:true rightImageName:@"plus"] ;
 }
 #pragma mark - Api Related Methods
 -(void)hitApiForAddressList{
@@ -201,8 +201,6 @@
 -(void)addAddress{
     AddressVC *addressVCObj = [[AddressVC alloc]initWithNibName:@"AddressVC" bundle:nil];
     [self.navigationController pushViewController:addressVCObj animated:true];
-    
-    
 }
 
 

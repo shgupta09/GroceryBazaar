@@ -39,7 +39,7 @@ __block int priceCheckout ;
     _tblView.estimatedRowHeight = 100;
     
     [CommonFunction setResignTapGestureToView:self.view andsender:self];
-    [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Confirm Order"] isCrossBusston:false isAddRightButton:false];
+    [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Confirm Order"] isCrossBusston:false isAddRightButton:false rightImageName:@""];
     cartArray = [NSMutableArray new];
     cartArray = [CartItem sharedInstance].myDataArray;
     

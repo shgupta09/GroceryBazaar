@@ -205,6 +205,8 @@
     obj = [arrCategories objectAtIndex:indexPath.row];
     cell.imgView.layer.cornerRadius = 10;
     cell.imgView.clipsToBounds = true;
+    cell.imgView.layer.borderWidth = 1.0;
+    cell.imgView.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
     CAShapeLayer* layering = [CAShapeLayer layer];
     [layering setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(10, 10, cell.frame.size.width-20, cell.frame.size.height-20)] CGPath ]];
     if (![[CommonFunction checkForNull:obj.category_icon] isEqualToString:@""]) {

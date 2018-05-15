@@ -27,7 +27,7 @@
 }
 
 -(void)setData{
-    [CommonFunction setNavToController:self title:@"Change Password" isCrossBusston:false isAddRightButton:false];
+    [CommonFunction setNavToController:self title:@"Change Password" isCrossBusston:false isAddRightButton:false rightImageName:@""];
 }
 
 - (void)didReceiveMemoryWarning {

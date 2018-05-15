@@ -7,7 +7,6 @@
 //
 
 #import "CommonFunction.h"
-
 @implementation CommonFunction
 
 +(BOOL)isValidPassword:(NSString*)password
@@ -27,7 +26,7 @@
     return statusBarView;
 }
 
-+(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross isAddRightButton:(BOOL)isAddButton{
++(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross isAddRightButton:(BOOL)isAddButton rightImageName:(NSString *)rigthImage{
 //    title = [title capitalizedString];
     [viewController.view addSubview:[CommonFunction setStatusBarColor]];
     [viewController.navigationController setNavigationBarHidden:YES animated:NO];
@@ -95,12 +94,37 @@
     newItem.leftBarButtonItem = dashboard;
     
     if (isAddButton) {
-     
-        UIBarButtonItem *anotherButton =  [[UIBarButtonItem alloc]
-         initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-         target:viewController action:@selector(addAddress)];
-        anotherButton.tintColor = [UIColor whiteColor];
-        newItem.rightBarButtonItem = anotherButton;
+        if ([rigthImage isEqualToString:@"plus"] ) {
+            UIBarButtonItem *anotherButton =  [[UIBarButtonItem alloc]
+                                               initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                               target:viewController action:@selector(addAddress)];
+            anotherButton.tintColor = [UIColor whiteColor];
+            newItem.rightBarButtonItem = anotherButton;
+        }else{
+            UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
+            [button setImage:[UIImage imageNamed:@"CartSmall"] forState:UIControlStateNormal];
+            [button addTarget:viewController action:@selector(cartBtnAction)forControlEvents:UIControlEventTouchUpInside];
+            [button setFrame:CGRectMake(0, 0, 20 , 20)];
+            button.tintColor = [UIColor whiteColor];
+            
+            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(10, -7, 12, 12)];
+            [label setFont:[UIFont fontWithName:@"Arial-BoldMT" size:9]];
+            [label setText:[NSString stringWithFormat:@"%d",[CartItem sharedInstance].myDataArray.count]];
+            label.textAlignment = UITextAlignmentCenter;
+            [label setTextColor:[CommonFunction colorWithHexString:primary_Button_Color]];
+            
+            [label setBackgroundColor:[UIColor whiteColor]];
+            label.layer.cornerRadius = 6;
+            label.layer.masksToBounds = true;
+            
+            [button addSubview:label];
+            
+            UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+            barButton.tintColor = [UIColor whiteColor];
+            newItem.rightBarButtonItem = barButton;
+            
+        }
+      
     }
     [newNavBar setItems:@[newItem]];
     [viewController.view addSubview:newNavBar];
@@ -387,11 +411,6 @@
 }
 
 
-
-
-
-
-
 +(void)addNoDataLabel:(UIView*)view{
 
     UILabel *lbl = [UILabel new];
@@ -404,5 +423,7 @@
     lbl.tag = 500;
     [view addSubview:lbl];
 }
+
+
 
 @end
