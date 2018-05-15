@@ -30,6 +30,7 @@
     [self setData];
     [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
     [CommonFunction setViewBackground:collectionView withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
+    tempView = [UIView new];
 
     
 }
@@ -70,6 +71,15 @@
     }
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [self disapper];
+}
+-(void)disapper{
+    [tempView removeGestureRecognizer:singleFingerTap];
+    [tempView removeFromSuperview];
+    isOpen = false;
+}
 -(void)viewDidLayoutSubviews{
     loderObj.frame = self.view.frame;
 }
@@ -127,6 +137,9 @@
         [tempView removeGestureRecognizer:singleFingerTap];
         [tempView removeFromSuperview];
         isOpen = false;
+    }else{
+        [tempView removeGestureRecognizer:singleFingerTap];
+        [tempView removeFromSuperview];
     }
     
 }
