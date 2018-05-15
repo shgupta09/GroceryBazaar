@@ -40,7 +40,7 @@
     cartArray = [CartItem sharedInstance].myDataArray;
     
     [cartArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        priceCheckout += ([((CartItem *)obj).product_price intValue] * [((CartItem *)obj).quantity integerValue]);
+        priceCheckout += ([((CartItem *)obj).price intValue] * [((CartItem *)obj).quantity integerValue]);
     }];
     _lbl_TotalPrice.text = [NSString stringWithFormat:@"₹ %d",priceCheckout];
     
@@ -66,7 +66,7 @@
         productCell = [_tblView dequeueReusableCellWithIdentifier:@"ProductCell"];
         CartItem *obj = [cartArray objectAtIndex:indexPath.row];
         productCell.lblName.text = obj.product_name;
-        productCell.lbl_Price.text = obj.product_price;
+        productCell.lbl_Price.text = obj.price;
         productCell.lbl_Quantity.text = obj.quantity;
         [productCell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.product_image]];
         productCell.selectionStyle = UITableViewCellSelectionStyleNone;

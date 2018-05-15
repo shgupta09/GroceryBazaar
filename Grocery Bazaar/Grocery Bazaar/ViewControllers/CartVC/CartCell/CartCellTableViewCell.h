@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lbl_CartQuantity;
 @property (weak, nonatomic) IBOutlet UIView *viewToClip;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_Weight;
 
 
 

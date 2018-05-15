@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,10 +29,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Qf6-kc-zAs" customClass="TPKeyboardAvoidingScrollView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="648"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXj-4b-M1f">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="648"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5t-mj-JKQ">
                                     <rect key="frame" x="0.0" y="64" width="375" height="390"/>
@@ -163,9 +164,10 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Qf6-kc-zAs" secondAttribute="trailing" id="BW5-bI-AIc"/>
                 <constraint firstItem="Qf6-kc-zAs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XTb-A3-28Y"/>
-                <constraint firstItem="Qf6-kc-zAs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bEv-LG-vfN"/>
+                <constraint firstItem="Qf6-kc-zAs" firstAttribute="top" secondItem="UX5-LM-fJ6" secondAttribute="top" id="bEv-LG-vfN"/>
                 <constraint firstAttribute="bottom" secondItem="Qf6-kc-zAs" secondAttribute="bottom" constant="-1" id="grL-VB-UU7"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="UX5-LM-fJ6"/>
             <point key="canvasLocation" x="33.5" y="82.5"/>
         </view>
     </objects>

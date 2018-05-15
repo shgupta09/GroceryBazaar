@@ -24,4 +24,7 @@
 @property (strong,nonatomic) NSString* publish_time;
 @property (strong,nonatomic) NSString* offer_code;
 @property (strong,nonatomic) NSString* selectedQuantity;
+@property (strong,nonatomic) NSString* weight;
+@property (strong,nonatomic) NSString* price;
+@property (strong,nonatomic) NSString* variant_id;
 @end

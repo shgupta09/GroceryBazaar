@@ -26,8 +26,8 @@
     _btn_Register.layer.borderWidth = 2;
     _btn_Register.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
 
-//    _txtPassword.text = @"Gupta@123";
-//    _txtUsername.text = @"shgupta09@gmail.com";
+    _txtPassword.text = @"Gupta@123";
+    _txtUsername.text = @"shgupta09@gmail.com";
 
     [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
 

@@ -61,13 +61,13 @@
         [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart (%d items)",cartItemArray.count] isCrossBusston:false isAddRightButton:false];
         __block int priceCheckout = 0;
         [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            priceCheckout += ([((CartItem *)obj).product_price intValue] * [((CartItem *)obj).quantity integerValue]);
+            priceCheckout += ([((CartItem *)obj).price intValue] * [((CartItem *)obj).quantity integerValue]);
         }];
         _lbl_price_checkout.text = [NSString stringWithFormat:@"₹ %d",priceCheckout];
     }else if(cartItemArray.count == 1){
         __block int priceCheckout = 0;
         [cartItemArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            priceCheckout += [((CartItem *)obj).product_price intValue]* [((CartItem *)obj).quantity integerValue];
+            priceCheckout += [((CartItem *)obj).price intValue]* [((CartItem *)obj).quantity integerValue];
         }];
         _lbl_price_checkout.text = [NSString stringWithFormat:@"₹ %d",priceCheckout];
         [CommonFunction setNavToController:self title:[NSString stringWithFormat:@"Cart (1 item)"] isCrossBusston:false isAddRightButton:false];
@@ -117,11 +117,13 @@
     proDuctObjToAddCArt.product_id =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]). product_id;
     proDuctObjToAddCArt.quantity =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]). quantity;
     proDuctObjToAddCArt.product_name =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).product_name;
-    proDuctObjToAddCArt.product_price =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).product_price;
+    proDuctObjToAddCArt.price =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).price;
     proDuctObjToAddCArt.created_at =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).created_at;
     proDuctObjToAddCArt.stock =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).stock;
+    proDuctObjToAddCArt.weight =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).weight;
+     proDuctObjToAddCArt.product_variant_id =   ((CartItem *)[cartItemArray objectAtIndex:sender.tag]).product_variant_id;
     _lbl_productName.text = proDuctObjToAddCArt.product_name;
-    _lbl_price.text = proDuctObjToAddCArt.product_price;
+    _lbl_price.text = proDuctObjToAddCArt.price;
     _lbl_Quantity.text = proDuctObjToAddCArt.quantity;
     _btnPlus.layer.cornerRadius = _btnPlus.frame.size.width/2;
     _btnPlus.clipsToBounds = true;
@@ -192,8 +194,9 @@
     CartCellTableViewCell *cell = [_tblView dequeueReusableCellWithIdentifier:@"CartCellTableViewCell"];
     CartItem *productObj = [cartItemArray objectAtIndex:indexPath.row];
     cell.lbl_Product_Name.text = productObj.product_name;
-    cell.lbl_Product_Price.text = productObj.product_price;
+    cell.lbl_Product_Price.text = productObj.price;
     cell.lbl_CartQuantity.text = productObj.quantity;
+    cell.lbl_Weight.text = productObj.weight;
     [cell.imgView_Product sd_setImageWithURL:[NSURL URLWithString:productObj.product_image]] ;
 
     cell.viewToClip.layer.cornerRadius = 10;
@@ -314,7 +317,7 @@
         
         [parameter setValue:[CommonFunction getValueFromDefaultWithKey:loginuserId] forKey:loginuserId];
         [parameter setValue:product.product_id forKey:@"product_id"];
-        
+          [parameter setValue:product.product_variant_id forKey:@"product_variant_id"];
         [parameter setObject:proDuctObjToAddCArt.quantity forKey:@"quantity"];
         
         

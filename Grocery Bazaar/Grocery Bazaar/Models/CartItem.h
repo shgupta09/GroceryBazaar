@@ -17,6 +17,10 @@
 @property (strong,nonatomic) NSString* quantity;
 @property (strong,nonatomic) NSString* created_at;
 @property (strong,nonatomic) NSString* stock;
+@property (strong,nonatomic) NSString* price;
+@property (strong,nonatomic) NSString* weight;
+
+@property (strong,nonatomic) NSString*product_variant_id;
 @property(nonatomic, strong) NSMutableArray *myDataArray;
 
 

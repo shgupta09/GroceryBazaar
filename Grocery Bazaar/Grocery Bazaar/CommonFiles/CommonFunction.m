@@ -31,7 +31,20 @@
 //    title = [title capitalizedString];
     [viewController.view addSubview:[CommonFunction setStatusBarColor]];
     [viewController.navigationController setNavigationBarHidden:YES animated:NO];
-    UINavigationBar *newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44.0)];
+    UINavigationBar *newNavBar;
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        
+        if(((int)[[UIScreen mainScreen] nativeBounds].size.height)==2436) {
+            if (@available(iOS 11.0, *)) {
+                newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 44, [UIScreen mainScreen].bounds.size.width, 44.0)];
+            } else {
+                // Fallback on earlier versions
+            }
+            
+        }else{
+            newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44.0)];
+        }
+    }
     newNavBar.barTintColor = [CommonFunction colorWithHexString:primary_Button_Color];
     newNavBar.translucent = false;
     UINavigationItem *newItem = [[UINavigationItem alloc] init];
@@ -60,7 +73,7 @@
         UIButton *imageButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 22, 22)];
         
         imageButton.tintColor = [UIColor whiteColor];
-        UIImage * image = [UIImage imageNamed:@"back"];
+        UIImage * image = [UIImage imageNamed:@"ic_action-1"];
         [imageButton setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         [imageButton addTarget:viewController action:@selector(backTapped) forControlEvents:UIControlEventAllEvents];
         
@@ -68,7 +81,7 @@
     }else{
         UIButton *imageButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 22, 22)];
         imageButton.tintColor = [UIColor whiteColor];
-        UIImage * image = [UIImage imageNamed:@"back"];
+        UIImage * image = [UIImage imageNamed:@"ic_action-1"];
         [imageButton setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         
         [imageButton addTarget:viewController action:@selector(backTapped) forControlEvents:UIControlEventAllEvents];
@@ -278,15 +291,25 @@
 }
 
 +(id)checkForNull:(id)tel{
-    if(tel==(id) [NSNull null] || [tel length]==0 || [tel isEqualToString:@""])
-    {
-        return @"";
-    }
-    else
-    {
+    
+    @try {
+        if(tel==(id) [NSNull null] || [tel length]==0 || [tel isEqualToString:@""])
+        {
+            return @"";
+        }
+        else
+        {
+            return tel;
+            
+        }
+    } @catch (NSException *exception) {
         return tel;
-        
+        //  Handle an exception thrown in the @try block
+    } @finally {
+        //  Code that gets executed whether or not an exception is thrown
     }
+    
+    
     
 }
 

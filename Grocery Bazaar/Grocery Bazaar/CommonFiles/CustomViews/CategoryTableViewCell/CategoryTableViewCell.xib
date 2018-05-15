@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4l-DI-k0I">
@@ -24,23 +24,34 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvn-h6-73C">
                                 <rect key="frame" x="10" y="9" width="70" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rvn-h6-73C" secondAttribute="height" multiplier="1:1" id="4Jc-Lb-DW6"/>
                                     <constraint firstAttribute="height" constant="70" id="NoJ-59-Y30"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-z7-lHF">
-                                <rect key="frame" x="90" y="32.5" width="200" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-z7-lHF">
+                                <rect key="frame" x="90" y="33" width="200" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2y3-c5-C5h">
+                                <rect key="frame" x="0.0" y="93" width="320" height="5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="FlY-U4-Du4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="2y3-c5-C5h" secondAttribute="bottom" id="3Ba-MG-tAt"/>
+                            <constraint firstItem="2y3-c5-C5h" firstAttribute="leading" secondItem="I4l-DI-k0I" secondAttribute="leading" id="Dr6-YG-ZHr"/>
                             <constraint firstItem="Sk7-z7-lHF" firstAttribute="leading" secondItem="rvn-h6-73C" secondAttribute="trailing" constant="10" id="FWj-dT-MmO"/>
                             <constraint firstItem="rvn-h6-73C" firstAttribute="leading" secondItem="I4l-DI-k0I" secondAttribute="leading" constant="10" id="GuT-6L-Jbz"/>
                             <constraint firstItem="Sk7-z7-lHF" firstAttribute="centerY" secondItem="rvn-h6-73C" secondAttribute="centerY" id="JuA-qa-fAh"/>
+                            <constraint firstAttribute="trailing" secondItem="2y3-c5-C5h" secondAttribute="trailing" id="bwx-gy-OzP"/>
                             <constraint firstAttribute="trailing" secondItem="Sk7-z7-lHF" secondAttribute="trailing" constant="30" id="cZU-zg-flA"/>
                             <constraint firstAttribute="height" constant="98" id="csY-3A-RpC"/>
                             <constraint firstItem="rvn-h6-73C" firstAttribute="centerY" secondItem="I4l-DI-k0I" secondAttribute="centerY" constant="-5" id="nY7-7o-Thr"/>

@@ -207,8 +207,9 @@
     cell.imgView.clipsToBounds = true;
     CAShapeLayer* layering = [CAShapeLayer layer];
     [layering setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(10, 10, cell.frame.size.width-20, cell.frame.size.height-20)] CGPath ]];
-
-    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.category_icon]];
+    if (![[CommonFunction checkForNull:obj.category_icon] isEqualToString:@""]) {
+        [cell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.category_icon]];
+    }
     cell.lblName.text = obj.name;
     
 //    [[cell.contentView layer] addSublayer:layering];
@@ -267,7 +268,7 @@
                         Category *categoryObj = [Category new];
                         
                         [obj enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-                            [categoryObj setValue:obj forKey:key];
+                            [categoryObj setValue:[CommonFunction checkForNull:obj] forKey:key];
                         }];
                         
                         
@@ -277,14 +278,20 @@
                             SubCategory *subobj = [SubCategory new];
                             
                             [obj enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-                                [subobj setValue:obj forKey:key];
+                                
+                                 [subobj setValue:[CommonFunction checkForNull:obj] forKey:key];
+                              
                             }];
                            
                             subobj.catId = categoryObj.cat_id;
                             [categoryObj.subcategories addObject:subobj];
                         }];
                         
-                        [arrCategories addObject:categoryObj];
+                        
+                        if (categoryObj.subcategories.count>0) {
+                            [arrCategories addObject:categoryObj];
+
+                        }
                     }];
                     if (arrCategories.count== 0) {
                         collectionView.hidden = true;

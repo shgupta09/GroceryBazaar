@@ -58,7 +58,7 @@
         productCell = [_tblView dequeueReusableCellWithIdentifier:@"ProductCell"];
         MyOrderProducts *obj = [_orderObj.order_products objectAtIndex:indexPath.row];
         productCell.lblName.text = obj.product_name;
-        productCell.lbl_Price.text = obj.product_price;
+        productCell.lbl_Price.text = obj.price;
         productCell.lbl_Quantity.text = obj.product_quantity;
 //        [productCell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.]];
         productCell.selectionStyle = UITableViewCellSelectionStyleNone;

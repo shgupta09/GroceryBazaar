@@ -16,6 +16,5 @@
 @property (strong,nonatomic) NSString* product_quantity;
 @property (strong,nonatomic) NSString* discount_amount;
 @property (strong,nonatomic) NSString* product_price;
-
-
+@property (strong,nonatomic) NSString* price;
 @end

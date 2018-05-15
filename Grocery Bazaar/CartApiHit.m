@@ -24,7 +24,6 @@
                         [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
                             [productObj setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
                         }];
-                        productObj.stock = @"5";
                         [[CartItem sharedInstance].myDataArray addObject:productObj];
                     }];
                     completion();

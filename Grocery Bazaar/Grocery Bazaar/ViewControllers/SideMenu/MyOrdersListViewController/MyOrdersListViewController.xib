@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-b7-Ieo">
-                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="VhU-Mg-4N0"/>
@@ -32,9 +33,10 @@
             <constraints>
                 <constraint firstItem="o5l-b7-Ieo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3vW-Pr-AVi"/>
                 <constraint firstAttribute="trailing" secondItem="o5l-b7-Ieo" secondAttribute="trailing" id="WtY-b3-Xpp"/>
-                <constraint firstItem="o5l-b7-Ieo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="YnO-Cf-RLa"/>
-                <constraint firstAttribute="bottom" secondItem="o5l-b7-Ieo" secondAttribute="bottom" id="fAQ-o2-D4M"/>
+                <constraint firstItem="o5l-b7-Ieo" firstAttribute="top" secondItem="IC0-pd-Wt3" secondAttribute="top" constant="44" id="YnO-Cf-RLa"/>
+                <constraint firstItem="IC0-pd-Wt3" firstAttribute="bottom" secondItem="o5l-b7-Ieo" secondAttribute="bottom" id="fAQ-o2-D4M"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="IC0-pd-Wt3"/>
         </view>
     </objects>
 </document>
