@@ -45,7 +45,7 @@
 
 #pragma mark- Table Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _orderObj.order_products.count+3;
+    return _orderObj.order_products.count+2;
 }
 
 
@@ -58,10 +58,13 @@
         productCell = [_tblView dequeueReusableCellWithIdentifier:@"ProductCell"];
         MyOrderProducts *obj = [_orderObj.order_products objectAtIndex:indexPath.row];
         productCell.lblName.text = obj.product_name;
-        productCell.lbl_Price.text = obj.price;
+        productCell.lbl_Price.text = obj.product_price;
         productCell.lbl_Quantity.text = obj.product_quantity;
+        productCell.lbl_weight.text = obj.weight;
         productCell.imgView.layer.borderWidth = 1.0;
         productCell.imgView.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
+        productCell.imgView.layer.cornerRadius = 20;
+        productCell.imgView.clipsToBounds =true;
 //        [productCell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.]];
         productCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return productCell;

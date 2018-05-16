@@ -30,6 +30,9 @@
     
 }
 - (IBAction)btnAction_Continue:(id)sender {
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:AddToCartNotification
+     object:self userInfo:nil];
     [self setVC];
 }
 

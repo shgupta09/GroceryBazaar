@@ -69,6 +69,10 @@
         productCell.lbl_Price.text = obj.price;
         productCell.lbl_Quantity.text = obj.quantity;
         [productCell.imgView sd_setImageWithURL:[NSURL URLWithString:obj.product_image]];
+        productCell.imgView.layer.cornerRadius = 10;
+        productCell.imgView.layer.borderWidth = 1.0;
+        productCell.lbl_weight.text = obj.weight;
+        productCell.imgView.layer.borderColor = [CommonFunction colorWithHexString:primary_Button_Color].CGColor;
         productCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return productCell;
     }else if (indexPath.row == cartArray.count){
@@ -168,6 +172,17 @@
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_FOR_PLACE_ORDER]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:NO header:NPHeaderName completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 if ([[responseObj valueForKey:API_Status] isEqualToString:isValidHitGB ]){
+                    CartApiHit *cartObj = [CartApiHit new];
+                    [[CartItem sharedInstance].myDataArray removeAllObjects];
+                    [cartObj hitApiForCartItemscompletetion:^() {
+                      
+                        [[NSNotificationCenter defaultCenter]
+                         postNotificationName:AddToCartNotification
+                         object:self userInfo:nil];
+                        
+                    }];
+                    
+                    
                     CongoVC *congoVCObj = [[CongoVC alloc]initWithNibName:@"CongoVC" bundle:nil];
                     [self.navigationController pushViewController:congoVCObj animated:true];
                 }

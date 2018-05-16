@@ -106,7 +106,7 @@
             [button addTarget:viewController action:@selector(cartBtnAction)forControlEvents:UIControlEventTouchUpInside];
             [button setFrame:CGRectMake(0, 0, 20 , 20)];
             button.tintColor = [UIColor whiteColor];
-            
+            if([CartItem sharedInstance].myDataArray.count>0){
             UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(10, -7, 12, 12)];
             [label setFont:[UIFont fontWithName:@"Arial-BoldMT" size:9]];
             [label setText:[NSString stringWithFormat:@"%d",[CartItem sharedInstance].myDataArray.count]];
@@ -118,7 +118,7 @@
             label.layer.masksToBounds = true;
             
             [button addSubview:label];
-            
+            }
             UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
             barButton.tintColor = [UIColor whiteColor];
             newItem.rightBarButtonItem = barButton;

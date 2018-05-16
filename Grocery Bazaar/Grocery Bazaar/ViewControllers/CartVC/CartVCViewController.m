@@ -290,6 +290,9 @@
                     [[CartItem sharedInstance].myDataArray removeObject:cartItem];
                     cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
                     [self setData];
+                    [[NSNotificationCenter defaultCenter]
+                     postNotificationName:AddToCartNotification
+                     object:self userInfo:nil];
                     [_tblView reloadData];
                 }
                 [self removeloder];

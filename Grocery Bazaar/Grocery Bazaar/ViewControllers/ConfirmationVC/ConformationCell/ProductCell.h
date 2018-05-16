@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbl_detail;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_Price;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_Quantity;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_weight;
 
 @end
