@@ -67,6 +67,11 @@
 
 
 #define codeForActivatedAccount @"NP001"
+
+
+//Notificartion
+#define AddToCartNotification @"addeddNotification"
+
 //Color related
 
 #define primary_Button_Color @"E91463"

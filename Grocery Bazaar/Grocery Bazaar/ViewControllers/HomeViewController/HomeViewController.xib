@@ -105,11 +105,13 @@
                         <action selector="btnAction_CArt:" destination="-1" eventType="touchUpInside" id="sJE-zX-Axc"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1w-68-FeI">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1w-68-FeI">
                     <rect key="frame" x="334" y="18" width="12" height="12"/>
                     <color key="backgroundColor" red="0.91372549020000005" green="0.078431372550000003" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="12" id="6h9-Jv-5sU"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="12" id="M32-o9-str"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="QIU-at-8Wf"/>
                         <constraint firstAttribute="height" constant="12" id="uoj-Hz-xDC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>

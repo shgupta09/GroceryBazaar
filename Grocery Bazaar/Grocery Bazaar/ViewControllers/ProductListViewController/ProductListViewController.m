@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
+    arrProducts = [[NSMutableArray alloc] init];
     [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
 
     [self setData];
@@ -32,6 +32,10 @@
         cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
         [self hitApiForProductList];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveCustomNotification:)
+                                                 name:AddToCartNotification
+                                               object:nil];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -50,7 +54,7 @@
     _tblView.rowHeight = UITableViewAutomaticDimension;
     _tblView.estimatedRowHeight = 100;
     _tblView.multipleTouchEnabled = NO;
-    arrProducts = [[NSMutableArray alloc] init];
+   
     
     [CommonFunction setNavToController:self title:@"Products" isCrossBusston:false isAddRightButton:true rightImageName:@"Cart"];
 }
@@ -159,6 +163,9 @@
                         cartItemArray = [NSMutableArray new];
                         cartItemArray = [[CartItem sharedInstance].myDataArray mutableCopy];
                         [_tblView reloadData];
+                        [[NSNotificationCenter defaultCenter]
+                         postNotificationName:AddToCartNotification
+                         object:self userInfo:nil];
 
                     }];
                     
@@ -384,7 +391,15 @@
     //    [self.navigationController pushViewController:addressVCObj animated:true];
 }
 
-
+#pragma mark - Notification
+-(void)receiveCustomNotification:(NSNotification*)notObj{
+    
+    if ([notObj.name isEqualToString:AddToCartNotification]) {
+    
+        [self setData];
+    }
+    
+}
 
 @end
 

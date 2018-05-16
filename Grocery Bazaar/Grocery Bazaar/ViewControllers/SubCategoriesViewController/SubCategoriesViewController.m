@@ -20,6 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setData];
+   
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveCustomNotification:)
+                                                 name:AddToCartNotification
+                                               object:nil];
+
 //     [CommonFunction addNoDataLabel:self.view];
     [CommonFunction setViewBackground:self.view withImage:[UIImage imageNamed:@"BackgroundGeneral.png"]];
 }
@@ -114,5 +120,13 @@
     obj.subCategory = [_arrSubCategories objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:obj animated:true];
 }
-
+#pragma mark - Notification
+-(void)receiveCustomNotification:(NSNotification*)notObj{
+    
+    if ([notObj.name isEqualToString:AddToCartNotification]) {
+        
+        [self setData];
+    }
+    
+}
 @end
